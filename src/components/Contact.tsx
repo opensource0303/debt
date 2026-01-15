@@ -125,7 +125,7 @@ const Contact = () => {
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">{t('contact.sendMessage')}</h3>
               
               <div className="mb-6">
-                <label htmlFor="name" className="block text-gray-700 dark:text-gray-300 mb-2 font-medium">姓名</label>
+                <label htmlFor="name" className="block text-gray-700 dark:text-gray-300 mb-2 font-medium">{language === 'zh' ? '姓名' : 'Name'}</label>
                 <input
                   type="text"
                   id="name"
@@ -134,12 +134,12 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors"
-                  placeholder="请输入您的姓名"
+                  placeholder={t('contact.address') === '办公地址' ? '请输入您的姓名' : 'Please enter your name'}
                 />
               </div>
               
               <div className="mb-6">
-                <label htmlFor="email" className="block text-gray-700 dark:text-gray-300 mb-2 font-medium">邮箱</label>
+                <label htmlFor="email" className="block text-gray-700 dark:text-gray-300 mb-2 font-medium">{language === 'zh' ? '邮箱' : 'Email'}</label>
                 <input
                   type="email"
                   id="email"
@@ -148,12 +148,12 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors"
-                  placeholder="请输入您的邮箱"
+                  placeholder={t('contact.email') === '电子邮箱' ? '请输入您的邮箱' : 'Please enter your email'}
                 />
               </div>
               
               <div className="mb-6">
-                <label htmlFor="phone" className="block text-gray-700 dark:text-gray-300 mb-2 font-medium">电话</label>
+                <label htmlFor="phone" className="block text-gray-700 dark:text-gray-300 mb-2 font-medium">{language === 'zh' ? '电话' : 'Phone'}</label>
                 <input
                   type="tel"
                   id="phone"
@@ -162,12 +162,12 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors"
-                  placeholder="请输入您的电话"
+                  placeholder={t('contact.phone') === '联系电话' ? '请输入您的电话' : 'Please enter your phone number'}
                 />
               </div>
               
               <div className="mb-8">
-                <label htmlFor="message" className="block text-gray-700 dark:text-gray-300 mb-2 font-medium">留言内容</label>
+                <label htmlFor="message" className="block text-gray-700 dark:text-gray-300 mb-2 font-medium">{language === 'zh' ? '留言内容' : 'Message'}</label>
                 <textarea
                   id="message"
                   name="message"
@@ -176,7 +176,7 @@ const Contact = () => {
                   required
                   rows={5}
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors"
-                  placeholder="请输入您关于平台的问题或合作意向"
+                  placeholder={t('contact.phone') === '联系电话' ? '请输入您关于平台的问题或合作意向' : 'Please enter your questions or cooperation intentions about the platform'}
                 ></textarea>
               </div>
               

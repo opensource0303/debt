@@ -75,8 +75,8 @@ const Services = () => {
               <div className={`w-14 h-14 rounded-full ${service.color} flex items-center justify-center text-white mb-6`}>
                 <i className={`fas ${service.icon} text-2xl`}></i>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">{service.title}</h3>
-              <p className="text-gray-600 dark:text-gray-300">{service.description}</p>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">{t(service.title)}</h3>
+                  <p className="text-gray-600 dark:text-gray-300">{t(service.description)}</p>
             </motion.div>
           ))}
         </div>

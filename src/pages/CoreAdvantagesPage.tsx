@@ -5,7 +5,7 @@ import Footer from '@/components/Footer';
 import { toast } from 'sonner';
 
 const CoreAdvantagesPage = () => {
-  // 移除没有实际功能的占位符函数
+
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-800 text-gray-900 dark:text-white">
@@ -423,9 +423,8 @@ const CoreAdvantagesPage = () => {
               <p className="text-xl mb-8 max-w-3xl mx-auto opacity-90">
                 通过"政府立法推动 + 市场化运营 + 适度技术创新（针对跨境痛点）"，澳门完全有能力建立一个辐射大湾区、连接葡语国家的特色金融资产交易平台，为解决全球多角债问题提供"澳门方案"。
               </p>
-               {/* 移除没有实际功能的按钮 */}
-            </motion.div>
-          </div>
+             </motion.div>
+           </div>
         </section>
       </main>
       <Footer />

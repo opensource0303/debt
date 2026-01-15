@@ -13,9 +13,7 @@ const Footer = () => {
     { name: "coreAdvantages", href: "/core-advantages" }
   ];
   
-  const legalLinks = [
-    // 移除不能跳转的占位符链接
-  ];
+
 
   return (
     <footer className="bg-gray-900 text-white py-16">
@@ -25,9 +23,8 @@ const Footer = () => {
           <div className="text-blue-400 text-2xl font-bold mb-6">{t('footer.logo')}</div>
           <p className="text-gray-400 mb-6">
             {t('footer.slogan')}
-            </p>
-             {/* 移除不能跳转的社交媒体链接 */}
-          </div>
+             </p>
+           </div>
           
           <div>
             <h4 className="text-lg font-bold mb-6">{t('footer.quickLinks')}</h4>
@@ -48,16 +45,14 @@ const Footer = () => {
                 </Link>
               </li>
             </ul>
-          </div>
-          
-           {/* 移除不能跳转的法律信息链接 */}
-          
-          <div>
+           </div>
+           
+           <div>
             <h4 className="text-lg font-bold mb-6">{t('contact')}</h4>
             <ul className="space-y-3">
               <li className="flex items-start space-x-3">
                 <i className="fas fa-map-marker-alt text-blue-400 mt-1"></i>
-                <span className="text-gray-400">珠海市横琴华发商都</span>
+                <span className="text-gray-400">{t('contact.addressValue')}</span>
               </li>
               <li className="flex items-center space-x-3">
                 <i className="fas fa-phone-alt text-blue-400"></i>

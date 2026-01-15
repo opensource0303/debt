@@ -22,7 +22,6 @@ export default function Home() {
         <Services />
         <Advantages />
         <News />
-        <Contact />
         
       {/* 平台核心功能区域 */}
       <section className="py-20 bg-gradient-to-b from-white to-gray-50 dark:from-gray-800 dark:to-gray-900">
@@ -135,6 +134,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+      
+      <Contact />
     </main>
     <Footer />
   </div>

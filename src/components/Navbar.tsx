@@ -28,8 +28,6 @@ const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  
-
 
     const handleLogout = () => {
         logout();
@@ -60,7 +58,6 @@ const Navbar = () => {
                             <></>
                         </Link>
                     </div>
-                    {}
             <nav className="hidden md:flex items-center space-x-8">
                         <Link
                             to="/"
@@ -86,13 +83,12 @@ const Navbar = () => {
                         <Link
                             to="/contact"
                             className={`transition-colors ${location.pathname === "/contact" ? "text-blue-600 dark:text-blue-400 font-medium" : "text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"}`}>{t('contact')}</Link>
-                    </nav>
-                    <div className="flex items-center space-x-4">
-                        {/* 语言切换按钮 */}
+                     </nav>
+                     <div className="flex items-center space-x-4">
                         <button
                             onClick={handleLanguageToggle}
                             className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors flex items-center justify-center"
-                            aria-label="切换语言">
+                            aria-label={language === 'zh' ? "切换到英文" : "Switch to Chinese"}>
                             <i className={`fas fa-globe text-gray-700 dark:text-gray-300 mr-1`}></i>
                             <span className="hidden md:inline text-sm font-medium">{language.toUpperCase()}</span>
                         </button>
@@ -100,11 +96,10 @@ const Navbar = () => {
                         <button
                             onClick={toggleTheme}
                             className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-                            aria-label="切换主题">
+                            aria-label={theme === "light" ? "切换到深色模式" : "Switch to light mode"}>
                             {theme === "light" ? <i className="fas fa-moon text-gray-700"></i> : <i className="fas fa-sun text-yellow-400"></i>}
                         </button>
 
-                        {}
                         {isAuthenticated ? <div className="relative">
                             <button
                                 onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
@@ -142,9 +137,8 @@ const Navbar = () => {
                                 className={`fas ${isMenuOpen ? "fa-times" : "fa-bars"} text-gray-700 dark:text-gray-300`}></i>
                         </button>
                     </div>
-                </div>
-                {}
-                 {isMenuOpen && <div className="md:hidden mt-4 pb-4 space-y-3 animate-fadeIn">
+                 </div>
+                  {isMenuOpen && <div className="md:hidden mt-4 pb-4 space-y-3 animate-fadeIn">
                         <Link
                             to="/"
                             className={`block transition-colors py-2 ${location.pathname === "/" ? "text-blue-600 dark:text-blue-400 font-medium" : "text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"}`}>{t('home')}</Link>

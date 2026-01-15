@@ -8,21 +8,21 @@ const News = () => {
   
   const newsItems = [
     {
-      title: '"链清"(Cred)平台产品设计方案正式发布',
-      date: "2026-01-15",
-      excerpt: '基于深度研究报告，"链清"(Cred)平台正式发布产品设计方案，旨在通过社交网络与隐私计算技术，解决企业间及个人间的三角债问题。',
+      titleKey: 'newsItem1.title',
+      dateKey: 'newsItem1.date',
+      excerptKey: 'newsItem1.excerpt',
       image: "https://space.coze.cn/api/coze_space/gen_image?image_size=landscape_4_3&prompt=debt%20settlement%20platform%20announcement&sign=ee564eb5fe9e8c68598de86823c233fc"
     },
     {
-      title: "隐私计算技术在债务清偿领域应用研讨会召开",
-      date: "2025-12-10",
-      excerpt: '来自国内外的隐私计算专家齐聚一堂，探讨零知识证明和多方安全计算技术在债务清偿领域的创新应用，为"链清"平台技术路线提供专业指导。',
+      titleKey: 'newsItem2.title',
+      dateKey: 'newsItem2.date',
+      excerptKey: 'newsItem2.excerpt',
       image: "https://space.coze.cn/api/coze_space/gen_image?image_size=landscape_4_3&prompt=privacy%20computing%20technology%20conference&sign=dcaff15cabce0b0270aac36d066b3838"
     },
     {
-      title: "社交网络拓扑匹配算法通过专家评审",
-      date: "2025-11-05",
-      excerpt: '"链清"平台的社交网络拓扑匹配算法通过专家评审，该算法能够精准挖掘隐性债务路径，显著提升债务闭环匹配效率，为解决三角债问题提供了技术保障。',
+      titleKey: 'newsItem3.title',
+      dateKey: 'newsItem3.date',
+      excerptKey: 'newsItem3.excerpt',
       image: "https://space.coze.cn/api/coze_space/gen_image?image_size=landscape_4_3&prompt=social%20network%20analysis%20technology&sign=bbd74ce2995100fef3bc25efe7709460"
     }
   ];
@@ -56,13 +56,13 @@ const News = () => {
             >
               <img 
                 src={item.image} 
-                alt={item.title}
+                alt={t(item.titleKey)}
                 className="w-full h-56 object-cover"
               />
               <div className="p-6">
-                <div className="text-blue-600 dark:text-blue-400 text-sm mb-2">{item.date}</div>
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{item.title}</h3>
-                <p className="text-gray-600 dark:text-gray-300 mb-4">{item.excerpt}</p>
+                <div className="text-blue-600 dark:text-blue-400 text-sm mb-2">{t(item.dateKey)}</div>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{t(item.titleKey)}</h3>
+                <p className="text-gray-600 dark:text-gray-300 mb-4">{t(item.excerptKey)}</p>
                 <Link to="/international-cases" className="text-blue-600 dark:text-blue-400 font-medium inline-flex items-center hover:underline">
                   {t('news.readMore')} <i className="fas fa-arrow-right ml-2 text-sm"></i>
                 </Link>
@@ -78,8 +78,7 @@ const News = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-           {/* 移除重复链接按钮，已有文章卡片上的链接 */}
-        </motion.div>
+         </motion.div>
       </div>
     </section>
   );

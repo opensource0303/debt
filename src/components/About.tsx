@@ -81,20 +81,20 @@ const About = () => {
             
             <div className="grid grid-cols-2 gap-6">
               <div className="bg-blue-50 dark:bg-gray-700 p-6 rounded-xl">
-                <div className="text-blue-600 dark:text-blue-400 text-3xl font-bold mb-2">社交网络</div>
-                <div className="text-gray-600 dark:text-gray-300">挖掘隐性债务路径</div>
+                <div className="text-blue-600 dark:text-blue-400 text-3xl font-bold mb-2">{t('socialNetwork')}</div>
+                <div className="text-gray-600 dark:text-gray-300">{t('socialNetworkDesc')}</div>
               </div>
               <div className="bg-blue-50 dark:bg-gray-700 p-6 rounded-xl">
-                <div className="text-blue-600 dark:text-blue-400 text-3xl font-bold mb-2">隐私计算</div>
-                <div className="text-gray-600 dark:text-gray-300">保护商业秘密</div>
+                <div className="text-blue-600 dark:text-blue-400 text-3xl font-bold mb-2">{t('privacyComputingShort')}</div>
+                <div className="text-gray-600 dark:text-gray-300">{t('privacyComputingShortDesc')}</div>
               </div>
               <div className="bg-blue-50 dark:bg-gray-700 p-6 rounded-xl">
-                <div className="text-blue-600 dark:text-blue-400 text-3xl font-bold mb-2">双向确权</div>
-                <div className="text-gray-600 dark:text-gray-300">确保债务真实性</div>
+                <div className="text-blue-600 dark:text-blue-400 text-3xl font-bold mb-2">{t('twoWayConfirmation')}</div>
+                <div className="text-gray-600 dark:text-gray-300">{t('twoWayConfirmationDesc')}</div>
               </div>
               <div className="bg-blue-50 dark:bg-gray-700 p-6 rounded-xl">
-                <div className="text-blue-600 dark:text-blue-400 text-3xl font-bold mb-2">区块链存证</div>
-                <div className="text-gray-600 dark:text-gray-300">提供法律保障</div>
+                <div className="text-blue-600 dark:text-blue-400 text-3xl font-bold mb-2">{t('blockchainStorage')}</div>
+                <div className="text-gray-600 dark:text-gray-300">{t('blockchainStorageDesc')}</div>
               </div>
             </div>
           </motion.div>

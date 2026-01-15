@@ -433,9 +433,8 @@ const PlatformModePage = () => {
               <p className="text-xl mb-8 max-w-3xl mx-auto opacity-90">
                 参考印度RXIL（年利润5000万人民币级，处理量2000亿级），澳门平台初期可能需要政府补贴，但长期具备盈利能力。随着交易量呈指数级增长，边际成本极低，利润率高。
               </p>
-               {/* 移除没有实际功能的按钮 */}
-            </motion.div>
-          </div>
+             </motion.div>
+           </div>
         </section>
 
         {/* 实施路径 */}

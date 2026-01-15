@@ -21,9 +21,9 @@ export function useTheme() {
     setTheme(prevTheme => prevTheme === 'light' ? 'dark' : 'light');
   };
 
+  // 移除未使用的 isDark 属性，简化返回值
   return {
     theme,
-    toggleTheme,
-    isDark: theme === 'dark'
+    toggleTheme
   };
 } 

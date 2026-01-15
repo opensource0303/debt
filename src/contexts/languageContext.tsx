@@ -283,7 +283,7 @@ const translations: Translations = {
   },
   'hero.legalAdvantageDesc': {
     'zh': '澳门《商业法典》与葡萄牙及欧洲大陆法系一脉相承，为引入成熟的欧洲清算规则提供了法理基础。',
-    'en': 'Macau\'s Commercial Code is一脉相承 with Portuguese and European continental legal systems, providing a legal basis for introducing mature European clearing rules.'
+    'en': 'Macau\'s Commercial Code is closely connected with Portuguese and European continental legal systems, providing a legal basis for introducing mature European clearing rules.'
   },
   'hero.capitalAdvantage': {
     'zh': '资金优势',
@@ -434,7 +434,77 @@ const translations: Translations = {
     'en': 'Monday to Friday: 9:00 - 18:00'
   },
   
-
+  // About组件中四个功能点的翻译
+  'socialNetwork': {
+    'zh': '社交网络',
+    'en': 'Social Network'
+  },
+  'socialNetworkDesc': {
+    'zh': '挖掘隐性债务路径',
+    'en': 'Mining Implicit Debt Paths'
+  },
+  'privacyComputingShort': {
+    'zh': '隐私计算',
+    'en': 'Privacy Computing'
+  },
+  'privacyComputingShortDesc': {
+    'zh': '保护商业秘密',
+    'en': 'Protecting Trade Secrets'
+  },
+  'twoWayConfirmation': {
+    'zh': '双向确权',
+    'en': 'Two-Way Confirmation'
+  },
+  'twoWayConfirmationDesc': {
+    'zh': '确保债务真实性',
+    'en': 'Ensuring Debt Authenticity'
+  },
+  'blockchainStorage': {
+    'zh': '区块链存证',
+    'en': 'Blockchain Evidence Storage'
+  },
+  'blockchainStorageDesc': {
+    'zh': '提供法律保障',
+    'en': 'Providing Legal Guarantee'
+  },
+  
+  // 新闻内容翻译
+  'newsItem1.title': {
+    'zh': '"链清"(Cred)平台产品设计方案正式发布',
+    'en': '"Cred" Platform Product Design Plan Officially Released'
+  },
+  'newsItem1.date': {
+    'zh': '2026-01-15',
+    'en': '2026-01-15'
+  },
+  'newsItem1.excerpt': {
+    'zh': '基于深度研究报告，"链清"(Cred)平台正式发布产品设计方案，旨在通过社交网络与隐私计算技术，解决企业间及个人间的三角债问题。',
+    'en': 'Based on in-depth research reports, the "Cred" platform officially released its product design plan, aiming to solve the triangular debt problem between enterprises and individuals through social network and privacy computing technologies.'
+  },
+  'newsItem2.title': {
+    'zh': '隐私计算技术在债务清偿领域应用研讨会召开',
+    'en': 'Seminar on Application of Privacy Computing Technology in Debt Settlement Field Held'
+  },
+  'newsItem2.date': {
+    'zh': '2025-12-10',
+    'en': '2025-12-10'
+  },
+  'newsItem2.excerpt': {
+    'zh': '来自国内外的隐私计算专家齐聚一堂，探讨零知识证明和多方安全计算技术在债务清偿领域的创新应用，为"链清"平台技术路线提供专业指导。',
+    'en': 'Privacy computing experts from home and abroad gathered to discuss the innovative application of zero-knowledge proof and multi-party secure computing technologies in the field of debt settlement, providing professional guidance for the technical route of the "Cred" platform.'
+  },
+  'newsItem3.title': {
+    'zh': '社交网络拓扑匹配算法通过专家评审',
+    'en': 'Social Network Topology Matching Algorithm Passes Expert Review'
+  },
+  'newsItem3.date': {
+    'zh': '2025-11-05',
+    'en': '2025-11-05'
+  },
+  'newsItem3.excerpt': {
+    'zh': '"链清"平台的社交网络拓扑匹配算法通过专家评审，该算法能够精准挖掘隐性债务路径，显著提升债务闭环匹配效率，为解决三角债问题提供了技术保障。',
+    'en': 'The social network topology matching algorithm of the "Cred" platform has passed expert review. This algorithm can precisely mine implicit debt paths, significantly improve the efficiency of debt closed-loop matching, and provide technical support for solving the triangular debt problem.'
+  }
 };
 
 // 语言提供者组件
@@ -453,7 +523,10 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   // 翻译函数
   const t = (key: string): string => {
     const translation = translations[key];
-    if (!translation) return key;
+    if (!translation) {
+      console.warn(`Translation key "${key}" not found`);
+      return key;
+    }
     
     let translatedText = translation[language];
     
