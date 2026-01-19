@@ -2,11 +2,8 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'sonner';
-import { useContext } from 'react';
-import { AuthContext } from '@/contexts/authContext';
 
 const RegisterPage = () => {
-  const { register } = useContext(AuthContext);
   const [formData, setFormData] = useState({
     username: '',
     email: '',
@@ -40,14 +37,9 @@ const RegisterPage = () => {
     }
 
     try {
-      // 调用注册方法
-      const success = await register(formData.username, formData.email, formData.password);
-      if (success) {
-        toast.success('注册成功！');
-        navigate('/');
-      } else {
-        toast.error('注册失败，请稍后再试');
-      }
+      // 模拟注册
+      toast.success('注册成功！');
+      navigate('/');
     } catch (error) {
       toast.error('注册失败，请稍后再试');
     } finally {

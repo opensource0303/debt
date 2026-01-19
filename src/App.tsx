@@ -12,7 +12,6 @@ const ScrollToTop = () => {
   const location = useLocation();
   
   useEffect(() => {
-    // 当路由改变时，滚动到页面顶部
     window.scrollTo({
       top: 0,
       behavior: 'smooth'

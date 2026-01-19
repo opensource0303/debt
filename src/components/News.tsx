@@ -27,22 +27,33 @@ const News = () => {
   ];
 
   return (
-    <section id="news" className="py-20 bg-gray-900 bg-grid relative">
+    <section id="news" className="py-24 bg-gray-900 bg-grid relative">
       {/* 装饰元素 */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -left-32 bottom-0 w-64 h-64 bg-purple-600/10 rounded-full filter blur-3xl"></div>
+        <motion.div 
+          className="absolute -left-32 bottom-0 w-96 h-96 bg-purple-600/10 rounded-full filter blur-3xl"
+          animate={{ 
+            scale: [1, 1.1, 1],
+            opacity: [0.2, 0.3, 0.2]
+          }}
+          transition={{ 
+            duration: 10, 
+            repeat: Infinity,
+            repeatType: "reverse"
+          }}
+        ></motion.div>
       </div>
       
       <div className="container mx-auto px-4 relative z-10">
         <motion.div 
           className="text-center mb-16"
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.8 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">新闻与动态</h2>
-          <p className="text-xl text-gray-200 max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">新闻与动态</h2>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
             了解"链清"(Cred)平台的最新进展和行业资讯
           </p>
         </motion.div>
@@ -51,42 +62,39 @@ const News = () => {
           {newsItems.map((item, index) => (
             <motion.div
               key={index}
-              className="bg-gray-800/80 backdrop-blur-sm rounded-2xl border border-gray-700 overflow-hidden hover:shadow-lg transition-shadow"
-              initial={{ opacity: 0, y: 20 }}
+              className="bg-gray-800/80 backdrop-blur-sm rounded-2xl border border-gray-700 overflow-hidden hover:shadow-xl hover:border-blue-500/30 transition-all duration-300 card-hover"
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -5, transition: { duration: 0.2 } }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              whileHover={{ y: -8 }}
             >
-              <div className="relative">
-                <div
-                  className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-50 z-10"></div>
-                <img 
+              <div className="relative overflow-hidden h-56">
+                <motion.img 
                   src={item.image} 
                   alt={item.title}
-                  className="w-full h-56 object-cover"
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                  whileHover={{ scale: 1.05 }}
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent opacity-70"></div>
+                <div className="absolute bottom-0 left-0 p-6">
+                  <div className="bg-blue-600/80 text-white text-xs font-medium px-3 py-1 rounded-full mb-3 inline-block">
+                    {item.date}
+                  </div>
+                </div>
               </div>
+              
               <div className="p-6">
-                <div className="text-blue-400 text-sm mb-2">{item.date}</div>
-                <h3 className="text-xl font-bold text-white mb-3">{item.title}</h3>
-                <p className="text-gray-300 mb-4">{item.excerpt}</p>
-                <Link to="/solutions-cases" className="text-blue-400 font-medium inline-flex items-center hover:underline">
-                  阅读更多 <i className="fas fa-arrow-right ml-2 text-sm"></i>
+                <h3 className="text-xl font-bold text-white mb-3 line-clamp-2">{item.title}</h3>
+                <p className="text-gray-300 mb-5 line-clamp-3">{item.excerpt}</p>
+                <Link to="/solutions-cases" className="text-blue-400 font-medium inline-flex items-center group hover:text-blue-300 transition-colors">
+                  阅读更多 
+                  <i className="fas fa-arrow-right ml-2 text-sm group-hover:translate-x-1 transition-transform duration-300"></i>
                 </Link>
               </div>
             </motion.div>
           ))}
         </div>
-        
-        <motion.div 
-          className="text-center mt-12"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-        >
-        </motion.div>
       </div>
     </section>
   );

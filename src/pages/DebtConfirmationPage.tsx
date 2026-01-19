@@ -3,8 +3,6 @@ import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { toast } from 'sonner';
-import { useContext } from 'react';
-import { AuthContext } from '@/contexts/authContext';
 import { useNavigate } from 'react-router-dom';
 
 // 模拟的债务数据类型定义
@@ -47,7 +45,6 @@ const generateMockDebts = (): DebtItem[] => {
 };
 
 const DebtConfirmationPage = () => {
-  const { isAuthenticated } = useContext(AuthContext);
   const navigate = useNavigate();
   const [debts, setDebts] = useState<DebtItem[]>([]);
   const [selectedDebt, setSelectedDebt] = useState<DebtItem | null>(null);
@@ -55,23 +52,13 @@ const DebtConfirmationPage = () => {
   const [isProcessing, setIsProcessing] = useState(false);
   const [filterStatus, setFilterStatus] = useState<string>('all');
   
-  // 检查用户是否已登录
-  useEffect(() => {
-    if (!isAuthenticated) {
-      toast.warning('请先登录后再查看待确认债务');
-      navigate('/login');
-    }
-  }, [isAuthenticated, navigate]);
-  
   // 加载模拟数据
   useEffect(() => {
-    if (isAuthenticated) {
-      // 模拟API请求延迟
-      setTimeout(() => {
-        setDebts(generateMockDebts());
-      }, 800);
-    }
-  }, [isAuthenticated]);
+    // 模拟API请求延迟
+    setTimeout(() => {
+      setDebts(generateMockDebts());
+    }, 800);
+  }, []);
   
   // 处理债务确认
   const handleConfirmDebt = (debtId: string) => {
@@ -145,16 +132,10 @@ const DebtConfirmationPage = () => {
     }
   };
   
-  // 如果用户未登录，显示空页面
-  if (!isAuthenticated) {
-    return null;
-  }
-  
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-800 text-gray-900 dark:text-white">
+    <div className="min-h-screen bg-gray-900 text-white">
       <Navbar />
       <main className="pt-24 pb-16">
-        {/* 页面标题 */}
         <motion.section 
           className="container mx-auto px-4 mb-16"
           initial={{ opacity: 0, y: 20 }}
@@ -167,7 +148,6 @@ const DebtConfirmationPage = () => {
           </p>
         </motion.section>
         
-        {/* 债务列表区域 */}
         <section className="py-16 bg-gray-50 dark:bg-gray-900">
           <div className="container mx-auto px-4 max-w-6xl">
             <motion.div
@@ -177,11 +157,9 @@ const DebtConfirmationPage = () => {
               transition={{ duration: 0.8 }}
               className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8"
             >
-              {/* 工具栏 */}
               <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
                 <h2 className="text-2xl font-bold mb-4 md:mb-0">债务列表</h2>
                 
-                {/* 筛选器 */}
                 <div className="flex flex-wrap gap-2">
                   <button
                     onClick={() => setFilterStatus('all')}
@@ -236,7 +214,6 @@ const DebtConfirmationPage = () => {
                 </div>
               </div>
               
-              {/* 统计卡片 */}
               <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
                 <div className="bg-blue-50 dark:bg-gray-700 p-6 rounded-xl">
                   <div className="text-blue-600 dark:text-blue-400 text-2xl mb-2">
@@ -271,7 +248,6 @@ const DebtConfirmationPage = () => {
                 </div>
               </div>
               
-              {/* 债务列表 */}
               {debts.length > 0 ? (
                 <div className="overflow-x-auto">
                   <table className="min-w-full bg-white dark:bg-gray-800 rounded-xl overflow-hidden">
@@ -335,7 +311,6 @@ const DebtConfirmationPage = () => {
       </main>
       <Footer />
       
-      {/* 债务详情模态框 */}
       {isModalOpen && selectedDebt && (
         <motion.div
           initial={{ opacity: 0 }}
@@ -363,7 +338,6 @@ const DebtConfirmationPage = () => {
               </div>
               
               <div className="grid md:grid-cols-2 gap-6">
-                {/* 左侧基本信息 */}
                 <div>
                   <h3 className="text-xl font-semibold mb-4 border-b border-gray-200 dark:border-gray-700 pb-2">基本信息</h3>
                   
@@ -409,7 +383,6 @@ const DebtConfirmationPage = () => {
                   </div>
                 </div>
                 
-                {/* 右侧详细信息 */}
                 <div>
                   <h3 className="text-xl font-semibold mb-4 border-b border-gray-200 dark:border-gray-700 pb-2">详细信息</h3>
                   
@@ -434,7 +407,6 @@ const DebtConfirmationPage = () => {
                       <p>{selectedDebt.description}</p>
                     </div>
                     
-                    {/* 证明材料预览 */}
                     <div>
                       <h4 className="text-gray-500 dark:text-gray-400 mb-3">证明材料</h4>
                       <div className="grid grid-cols-2 gap-3">
@@ -452,7 +424,6 @@ const DebtConfirmationPage = () => {
                 </div>
               </div>
               
-              {/* 操作按钮 */}
               {selectedDebt.status === 'pending' && (
                 <div className="mt-8 flex justify-end gap-4">
                   <button
@@ -520,7 +491,6 @@ const DebtConfirmationPage = () => {
                 </div>
               )}
               
-              {/* 其他状态下的提示 */}
               {selectedDebt.status !== 'pending' && (
                 <div className="mt-8 p-4 bg-gray-100 dark:bg-gray-700 rounded-lg">
                   <p className="text-gray-600 dark:text-gray-300">

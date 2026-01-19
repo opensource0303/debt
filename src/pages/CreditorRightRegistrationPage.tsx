@@ -3,54 +3,34 @@ import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { toast } from 'sonner';
-import { useContext } from 'react';
-import { AuthContext } from '@/contexts/authContext';
 import { useNavigate } from 'react-router-dom';
 
 const CreditorRightRegistrationPage = () => {
-  const { isAuthenticated } = useContext(AuthContext);
   const navigate = useNavigate();
-  
-  // 检查用户是否已登录
-  React.useEffect(() => {
-    if (!isAuthenticated) {
-      toast.warning('请先登录后再进行债权登记');
-      navigate('/login');
-    }
-  }, [isAuthenticated, navigate]);
   
   // 表单状态
   const [formData, setFormData] = useState({
-    // 债权人信息
     creditorName: '',
     creditorType: '企业',
     creditorId: '',
     creditorContact: '',
     creditorPhone: '',
     creditorEmail: '',
-    
-    // 债务人信息
     debtorName: '',
     debtorType: '企业',
     debtorId: '',
     debtorContact: '',
     debtorPhone: '',
-    
-    // 债权基本信息
     claimAmount: '',
     interestRate: '',
     dueDate: '',
     claimType: '应收账款',
     currency: '人民币',
-    
-    // 债权详情
     contractNumber: '',
     contractDate: '',
     invoiceNumber: '',
     invoiceDate: '',
     description: '',
-    
-    // 其他信息
     priorityLevel: '普通债权',
     guaranteeType: '无担保',
     remarks: ''
@@ -130,16 +110,10 @@ const CreditorRightRegistrationPage = () => {
     }, 1500);
   };
   
-  // 如果用户未登录，显示空页面
-  if (!isAuthenticated) {
-    return null;
-  }
-  
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-800 text-gray-900 dark:text-white">
+    <div className="min-h-screen bg-gray-900 text-white">
       <Navbar />
       <main className="pt-24 pb-16">
-        {/* 页面标题 */}
         <motion.section 
           className="container mx-auto px-4 mb-16"
           initial={{ opacity: 0, y: 20 }}
@@ -152,7 +126,6 @@ const CreditorRightRegistrationPage = () => {
           </p>
         </motion.section>
         
-        {/* 表单主体 */}
         <section className="py-16 bg-gray-50 dark:bg-gray-900">
           <div className="container mx-auto px-4 max-w-4xl">
             <motion.div
@@ -163,7 +136,6 @@ const CreditorRightRegistrationPage = () => {
               className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8"
             >
               <form onSubmit={handleSubmit}>
-                {/* 步骤指示器 */}
                 <div className="flex items-center justify-between mb-12">
                   <div className="flex flex-col items-center">
                     <div className="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold">1</div>
@@ -183,7 +155,6 @@ const CreditorRightRegistrationPage = () => {
                   </div>
                 </div>
                 
-                {/* 第一部分：债权人信息 */}
                 <div className="mb-12">
                   <h2 className="text-2xl font-bold mb-6 flex items-center">
                     <i className="fas fa-user-check text-blue-600 dark:text-blue-400 mr-3"></i>
@@ -275,7 +246,6 @@ const CreditorRightRegistrationPage = () => {
                   </div>
                 </div>
                 
-                {/* 第二部分：债务人信息 */}
                 <div className="mb-12">
                   <h2 className="text-2xl font-bold mb-6 flex items-center">
                     <i className="fas fa-user-tag text-blue-600 dark:text-blue-400 mr-3"></i>
@@ -354,7 +324,6 @@ const CreditorRightRegistrationPage = () => {
                   </div>
                 </div>
                 
-                {/* 第三部分：债权基本信息 */}
                 <div className="mb-12">
                   <h2 className="text-2xl font-bold mb-6 flex items-center">
                     <i className="fas fa-file-invoice-dollar text-blue-600 dark:text-blue-400 mr-3"></i>
@@ -455,7 +424,6 @@ const CreditorRightRegistrationPage = () => {
                   </div>
                 </div>
                 
-                {/* 第四部分：债权详情 */}
                 <div className="mb-12">
                   <h2 className="text-2xl font-bold mb-6 flex items-center">
                     <i className="fas fa-list-alt text-blue-600 dark:text-blue-400 mr-3"></i>
@@ -541,7 +509,6 @@ const CreditorRightRegistrationPage = () => {
                   </div>
                 </div>
                 
-                {/* 第五部分：证明材料上传 */}
                 <div className="mb-12">
                   <h2 className="text-2xl font-bold mb-6 flex items-center">
                     <i className="fas fa-upload text-blue-600 dark:text-blue-400 mr-3"></i>
@@ -569,7 +536,6 @@ const CreditorRightRegistrationPage = () => {
                     </div>
                   </div>
                   
-                  {/* 已上传文件列表 */}
                   {uploadedFiles.length > 0 && (
                     <div className="mb-6">
                       <h3 className="text-lg font-semibold mb-3">已上传文件</h3>
@@ -599,7 +565,6 @@ const CreditorRightRegistrationPage = () => {
                   )}
                 </div>
                 
-                {/* 提交按钮 */}
                 <div className="text-center">
                   <button
                     type="submit"

@@ -2,11 +2,8 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'sonner';
-import { useContext } from 'react';
-import { AuthContext } from '@/contexts/authContext';
 
 const LoginPage = () => {
-  const { login } = useContext(AuthContext);
   const [formData, setFormData] = useState({
     username: '',
     password: ''
@@ -24,8 +21,8 @@ const LoginPage = () => {
     setLoading(true);
 
     try {
-      const success = await login(formData.username, formData.password);
-      if (success) {
+      // 模拟登录验证
+      if (formData.username && formData.password) {
         toast.success('登录成功！');
         navigate('/');
       } else {
