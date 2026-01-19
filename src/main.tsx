@@ -6,7 +6,7 @@ import App from "./App.tsx";
 import "./index.css";
 
 // 设置全局语言环境
-document.documentElement.lang = localStorage.getItem('language') || 'zh';
+document.documentElement.lang = 'zh';
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
