@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
-import Services from '@/components/Services';
 import Advantages from '@/components/Advantages';
 import News from '@/components/News';
 import Contact from '@/components/Contact';
@@ -16,7 +15,6 @@ export default function Home() {
       <main>
         <Hero />
         <About />
-        <Services />
         <Advantages />
         <News />
         <Contact />

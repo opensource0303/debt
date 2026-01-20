@@ -29,9 +29,9 @@ const About = () => {
           transition={{ duration: 0.8 }}
         >
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">产品概述</h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            "链清"是一款聚焦企业间及个人间"三角债"痛点的数字化互助清偿平台，核心逻辑是通过"债务登记确权+社交网络拓扑匹配+隐私计算技术赋能"，实现债务自动冲抵。
-          </p>
+           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              "可信达"平台利用权威区块链技术和隐私计算，专注于解决企业间及个人间的三角债、多角债问题，通过数字化、标准化和市场化手段，实现债务有效清偿和资产盘活。
+            </p>
         </motion.div>
         
         <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -69,81 +69,42 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">核心理念与价值主张</h3>
-            <p className="text-gray-300 mb-8 leading-relaxed">
-              "链清"平台无需新增资金注入，通过优化债务关系流转效率，降低全社会整体负债规模，为企业及个人提供低成本、高效率、强合规的债务清偿解决方案，同时盘活存量债权资产，改善市场信用环境。
-            </p>
-            
-            <h4 className="text-xl font-bold text-white mb-5">核心价值主张</h4>
-            <div className="space-y-6 mb-10">
-              <div className="flex items-start bg-gray-800/50 p-5 rounded-xl border border-gray-700 hover:border-blue-500/30 transition-colors duration-300">
-                <div className="text-blue-400 mr-4 mt-1">
-                  <i className="fas fa-user-check text-xl"></i>
-                </div>
-                <div>
-                  <h5 className="font-semibold mb-2 text-white text-lg">对用户</h5>
-                  <p className="text-gray-300">低成本解决债务纠纷，快速盘活沉淀债权，降低坏账风险</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start bg-gray-800/50 p-5 rounded-xl border border-gray-700 hover:border-blue-500/30 transition-colors duration-300">
-                <div className="text-blue-400 mr-4 mt-1">
-                  <i className="fas fa-chart-line text-xl"></i>
-                </div>
-                <div>
-                  <h5 className="font-semibold mb-2 text-white text-lg">对市场</h5>
-                  <p className="text-gray-300">提升资金流转效率，缓解三角债对经济循环的阻滞，优化供应链信用生态</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start bg-gray-800/50 p-5 rounded-xl border border-gray-700 hover:border-blue-500/30 transition-colors duration-300">
-                <div className="text-blue-400 mr-4 mt-1">
-                  <i className="fas fa-gavel text-xl"></i>
-                </div>
-                <div>
-                  <h5 className="font-semibold mb-2 text-white text-lg">对监管</h5>
-                  <p className="text-gray-300">形成标准化债务清偿证据链，助力规范市场信用秩序，提供债务风险监测数据支撑</p>
-                </div>
-              </div>
-            </div>
-            
-            <div className="grid grid-cols-2 gap-5">
-              <motion.div 
-                className="bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl border border-gray-700"
-                whileHover={{ y: -5, boxShadow: "0 10px 25px -5px rgba(59, 130, 246, 0.1)" }}
-                transition={{ duration: 0.3 }}
-              >
-                <div className="text-blue-400 text-3xl font-bold mb-2">社交网络</div>
-                <div className="text-gray-300">挖掘隐性债务路径</div>
-              </motion.div>
-              
-              <motion.div 
-                className="bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl border border-gray-700"
-                whileHover={{ y: -5, boxShadow: "0 10px 25px -5px rgba(59, 130, 246, 0.1)" }}
-                transition={{ duration: 0.3 }}
-              >
-                <div className="text-blue-400 text-3xl font-bold mb-2">隐私计算</div>
-                <div className="text-gray-300">保护商业秘密</div>
-              </motion.div>
-              
-              <motion.div 
-                className="bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl border border-gray-700"
-                whileHover={{ y: -5, boxShadow: "0 10px 25px -5px rgba(59, 130, 246, 0.1)" }}
-                transition={{ duration: 0.3 }}
-              >
-                <div className="text-blue-400 text-3xl font-bold mb-2">双向确权</div>
-                <div className="text-gray-300">确保债务真实性</div>
-              </motion.div>
-              
-              <motion.div 
-                className="bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl border border-gray-700"
-                whileHover={{ y: -5, boxShadow: "0 10px 25px -5px rgba(59, 130, 246, 0.1)" }}
-                transition={{ duration: 0.3 }}
-              >
-                <div className="text-blue-400 text-3xl font-bold mb-2">区块链存证</div>
-                <div className="text-gray-300">提供法律保障</div>
-              </motion.div>
-            </div>
+                       <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">产品概述</h3>
+                        <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+                          "可信达"平台利用权威区块链技术和隐私计算，专注于解决企业间及个人间的三角债、多角债问题，通过数字化、标准化和市场化手段，实现债务有效清偿和资产盘活。
+                        </p>
+                        
+                        <div className="grid grid-cols-1 gap-5 mb-10">
+                          <motion.div 
+                            className="bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl border border-gray-700"
+                            whileHover={{ y: -5, boxShadow: "0 10px 25px -5px rgba(59, 130, 246, 0.1)" }}
+                            transition={{ duration: 0.3 }}
+                          >
+                            <div className="text-blue-400 text-2xl font-bold mb-2 flex items-center">
+                              <i className="fas fa-flag mr-3"></i>为国分忧，为企排雷
+                            </div>
+                          </motion.div>
+                          
+                          <motion.div 
+                            className="bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl border border-gray-700"
+                            whileHover={{ y: -5, boxShadow: "0 10px 25px -5px rgba(59, 130, 246, 0.1)" }}
+                            transition={{ duration: 0.3 }}
+                          >
+                            <div className="text-blue-400 text-2xl font-bold mb-2 flex items-center">
+                              <i className="fas fa-magic mr-3"></i>化债化得好，腐朽变神奇
+                            </div>
+                          </motion.div>
+                          
+                          <motion.div 
+                            className="bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl border border-gray-700"
+                            whileHover={{ y: -5, boxShadow: "0 10px 25px -5px rgba(59, 130, 246, 0.1)" }}
+                            transition={{ duration: 0.3 }}
+                          >
+                            <div className="text-blue-400 text-2xl font-bold mb-2 flex items-center">
+                              <i className="fas fa-butterfly mr-3"></i>助力解困，化茧成蝶
+                            </div>
+                          </motion.div>
+                        </div>
           </motion.div>
         </div>
       </div>

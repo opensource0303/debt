@@ -7,39 +7,39 @@ const Services = () => {
   // 核心功能数据
   const services = [
     {
-      title: "结构化债务登记",
-      description: "支持手动录入和智能批量录入两种方式，通过OCR识别与自然语言处理技术自动提取关键要素，确保债务信息的标准化和完整性。",
-      icon: "fa-file-invoice-dollar",
+      title: "三角债、多角债清算",
+      description: "利用权威区块链技术和隐私计算，为省/市、园区/行业/核心企业提供专项化债清算服务，实现债务高效冲抵。",
+      icon: "fa-balance-scale",
       color: "bg-blue-600"
     },
     {
-      title: "社交网络匹配",
-      description: "基于社交网络分析技术，构建人脉-债务关联拓扑图，挖掘隐性债务路径，识别债务聚集节点，提升闭环匹配效率。",
-      icon: "fa-network-wired",
+      title: "澳门交易所(MOX)合作发债",
+      description: "与澳门交易所深度合作，增强融资能力，为企业提供多元化融资渠道，降低融资成本。",
+      icon: "fa-exchange-alt",
       color: "bg-green-600"
     },
     {
-      title: "隐私计算与安全",
-      description: "采用零知识证明和多方安全计算技术，在加密域内完成债务匹配，保护企业商业秘密和个人隐私，同时确保匹配准确性。",
-      icon: "fa-shield-alt",
+      title: "数字化电子债权凭证多级流转 ABS",
+      description: "利用丰富的跨境金融供应链，提供资产证券化服务，实现债权凭证的高效流转和价值提升。",
+      icon: "fa-chart-line",
       color: "bg-indigo-600"
     },
     {
-      title: "法律认可的清债证据链",
-      description: "将债务登记信息、双向确权记录等关键节点数据实时上链，提供标准化冲抵协议和电子签章服务，形成完整、不可篡改的证据流。",
-      icon: "fa-gavel",
+      title: "债权\"清洁化与标准化\"工厂",
+      description: "引入境内外资金消化债权产品，提升资产流动性，实现不良资产的价值重估和有效利用。",
+      icon: "fa-industry",
       color: "bg-purple-600"
     },
     {
-      title: "拆分冲抵功能",
-      description: "针对债务金额不匹配场景，自动拆分债务金额，优先实现最大额度的闭环冲抵，剩余债务自动更新状态并重新进入待匹配池。",
-      icon: "fa-calculator",
+      title: "隐私计算与安全",
+      description: "采用零知识证明和多方安全计算技术，在加密域内完成债务匹配，保护企业商业秘密和个人隐私。",
+      icon: "fa-shield-alt",
       color: "bg-amber-600"
     },
     {
-      title: "债权转让市场",
-      description: "为无法形成闭环的债务提供变现渠道，支持债权挂牌、精准匹配和交易保障，帮助债权人盘活存量资产。",
-      icon: "fa-exchange-alt",
+      title: "法律认可的证据链",
+      description: "将债务登记信息、双向确权记录等关键节点数据实时上链，提供标准化冲抵协议和电子签章服务。",
+      icon: "fa-gavel",
       color: "bg-red-600"
     }
   ];
@@ -70,9 +70,9 @@ const Services = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">核心功能</h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            "链清"平台提供全面的债务清偿服务，通过创新技术和商业模式，解决企业间及个人间的三角债问题
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">产品与服务</h2>
+           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            "可信达"平台专注于解决三角债、多角债问题，通过区块链技术和创新商业模式，提供全方位的债务清偿和资产盘活服务
           </p>
         </motion.div>
         

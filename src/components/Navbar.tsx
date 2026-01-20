@@ -33,10 +33,10 @@ const Navbar = () => {
         name: "澳门优势",
         href: "/macau-advantages"
     }, {
-        name: "平台模式",
+        name: "产品优势",
         href: "/platform-mode"
     }, {
-        name: "联系我们",
+        name: "咨询我们",
         href: "/contact"
     }];
 

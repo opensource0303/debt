@@ -24,7 +24,7 @@ const MacauAdvantagesPage = () => {
                     }}>
                     <h1 className="text-4xl md:text-5xl font-bold mb-4 text-center">澳门优势</h1>
                     <p className="text-xl text-gray-200 max-w-3xl mx-auto text-center">利用澳门独特的制度、资金和数据优势，打造领先的供应链金融创新平台
-                                  </p>
+                                                          </p>
                 </motion.section>
                 {}
                 <section className="py-16 bg-gray-900 bg-grid relative">
@@ -56,9 +56,9 @@ const MacauAdvantagesPage = () => {
                                     <div className="text-blue-600 dark:text-blue-400 text-4xl mb-6">
                                         <i className="fas fa-balance-scale"></i>
                                     </div>
-                                    <h3 className="text-2xl font-bold mb-4">法律优势</h3>
+                                    <h3 className="text-2xl font-bold mb-4">制度优势</h3>
                                     <p className="text-gray-200 mb-6">澳门作为特别行政区，拥有独立的法律体系和司法管辖权，为区块链金融创新提供了灵活的制度环境。
-                                                          </p>
+                                                                                                  </p>
                                     <div className="space-y-4 mb-6">
                                         <div className="flex items-start">
                                             <div className="text-blue-600 dark:text-blue-400 mr-3 mt-1">
@@ -127,7 +127,7 @@ const MacauAdvantagesPage = () => {
                                     </div>
                                     <h3 className="text-2xl font-bold mb-4">资金优势</h3>
                                     <p className="text-gray-200 mb-6">澳门作为国际金融中心，拥有丰富的资金资源和多元化的金融机构，为供应链金融提供强大的资金支持。
-                                                          </p>
+                                                                                                  </p>
                                     <div className="space-y-4 mb-6">
                                         <div className="flex items-start">
                                             <div className="text-green-600 dark:text-green-400 mr-3 mt-1">
@@ -196,7 +196,7 @@ const MacauAdvantagesPage = () => {
                                     </div>
                                     <h3 className="text-2xl font-bold mb-4">数据特区优势</h3>
                                     <p className="text-gray-200 mb-6">横琴粤澳深度合作区作为"数据海关"，为跨境数据流动提供了创新试点，解决了供应链金融中的数据核验难题。
-                                                          </p>
+                                                                                                  </p>
                                     <div className="space-y-4 mb-6">
                                         <div className="flex items-start">
                                             <div className="text-purple-600 dark:text-purple-400 mr-3 mt-1">
@@ -276,7 +276,7 @@ const MacauAdvantagesPage = () => {
                                 style={{
                                     color: "#B6BBCC"
                                 }}>澳门独特的区位优势和政策支持，为供应链金融创新提供了理想环境
-                                              </p>
+                                                                              </p>
                         </motion.div>
                         <motion.div
                             initial={{
@@ -301,22 +301,22 @@ const MacauAdvantagesPage = () => {
                             <div>
                                 <h3 className="text-2xl font-bold mb-6">独特的"一国两制"优势</h3>
                                 <p className="text-gray-200 mb-6 leading-relaxed">澳门作为中国与世界的桥梁，凭借"一国两制"的独特优势，在制度创新、资金流动、人才交流等方面具备显著优势，为供应链金融平台的发展提供了理想条件。
-                                                    </p>
+                                                                                        </p>
                                 <div className="space-y-6">
                                     <div className="bg-gray-800/90 p-6 rounded-xl border border-gray-700">
                                         <h4 className="text-xl font-semibold mb-3 text-blue-400">粤港澳大湾区核心节点</h4>
                                         <p className="text-gray-200">作为粤港澳大湾区的重要组成部分，澳门连接内地与国际市场，为供应链金融平台提供了广阔的市场空间和丰富的应用场景。
-                                                                 </p>
+                                                                                                             </p>
                                     </div>
                                     <div className="bg-gray-800/90 p-6 rounded-xl border border-gray-700">
                                         <h4 className="text-xl font-semibold mb-3 text-green-400">政策支持体系</h4>
                                         <p className="text-gray-200">澳门政府积极推动金融创新和产业多元化，出台了一系列支持金融科技发展的政策措施，为供应链金融平台提供了有力的政策保障。
-                                                                 </p>
+                                                                                                             </p>
                                     </div>
                                     <div className="bg-gray-800/90 p-6 rounded-xl border border-gray-700">
                                         <h4 className="text-xl font-semibold mb-3 text-purple-400">国际合作平台</h4>
                                         <p className="text-gray-200">澳门与葡语国家和地区保持着密切联系，是中国与葡语国家商贸合作服务平台，为供应链金融平台的国际化发展提供了独特优势。
-                                                                 </p>
+                                                                                                             </p>
                                     </div>
                                 </div>
                             </div>
@@ -356,7 +356,7 @@ const MacauAdvantagesPage = () => {
                                 style={{
                                     color: "#B6BBCC"
                                 }}>依托先进技术，打造安全、高效、智能的供应链金融平台
-                                              </p>
+                                                                              </p>
                         </motion.div>
                         <div className="grid md:grid-cols-2 gap-16">
                             {}
@@ -381,7 +381,7 @@ const MacauAdvantagesPage = () => {
                                 </div>
                                 <h3 className="text-2xl font-bold mb-4 text-white">隐私计算与区块链技术</h3>
                                 <p className="text-gray-200 mb-6">我们采用先进的隐私计算和区块链技术，确保交易数据的安全性、隐私性和不可篡改性。
-                                                     </p>
+                                                                                         </p>
                                 <div className="space-y-4 mb-8">
                                     <div className="flex items-start">
                                         <div className="text-blue-400 mr-3 mt-1">
@@ -435,7 +435,7 @@ const MacauAdvantagesPage = () => {
                                 </div>
                                 <h3 className="text-2xl font-bold mb-4 text-white">智能风控与数据分析</h3>
                                 <p className="text-gray-200 mb-6">通过大数据分析和人工智能技术，构建智能风控模型，提升风险管理能力和决策效率。
-                                                      </p>
+                                                                                          </p>
                                 <div className="space-y-4 mb-8">
                                     <div className="flex items-start">
                                         <div className="text-green-400 mr-3 mt-1">
@@ -470,41 +470,7 @@ const MacauAdvantagesPage = () => {
                     </div>
                 </section>
                 {}
-                <section className="py-16 bg-gradient-to-r from-blue-600 to-indigo-600">
-                    <div className="container mx-auto px-4 text-center">
-                        <motion.div
-                            initial={{
-                                opacity: 0,
-                                y: 20
-                            }}
-                            whileInView={{
-                                opacity: 1,
-                                y: 0
-                            }}
-                            viewport={{
-                                once: true
-                            }}
-                            transition={{
-                                duration: 0.6
-                            }}>
-                            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">把握澳门优势，共创供应链金融新未来</h2>
-                            <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">借助澳门独特的优势，我们致力于打造领先的供应链金融平台，为企业提供高效、安全、低成本的融资解决方案
-                                              </p>
-                            <div className="flex flex-col sm:flex-row justify-center gap-4">
-                                <a href="/platform-mode">
-                                    <button
-                                        className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-3 rounded-full text-lg font-medium transition-all transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50">了解平台模式
-                                                          </button>
-                                </a>
-                                <a href="/contact">
-                                    <button
-                                        className="bg-transparent border-2 border-white text-white hover:bg-white/10 px-8 py-3 rounded-full text-lg font-medium transition-all transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50">联系我们
-                                                          </button>
-                                </a>
-                            </div>
-                        </motion.div>
-                    </div>
-                </section>
+                <></>
             </main>
             <Footer />
         </div>

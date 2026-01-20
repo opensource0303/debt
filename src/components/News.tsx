@@ -54,8 +54,8 @@ const News = () => {
         >
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">新闻与动态</h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            了解"链清"(Cred)平台的最新进展和行业资讯
-          </p>
+               了解"可信达"(Cred)平台的最新进展和行业资讯
+            </p>
         </motion.div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

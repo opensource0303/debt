@@ -54,9 +54,7 @@ const Hero = () => {
                                 src="https://s.coze.cn/t/z8Q93p0xjqM/"
                                 alt="链清 Cred"
                                 className="w-24 h-auto"
-                                initial={{ scale: 0.9, opacity: 0 }}
-                                animate={{ scale: 1, opacity: 1 }}
-                                transition={{ delay: 0.2, duration: 0.6 }}
+
                             />
                         </div>
                         
@@ -66,18 +64,19 @@ const Hero = () => {
                             animate={{ y: 0, opacity: 1 }}
                             transition={{ delay: 0.3, duration: 0.8 }}
                         >
-                            链清<br />
-                            <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 text-transparent bg-clip-text">Cred</span>
+                          可信达<br />
+                          <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 text-transparent bg-clip-text">Cred</span>
                         </motion.h1>
-                        
-                        <motion.p
-                            className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed max-w-xl"
-                            initial={{ y: 20, opacity: 0 }}
-                            animate={{ y: 0, opacity: 1 }}
-                            transition={{ delay: 0.4, duration: 0.8 }}
-                        >
-                            赋能核心企业，以核心企业为载体进行供应链金融的区块链改造，促进债务凭证在核心企业供应链范围内自由流动，降低供应链体系的外部融资需求与内部循环负债水平。
-                        </motion.p>
+                         
+                          <motion.p
+                             className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed max-w-xl"
+                             initial={{ y: 20, opacity: 0 }}
+                             animate={{ y: 0, opacity: 1 }}
+                             transition={{ delay: 0.4, duration: 0.8 }}
+                         >
+                           化解债务危机，盘活困境资产<br />
+                           出品债权资产，赋能产业布局
+                         </motion.p>
                         
                         <motion.div 
                             className="flex flex-col sm:flex-row flex-wrap gap-4"

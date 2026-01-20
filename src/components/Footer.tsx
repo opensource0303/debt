@@ -12,7 +12,7 @@ const Footer = () => {
         name: "澳门优势",
         href: "/macau-advantages"
     }, {
-        name: "平台模式",
+        name: "产品优势",
         href: "/platform-mode"
     }];
 
@@ -21,10 +21,10 @@ const Footer = () => {
             <div className="container mx-auto px-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <div>
-                        <div className="flex items-center mb-6">
-                            <img src="https://s.coze.cn/t/TrYhakFBT0I/" alt="链清 Cred" className="h-8 mr-3" />
-                            <div className="text-xl font-bold">Cred</div>
-                        </div>
+                     <div className="flex items-center mb-6">
+                        <img src="https://s.coze.cn/t/TrYhakFBT0I/" alt="可信达 Cred" className="h-8 mr-3" />
+                        <div className="text-xl font-bold">Cred</div>
+                    </div>
                         <p className="text-gray-400 mb-6">赋能核心企业，促进债务凭证在供应链范围内自由流动
                                         </p>
                         <div className="flex space-x-4">

@@ -44,7 +44,7 @@ const ContactPage = () => {
         <div className="min-h-screen bg-gray-900 text-white">
             <Navbar />
             <main className="pt-24 pb-16">
-                {}
+
                 <motion.section
                     className="container mx-auto px-4 mb-16"
                     initial={{
@@ -58,11 +58,11 @@ const ContactPage = () => {
                     transition={{
                         duration: 0.8
                     }}>
-                    <h1 className="text-4xl md:text-5xl font-bold mb-4 text-center">联系我们</h1>
+                    <h1 className="text-4xl md:text-5xl font-bold mb-4 text-center">咨询我们</h1>
                     <p className="text-xl text-gray-200 max-w-3xl mx-auto text-center">如有任何关于澳门多角债解决平台的问题或合作意向，请随时与我们联系
-                                  </p>
+                                                          </p>
                 </motion.section>
-                {}
+
                 <section className="py-16 bg-gray-900 bg-grid relative">
                     <div className="absolute inset-0 overflow-hidden">
                         <div
@@ -153,7 +153,7 @@ const ContactPage = () => {
                                     <div className="bg-red-50 dark:bg-red-900/20 p-4 rounded-lg">
                                         <p className="text-gray-600 dark:text-gray-300 flex items-center">
                                             <i className="fas fa-exclamation-circle text-red-600 dark:text-red-400 mr-2"></i>对于平台紧急问题，请拨打 +853-2888-8888 或发送邮件至 bruce@cred.top
-                                                                </p>
+                                                                                                            </p>
                                     </div>
                                 </div>
                             </motion.div>
@@ -270,13 +270,13 @@ const ContactPage = () => {
                                     <button
                                         type="submit"
                                         className="w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-4 rounded-lg font-medium transition-all transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">提交咨询
-                                                          </button>
+                                                                                                  </button>
                                 </form>
                             </motion.div>
                         </div>
                     </div>
                 </section>
-                {}
+
                 <section className="py-16 bg-gray-900 bg-grid relative">
                     <div className="absolute inset-0 overflow-hidden">
                         <div
@@ -301,7 +301,7 @@ const ContactPage = () => {
                             }}>
                             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">常见问题</h2>
                             <p className="text-xl text-gray-300 max-w-3xl mx-auto">关于澳门多角债解决平台的常见问题解答
-                                              </p>
+                                                                              </p>
                         </motion.div>
                         <motion.div
                             initial={{
@@ -326,7 +326,7 @@ const ContactPage = () => {
                                         style={{
                                             color: "#B6BBCC"
                                         }}>多角债是指企业间债务链条的纠缠，形成复杂的网络结构。当企业A欠企业B，企业B欠企业C，而企业C又欠企业A时，整个链条的流动性被人为锁定。澳门多角债解决平台通过多边净额清算技术，可以在瞬间抵销这些相互的债务，无需外部资金注入即可释放资产负债表空间。
-                                                          </p>
+                                                                                                  </p>
                                 </div>
                                 <div
                                     className="bg-gray-800/90 p-6 rounded-xl shadow-md border border-gray-700">
@@ -336,7 +336,7 @@ const ContactPage = () => {
                                         style={{
                                             color: "#B6BBCC"
                                         }}>澳门平台采用"双引擎"策略：一是建立基于斯洛文尼亚模式的"多边净额清算引擎"以解决存量三角债；二是建立基于印度TReDS模式的"供应链金融交易引擎"以解决增量融资需求。这种双轨制设计能够全方位解决不同类型的债务问题，提高平台的市场覆盖范围和服务能力。
-                                                          </p>
+                                                                                                  </p>
                                 </div>
                                 <div
                                     className="bg-gray-800/90 p-6 rounded-xl shadow-md border border-gray-700">
@@ -346,7 +346,7 @@ const ContactPage = () => {
                                         style={{
                                             color: "#B6BBCC"
                                         }}>澳门平台采用联邦学习或零知识证明技术，在横琴设立数据节点（受内地管辖），在澳门设立交易节点。澳门平台向横琴节点发起查询，横琴节点在本地核验发票、税务数据后，仅返回"是/否"的验证结果，而不传输原始明细数据。这符合"数据可用不可见"的原则，规避了数据跨境法律风险。
-                                                          </p>
+                                                                                                  </p>
                                 </div>
                                 <div
                                     className="bg-gray-800/90 p-6 rounded-xl shadow-md border border-gray-700">
@@ -356,7 +356,7 @@ const ContactPage = () => {
                                         style={{
                                             color: "#B6BBCC"
                                         }}>澳门平台采用分层收费模式：对于多边净额清算服务，收取极低费率（如0.05%）或按笔收费，作为公共服务；对于债权流转与融资服务，收取市场化费率（如0.3%-0.5%），由融资方或受益方承担。此外，平台还可能收取SaaS订阅费和数据服务费等增值服务费用。
-                                                          </p>
+                                                                                                  </p>
                                 </div>
                                 <div
                                     className="bg-gray-800/90 p-6 rounded-xl shadow-md border border-gray-700">
@@ -366,7 +366,7 @@ const ContactPage = () => {
                                         style={{
                                             color: "#B6BBCC"
                                         }}>企业可以通过平台官方网站或联系客服申请参与。对于核心节点企业（如承接政府工程的供应商、博彩持牌企业），根据未来可能的立法要求，超过一定期限的应付账款信息需上报至平台。其他企业可以自愿参与平台的各项服务。
-                                                          </p>
+                                                                                                  </p>
                                 </div>
                             </div>
                         </motion.div>
