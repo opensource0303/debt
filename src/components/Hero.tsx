@@ -81,7 +81,7 @@ const Hero = () => {
                                 delay: 0.4,
                                 duration: 0.8
                             }}>化解债务危机，盘活困境资产<br />出品债权资产，赋能产业布局
-                        </motion.p>
+                                                    </motion.p>
                         <motion.div
                             className="flex flex-col sm:flex-row flex-wrap gap-4"
                             initial={{
@@ -122,7 +122,7 @@ const Hero = () => {
                             <div
                                 className="absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl blur-lg opacity-75 animate-pulse"></div>
                             <motion.img
-                                src="https://space-static.coze.site/coze_space/7594705743611461929/upload/%E8%83%8C%E6%99%AF_1536x1024.jpg?sign=1771560218-8502ee762e-0-17cd679d4cb895a6f1a41769ecacc094a024c58f3f211a9189ade41187477253"
+                                src="https://space-static.coze.site/coze_space/7594705743611461929/upload/%E8%83%8C%E6%99%AF_1536x1024.png?sign=1771562080-47b5ec403b-0-6b5695711c32c873169e5fef2c693e94092c24dfaa9d9bd9c44bc2da38d2c3ac"
                                 alt="Cred Platform"
                                 className="relative z-10 rounded-2xl shadow-xl w-full h-auto"
                                 whileHover={{
@@ -134,7 +134,6 @@ const Hero = () => {
                         </div>
                     </motion.div>
                 </div>
-                
                 <motion.div
                     className="mt-32"
                     initial={{
@@ -177,7 +176,7 @@ const Hero = () => {
                             </div>
                             <h3 className="text-xl font-bold text-white mb-3">法律优势</h3>
                             <p className="text-gray-400 leading-relaxed">澳门《商业法典》与葡萄牙及欧洲大陆法系一脉相承，为引入成熟的欧洲清算规则提供了法理基础。
-                            </p>
+                                                            </p>
                         </motion.div>
                         <motion.div
                             className="bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl border border-gray-700 hover:shadow-lg transition-all duration-300 hover:border-blue-500/50 card-hover"
@@ -204,7 +203,7 @@ const Hero = () => {
                             </div>
                             <h3 className="text-xl font-bold text-white mb-3">资金优势</h3>
                             <p className="text-gray-400 leading-relaxed">澳门作为自由港，资金成本显著低于内地，且拥有大量沉淀的离岸人民币，为平台提供资金支持。
-                            </p>
+                                                            </p>
                         </motion.div>
                         <motion.div
                             className="bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl border border-gray-700 hover:shadow-lg transition-all duration-300 hover:border-blue-500/50 card-hover"
@@ -231,7 +230,7 @@ const Hero = () => {
                             </div>
                             <h3 className="text-xl font-bold text-white mb-3">隐私计算</h3>
                             <p className="text-gray-400 leading-relaxed">采用零知识证明和多方安全计算技术，在保护商业秘密的同时实现数据有效利用，解决跨境风控痛点。
-                            </p>
+                                                            </p>
                         </motion.div>
                     </div>
                 </motion.div>
