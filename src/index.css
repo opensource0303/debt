@@ -136,3 +136,12 @@ body {
   @apply hover:-translate-y-1 transition-transform duration-300;
 }
 
+/* 统一的章节标题样式 */
+.section-title {
+  @apply text-3xl md:text-4xl font-bold text-white mb-6;
+}
+
+.section-description {
+  @apply text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed;
+}
+

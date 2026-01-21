@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 const Hero = () => {
     return (
         <section className="pt-32 pb-24 bg-gray-900 bg-grid overflow-hidden relative">
-            {}
             <div className="absolute inset-0 overflow-hidden">
                 <motion.div
                     className="absolute -right-32 top-20 w-96 h-96 bg-blue-600/20 rounded-full filter blur-3xl"
@@ -48,7 +47,7 @@ const Hero = () => {
                         <div className="mb-6">
                             <motion.img
                                 src="https://s.coze.cn/t/z8Q93p0xjqM/"
-                                alt="链清 Cred"
+                                alt="可信达 Cred"
                                 className="w-24 h-auto" />
                         </div>
                         <motion.h1
@@ -82,7 +81,7 @@ const Hero = () => {
                                 delay: 0.4,
                                 duration: 0.8
                             }}>化解债务危机，盘活困境资产<br />出品债权资产，赋能产业布局
-                                                     </motion.p>
+                        </motion.p>
                         <motion.div
                             className="flex flex-col sm:flex-row flex-wrap gap-4"
                             initial={{
@@ -98,12 +97,10 @@ const Hero = () => {
                                 duration: 0.8
                             }}>
                             <Link to="/solutions-cases">
-                                <button className="btn-primary text-lg px-8 py-4">解决方案与案例
-                                                                    </button>
+                                <button className="btn-primary text-lg px-8 py-4">解决方案与案例</button>
                             </Link>
                             <Link to="/macau-advantages">
-                                <button className="btn-secondary text-lg px-8 py-4">澳门优势
-                                                                    </button>
+                                <button className="btn-secondary text-lg px-8 py-4">澳门优势</button>
                             </Link>
                         </motion.div>
                     </motion.div>
@@ -137,7 +134,7 @@ const Hero = () => {
                         </div>
                     </motion.div>
                 </div>
-                {}
+                
                 <motion.div
                     className="mt-32"
                     initial={{
@@ -154,7 +151,7 @@ const Hero = () => {
                     transition={{
                         duration: 0.8
                     }}>
-                    <h2 className="text-3xl font-bold text-center text-white mb-12">平台核心亮点</h2>
+                    <h2 className="section-title text-center">平台核心亮点</h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         <motion.div
                             className="bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl border border-gray-700 hover:shadow-lg transition-all duration-300 hover:border-blue-500/50 card-hover"
@@ -180,7 +177,7 @@ const Hero = () => {
                             </div>
                             <h3 className="text-xl font-bold text-white mb-3">法律优势</h3>
                             <p className="text-gray-400 leading-relaxed">澳门《商业法典》与葡萄牙及欧洲大陆法系一脉相承，为引入成熟的欧洲清算规则提供了法理基础。
-                                                            </p>
+                            </p>
                         </motion.div>
                         <motion.div
                             className="bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl border border-gray-700 hover:shadow-lg transition-all duration-300 hover:border-blue-500/50 card-hover"
@@ -207,7 +204,7 @@ const Hero = () => {
                             </div>
                             <h3 className="text-xl font-bold text-white mb-3">资金优势</h3>
                             <p className="text-gray-400 leading-relaxed">澳门作为自由港，资金成本显著低于内地，且拥有大量沉淀的离岸人民币，为平台提供资金支持。
-                                                            </p>
+                            </p>
                         </motion.div>
                         <motion.div
                             className="bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl border border-gray-700 hover:shadow-lg transition-all duration-300 hover:border-blue-500/50 card-hover"
@@ -234,7 +231,7 @@ const Hero = () => {
                             </div>
                             <h3 className="text-xl font-bold text-white mb-3">隐私计算</h3>
                             <p className="text-gray-400 leading-relaxed">采用零知识证明和多方安全计算技术，在保护商业秘密的同时实现数据有效利用，解决跨境风控痛点。
-                                                            </p>
+                            </p>
                         </motion.div>
                     </div>
                 </motion.div>

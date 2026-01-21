@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-// import { Link } from 'react-router-dom';
 
 const Services = () => {
   
@@ -70,8 +69,8 @@ const Services = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">产品与服务</h2>
-           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          <h2 className="section-title">产品与服务</h2>
+          <p className="section-description">
             "可信达"平台专注于解决三角债、多角债问题，通过区块链技术和创新商业模式，提供全方位的债务清偿和资产盘活服务
           </p>
         </motion.div>
@@ -87,7 +86,7 @@ const Services = () => {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               whileHover={{ y: -8 }}
             >
-              <div className={`w-full p-6 flex items-start space-x-5`}>
+              <div className="w-full p-6 flex items-start space-x-5">
                 <motion.div 
                   className={`w-14 h-14 rounded-full ${service.color} flex items-center justify-center text-white`}
                   whileHover={{ rotate: 5, scale: 1.05 }}
@@ -120,9 +119,9 @@ const Services = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-             <button className="btn-primary text-lg px-8 py-4">
-               阅读更多
-             </button>
+          <button className="btn-primary text-lg px-8 py-4">
+            阅读更多
+          </button>
         </motion.div>
       </div>
     </section>

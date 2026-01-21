@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-// import { Link } from 'react-router-dom';
 
 const Advantages = () => {
   
@@ -64,10 +63,10 @@ const Advantages = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">产品优势</h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-               "可信达"平台通过创新技术和商业模式，为解决三角债问题提供了全面、高效、安全的解决方案。
-            </p>
+          <h2 className="section-title">产品优势</h2>
+          <p className="section-description">
+            "可信达"平台通过创新技术和商业模式，为解决三角债问题提供了全面、高效、安全的解决方案。
+          </p>
         </motion.div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -85,8 +84,8 @@ const Advantages = () => {
                 <i className={`fas ${advantage.icon}`}></i>
               </div>
               <div>
-               <h3 className="text-xl font-bold text-white mb-3">{advantage.title}</h3>
-               <p className="text-gray-300 leading-relaxed">{advantage.description}</p>
+                <h3 className="text-xl font-bold text-white mb-3">{advantage.title}</h3>
+                <p className="text-gray-300 leading-relaxed">{advantage.description}</p>
               </div>
             </motion.div>
           ))}
@@ -102,11 +101,11 @@ const Advantages = () => {
         >
           <h3 className="text-2xl md:text-3xl font-bold mb-6">了解更多产品优势</h3>
           <p className="text-xl mb-8 max-w-3xl mx-auto opacity-90 leading-relaxed">
-             "可信达"平台不仅解决债务问题，更能盘活存量债权资产，改善市场信用环境，为经济运行提供低成本"润滑剂"。
-            </p>
-           <button className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-4 rounded-full text-lg font-medium transition-all focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50">
-    阅读更多
-  </button>
+            "可信达"平台不仅解决债务问题，更能盘活存量债权资产，改善市场信用环境，为经济运行提供低成本"润滑剂"。
+          </p>
+          <button className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-4 rounded-full text-lg font-medium transition-all focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50">
+            阅读更多
+          </button>
         </motion.div>
       </div>
     </section>

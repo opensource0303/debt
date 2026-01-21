@@ -53,7 +53,7 @@ const Navbar = () => {
                     <div className="flex items-center">
                         <img 
                             src="https://s.coze.cn/t/z8Q93p0xjqM/" 
-                            alt="链清 Cred" 
+                            alt="可信达 Cred" 
                             className="h-8 mr-3" 
                         />
                         <span className="text-xl font-bold">Cred</span>

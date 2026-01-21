@@ -17,16 +17,16 @@ const Footer = () => {
     }];
 
     return (
-        <footer className="bg-gray-900 text-white py-12 border-t border-gray-800">
+        <footer className="bg-gray-900/95 backdrop-blur-sm text-white py-12 border-t border-gray-800">
             <div className="container mx-auto px-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <div>
-                     <div className="flex items-center mb-6">
-                        <img src="https://s.coze.cn/t/TrYhakFBT0I/" alt="可信达 Cred" className="h-8 mr-3" />
-                        <div className="text-xl font-bold">Cred</div>
-                    </div>
+                        <div className="flex items-center mb-6">
+                            <img src="https://s.coze.cn/t/z8Q93p0xjqM/" alt="可信达 Cred" className="h-8 mr-3" />
+                            <div className="text-xl font-bold">Cred</div>
+                        </div>
                         <p className="text-gray-400 mb-6">赋能核心企业，促进债务凭证在供应链范围内自由流动
-                                        </p>
+                        </p>
                         <div className="flex space-x-4">
                             {['weixin', 'weibo', 'linkedin', 'twitter'].map((social, index) => (
                                 <a 

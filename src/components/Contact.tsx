@@ -55,8 +55,8 @@ const Contact = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">联系我们</h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          <h2 className="section-title">联系我们</h2>
+          <p className="section-description">
             如有任何关于澳门多角债解决平台的问题或合作意向，请随时与我们联系。
           </p>
         </motion.div>
@@ -78,8 +78,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="text-lg font-semibold text-white mb-1">办公地址</h4>
-                     <p className="text-gray-300">珠海市横琴华发商都</p>
-                    </div>
+                    <p className="text-gray-300">珠海市横琴华发商都</p>
+                  </div>
                 </div>
                 
                 <div className="flex items-start space-x-4">
