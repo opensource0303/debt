@@ -27,11 +27,11 @@ const News = () => {
   ];
 
   return (
-    <section id="news" className="py-24 bg-gray-900 bg-grid relative">
+    <section id="news" className="py-24 relative">
       {/* 装饰元素 */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div 
-          className="absolute -left-32 bottom-0 w-96 h-96 bg-purple-600/10 rounded-full filter blur-3xl"
+          className="absolute -left-32 bottom-0 w-96 h-96 bg-purple-600/20 rounded-full filter blur-3xl"
           animate={{ 
             scale: [1, 1.1, 1],
             opacity: [0.2, 0.3, 0.2]
@@ -62,7 +62,7 @@ const News = () => {
           {newsItems.map((item, index) => (
             <motion.div
               key={index}
-              className="bg-gray-800/80 backdrop-blur-sm rounded-2xl border border-gray-700 overflow-hidden hover:shadow-xl hover:border-blue-500/30 transition-all duration-300 card-hover"
+              className="bg-gray-900/70 backdrop-blur-md rounded-2xl border border-gray-700 overflow-hidden hover:shadow-xl hover:border-blue-500/30 transition-all duration-300 card-hover"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

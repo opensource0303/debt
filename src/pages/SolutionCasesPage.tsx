@@ -6,8 +6,8 @@ import { Link } from "react-router-dom";
 
 const SolutionCasesPage = () => {
     return (
-         <div className="min-h-screen text-white tech-gradient-bg">
-      <div className="bg-overlay min-h-screen">
+    <div className="min-h-screen text-white tech-gradient-bg">
+            <div className="bg-overlay min-h-screen">
             <Navbar />
             <main className="pt-24 pb-16">
                 {}
@@ -26,13 +26,13 @@ const SolutionCasesPage = () => {
                     }}>
                     <h1 className="text-4xl md:text-5xl font-bold mb-4 text-center">解决方案与成功案例</h1>
                     <p className="text-xl text-gray-200 max-w-3xl mx-auto text-center">以核心链主企业信用为背书，依托区块链隐私、安全、无法篡改特性，促进体系内债权自由流动
-                                                                                                                                                          </p>
+                                                                                                                                                           </p>
                 </motion.section>
                 {}
-                <section className="py-16 bg-gray-900 bg-grid relative">
+                <section className="py-16 relative">
                     <div className="absolute inset-0 overflow-hidden">
                         <div
-                            className="absolute right-0 bottom-0 w-80 h-80 bg-blue-600/10 rounded-full filter blur-3xl"></div>
+                            className="absolute right-0 bottom-0 w-80 h-80 bg-blue-600/20 rounded-full filter blur-3xl"></div>
                     </div>
                     <div className="container mx-auto px-4 relative z-10">
                         <motion.div
@@ -52,7 +52,7 @@ const SolutionCasesPage = () => {
                             <div>
                                 <h2 className="text-3xl font-bold mb-6">供应链金融区块链解决方案</h2>
                                 <p className="text-gray-200 mb-6 leading-relaxed">我们的解决方案以核心企业为中心，通过区块链技术构建可信的供应链金融生态系统。在核心企业供应链体系内设置多节点，发行可转让的区块链债务凭证，促进体系内债权的自由流动，降低供应链整体融资成本。
-                                                                                                                                                                                                                                        </p>
+                                                                                                                                                                                                                                         </p>
                                 <div className="flex items-start">
                                     <div className="text-blue-400 mr-3 mt-1">
                                         <i className="fas fa-check-circle text-xl"></i>
@@ -60,7 +60,7 @@ const SolutionCasesPage = () => {
                                     <div>
                                         <h4 className="font-semibold mb-1 text-blue-300">核心企业信用背书</h4>
                                         <p className="text-gray-200">利用核心企业的高信用评级为整个供应链提供信用支持，降低中小企业融资门槛
-                                                                                                                                                                                                                                                                                               </p>
+                                                                                                                                                                                                                                                                                                </p>
                                     </div>
                                 </div>
                                 <div className="flex items-start">
@@ -70,7 +70,7 @@ const SolutionCasesPage = () => {
                                     <div>
                                         <h4 className="font-semibold mb-1 text-green-300">区块链隐私安全</h4>
                                         <p className="text-gray-200">采用隐私计算和加密技术，确保交易数据安全，同时保持数据透明度和可追溯性
-                                                                                                                                                                                                                                                                                               </p>
+                                                                                                                                                                                                                                                                                                </p>
                                     </div>
                                 </div>
                                 <div className="flex items-start">
@@ -80,7 +80,7 @@ const SolutionCasesPage = () => {
                                     <div>
                                         <h4 className="font-semibold mb-1 text-purple-300">可转让债务凭证</h4>
                                         <p className="text-gray-200">发行标准化、可拆分、可转让的区块链债务凭证，提高资金使用效率
-                                                                                                                                                                                                                                                                                               </p>
+                                                                                                                                                                                                                                                                                                </p>
                                     </div>
                                 </div>
                                 <div className="flex items-start">
@@ -90,7 +90,7 @@ const SolutionCasesPage = () => {
                                     <div>
                                         <h4 className="font-semibold mb-1 text-amber-300">多节点协作</h4>
                                         <p className="text-gray-200">在供应链体系内设置多个参与节点，包括核心企业、供应商、金融机构等，共同维护生态健康
-                                                                                                                                                                                                                                                                                               </p>
+                                                                                                                                                                                                                                                                                                </p>
                                     </div>
                                 </div>
                             </div>
@@ -104,10 +104,10 @@ const SolutionCasesPage = () => {
                     </div>
                 </section>
                 {}
-                <section className="py-16 bg-gray-900 bg-grid relative">
+                <section className="py-16 relative">
                     <div className="absolute inset-0 overflow-hidden">
                         <div
-                            className="absolute left-0 top-1/2 w-80 h-80 bg-purple-600/10 rounded-full filter blur-3xl transform -translate-y-1/2"></div>
+                            className="absolute left-0 top-1/2 w-80 h-80 bg-purple-600/20 rounded-full filter blur-3xl transform -translate-y-1/2"></div>
                     </div>
                     <div className="container mx-auto px-4 relative z-10">
                         <motion.div
@@ -126,17 +126,9 @@ const SolutionCasesPage = () => {
                             transition={{
                                 duration: 0.6
                             }}>
-                            <h2
-                                className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4"
-                                style={{
-                                    color: "#FFFFFF"
-                                }}>双轨制引擎解决方案</h2>
-                            <p
-                                className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
-                                style={{
-                                    color: "#34D399"
-                                }}>全方位解决不同类型的债务问题，为债权方和债务方创造价值
-                                                                                                                                                                                                              </p>
+                            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">双轨制引擎解决方案</h2>
+                            <p className="text-xl text-green-300 max-w-3xl mx-auto">全方位解决不同类型的债务问题，为债权方和债务方创造价值
+                                                                                                                                                                                                               </p>
                         </motion.div>
                         <div className="grid md:grid-cols-2 gap-16">
                             {}
@@ -155,17 +147,13 @@ const SolutionCasesPage = () => {
                                 transition={{
                                     duration: 0.6
                                 }}
-                                className="bg-gray-800/90 rounded-2xl p-8 shadow-lg border border-gray-700">
+                                className="bg-gray-900/70 backdrop-blur-md rounded-2xl p-8 shadow-lg border border-gray-700">
                                 <div className="text-blue-400 text-4xl mb-6">
                                     <i className="fas fa-cogs"></i>
                                 </div>
                                 <h3 className="text-2xl font-bold mb-4">多边净额清算</h3>
-                                <p
-                                    className="text-gray-600 dark:text-gray-300 mb-6"
-                                    style={{
-                                        color: "#FFFFFF"
-                                    }}>针对纯粹流动性错配型债务，利用高级图计算算法识别并抵销闭环债务。
-                                                                                                                                                                                                                                        </p>
+                                <p className="text-white mb-6">针对纯粹流动性错配型债务，利用高级图计算算法识别并抵销闭环债务。
+                                                                                                                                                                                                                                         </p>
                                 <div className="space-y-4 mb-8">
                                     <div className="flex items-start">
                                         <div className="text-green-400 mr-3 mt-1">
@@ -213,17 +201,13 @@ const SolutionCasesPage = () => {
                                     duration: 0.6,
                                     delay: 0.2
                                 }}
-                                className="bg-gray-800/90 rounded-2xl p-8 shadow-lg border border-gray-700">
+                                className="bg-gray-900/70 backdrop-blur-md rounded-2xl p-8 shadow-lg border border-gray-700">
                                 <div className="text-purple-400 text-4xl mb-6">
                                     <i className="fas fa-exchange-alt"></i>
                                 </div>
                                 <h3 className="text-2xl font-bold mb-4">债权流转与融资</h3>
-                                <p
-                                    className="text-gray-600 dark:text-gray-300 mb-6"
-                                    style={{
-                                        color: "#FFFFFF"
-                                    }}>针对核心节点挤占型债务，提供高效的债权融资解决方案，促进资产流动。
-                                                                                                                                                                                                                                        </p>
+                                <p className="text-white mb-6">针对核心节点挤占型债务，提供高效的债权融资解决方案，促进资产流动。
+                                                                                                                                                                                                                                         </p>
                                 <div className="space-y-4 mb-8">
                                     <div className="flex items-start">
                                         <div className="text-green-400 mr-3 mt-1">
@@ -258,10 +242,10 @@ const SolutionCasesPage = () => {
                     </div>
                 </section>
                 {}
-                <section className="py-16 bg-gray-900 bg-grid relative">
+                <section className="py-16 relative">
                     <div className="absolute inset-0 overflow-hidden">
                         <div
-                            className="absolute -left-32 bottom-0 w-64 h-64 bg-purple-600/10 rounded-full filter blur-3xl"></div>
+                            className="absolute -left-32 bottom-0 w-64 h-64 bg-purple-600/20 rounded-full filter blur-3xl"></div>
                     </div>
                     <div className="container mx-auto px-4 relative z-10">
                         <motion.div
@@ -280,17 +264,9 @@ const SolutionCasesPage = () => {
                             transition={{
                                 duration: 0.6
                             }}>
-                            <h2
-                                className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4"
-                                style={{
-                                    color: "#FFFFFF"
-                                }}>国际成功案例</h2>
-                            <p
-                                className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
-                                style={{
-                                    color: "#FFFFFF"
-                                }}>借鉴全球领先实践，打造适合本地的创新解决方案
-                                                                                                                                                                                                              </p>
+                            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">国际成功案例</h2>
+                            <p className="text-xl text-white max-w-3xl mx-auto">借鉴全球领先实践，打造适合本地的创新解决方案
+                                                                                                                                                                                                               </p>
                         </motion.div>
                         <div className="grid md:grid-cols-2 gap-16">
                             {}
@@ -309,18 +285,14 @@ const SolutionCasesPage = () => {
                                 transition={{
                                     duration: 0.6
                                 }}
-                                className="bg-gray-800/90 rounded-2xl shadow-lg overflow-hidden border border-gray-700">
+                                className="bg-gray-900/70 backdrop-blur-md rounded-2xl shadow-lg overflow-hidden border border-gray-700">
                                 <div className="p-8">
                                     <h3 className="text-2xl font-bold mb-6 flex items-center">
                                         <span
                                             className="w-10 h-10 bg-green-900/30 rounded-full flex items-center justify-center text-green-400 mr-3">1</span>印度 TReDS 模式
-                                                                                                                                                                                                                                                                   </h3>
-                                    <p
-                                        className="text-gray-600 dark:text-gray-300 mb-6"
-                                        style={{
-                                            color: "#FFFFFF"
-                                        }}>印度贸易应收账款贴现系统（TReDS）是一个成功的供应链金融平台，通过数字化平台连接供应商、核心企业和金融机构，解决中小企业融资难题。
-                                                                                                                                                                                                                                                                  </p>
+                                                                                                                                                                                                                                                                    </h3>
+                                    <p className="text-white mb-6">印度贸易应收账款贴现系统（TReDS）是一个成功的供应链金融平台，通过数字化平台连接供应商、核心企业和金融机构，解决中小企业融资难题。
+                                                                                                                                                                                                                                                                   </p>
                                     <div className="space-y-4 mb-8">
                                         <div className="flex items-start">
                                             <div className="text-green-400 mr-3 mt-1">
@@ -369,18 +341,14 @@ const SolutionCasesPage = () => {
                                     duration: 0.6,
                                     delay: 0.2
                                 }}
-                                className="bg-gray-800/90 rounded-2xl shadow-lg overflow-hidden border border-gray-700">
+                                className="bg-gray-900/70 backdrop-blur-md rounded-2xl shadow-lg overflow-hidden border border-gray-700">
                                 <div className="p-8">
                                     <h3 className="text-2xl font-bold mb-6 flex items-center">
                                         <span
                                             className="w-10 h-10 bg-blue-900/30 rounded-full flex items-center justify-center text-blue-400 mr-3">2</span>欧洲供应链金融模式
-                                                                                                                                                                                                                                                                   </h3>
-                                    <p
-                                        className="text-gray-600 dark:text-gray-300 mb-6"
-                                        style={{
-                                            color: "#FFFFFF"
-                                        }}>欧洲在供应链金融领域拥有成熟的实践经验，特别是在利用数字化技术提升供应链透明度和融资效率方面走在全球前列。
-                                                                                                                                                                                                                                                                  </p>
+                                                                                                                                                                                                                                                                    </h3>
+                                    <p className="text-white mb-6">欧洲在供应链金融领域拥有成熟的实践经验，特别是在利用数字化技术提升供应链透明度和融资效率方面走在全球前列。
+                                                                                                                                                                                                                                                                   </p>
                                     <div className="space-y-4 mb-8">
                                         <div className="flex items-start">
                                             <div className="text-green-400 mr-3 mt-1">
@@ -416,10 +384,10 @@ const SolutionCasesPage = () => {
                     </div>
                 </section>
                 {}
-                <section className="py-16 bg-gray-900 bg-grid relative">
+                <section className="py-16 relative">
                     <div className="absolute inset-0 overflow-hidden">
                         <div
-                            className="absolute -right-32 top-20 w-64 h-64 bg-blue-600/10 rounded-full filter blur-3xl"></div>
+                            className="absolute -right-32 top-20 w-64 h-64 bg-blue-600/20 rounded-full filter blur-3xl"></div>
                     </div>
                     <div className="container mx-auto px-4 relative z-10">
                         <motion.div
@@ -438,17 +406,9 @@ const SolutionCasesPage = () => {
                             transition={{
                                 duration: 0.6
                             }}>
-                            <h2
-                                className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4"
-                                style={{
-                                    color: "#FFFFFF"
-                                }}>解决方案</h2>
-                            <p
-                                className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
-                                style={{
-                                    color: "#FFFFFF"
-                                }}>为供应链各参与方创造显著价值，优化整体生态
-                                                                                                                                                                                                              </p>
+                            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">解决方案</h2>
+                            <p className="text-xl text-white max-w-3xl mx-auto">为供应链各参与方创造显著价值，优化整体生态
+                                                                                                                                                                                                               </p>
                         </motion.div>
                         <motion.div
                             initial={{
@@ -466,13 +426,13 @@ const SolutionCasesPage = () => {
                             className="grid md:grid-cols-3 gap-8">
                             {}
                             <div
-                                className="bg-gray-800/90 rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow border border-gray-700">
+                                className="bg-gray-900/70 backdrop-blur-md rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow border border-gray-700">
                                 <div
                                     className="w-16 h-16 bg-blue-900/30 rounded-full flex items-center justify-center text-blue-400 text-2xl mb-6">
                                     <i className="fas fa-building"></i>
                                 </div>
                                 <h3 className="text-xl font-bold mb-4">对核心企业</h3>
-                                <ul className="text-gray-600 dark:text-gray-300 space-y-4">
+                                <ul className="space-y-4">
                                     <li className="flex items-start">
                                         <i className="fas fa-check-circle text-green-400 mr-3 mt-1"></i>
                                         <span className="text-gray-200">优化现金流管理，延长付款周期，提高资金使用效率</span>
@@ -493,13 +453,13 @@ const SolutionCasesPage = () => {
                             </div>
                             {}
                             <div
-                                className="bg-gray-800/90 rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow border border-gray-700">
+                                className="bg-gray-900/70 backdrop-blur-md rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow border border-gray-700">
                                 <div
                                     className="w-16 h-16 bg-green-900/30 rounded-full flex items-center justify-center text-green-400 text-2xl mb-6">
                                     <i className="fas fa-industry"></i>
                                 </div>
                                 <h3 className="text-xl font-bold mb-4">对供应商</h3>
-                                <ul className="text-gray-600 dark:text-gray-300 space-y-4">
+                                <ul className="space-y-4">
                                     <li className="flex items-start">
                                         <i className="fas fa-check-circle text-green-400 mr-3 mt-1"></i>
                                         <span className="text-gray-200">将应收账款快速变现，改善现金流，降低资金压力</span>
@@ -520,13 +480,13 @@ const SolutionCasesPage = () => {
                             </div>
                             {}
                             <div
-                                className="bg-gray-800/90 rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow border border-gray-700">
+                                className="bg-gray-900/70 backdrop-blur-md rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow border border-gray-700">
                                 <div
                                     className="w-16 h-16 bg-purple-900/30 rounded-full flex items-center justify-center text-purple-400 text-2xl mb-6">
                                     <i className="fas fa-university"></i>
                                 </div>
                                 <h3 className="text-xl font-bold mb-4">对金融机构</h3>
-                                <ul className="text-gray-600 dark:text-gray-300 space-y-4">
+                                <ul className="space-y-4">
                                     <li className="flex items-start">
                                         <i className="fas fa-check-circle text-green-400 mr-3 mt-1"></i>
                                         <span className="text-gray-200">拓展供应链金融业务，增加优质资产投放</span>
@@ -568,17 +528,17 @@ const SolutionCasesPage = () => {
                             }}>
                             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">开启供应链金融创新之旅</h2>
                             <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">立即联系我们，了解如何通过区块链技术优化您的供应链金融生态，降低融资成本，提升运营效率
-                                                                                                                                                                                                              </p>
+                                                                                                                                                                                                               </p>
                             <div className="flex flex-col sm:flex-row justify-center gap-4">
                                 <Link to="/macau-advantages">
                                     <button
                                         className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-3 rounded-full text-lg font-medium transition-all transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50">了解澳门优势
-                                                                                                                                                                                                                                                                  </button>
+                                                                                                                                                                                                                                                                   </button>
                                 </Link>
                                 <Link to="/contact">
                                     <button
                                         className="bg-transparent border-2 border-white text-white hover:bg-white/10 px-8 py-3 rounded-full text-lg font-medium transition-all transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50">联系我们
-                                                                                                                                                                                                                                                                  </button>
+                                                                                                                                                                                                                                                                   </button>
                                 </Link>
                             </div>
                         </motion.div>
@@ -586,8 +546,8 @@ const SolutionCasesPage = () => {
                 </section>
             </main>
             <Footer />
-      </div>
-         </div>
+            </div>
+    </div>
   );
 };
 

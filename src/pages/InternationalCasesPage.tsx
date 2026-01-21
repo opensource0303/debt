@@ -5,8 +5,8 @@ import Footer from '@/components/Footer';
 
 const InternationalCasesPage = () => {
   return (
-         <div className="min-h-screen text-white tech-gradient-bg">
-      <div className="bg-overlay min-h-screen">
+          <div className="min-h-screen text-white tech-gradient-bg">
+      <div className="bg-overlay min-h-screen opacity-70">
       <Navbar />
       <main className="pt-24 pb-16">
         {/* 页面标题 */}

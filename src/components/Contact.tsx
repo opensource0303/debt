@@ -30,11 +30,11 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-gray-900 bg-grid relative">
+    <section id="contact" className="py-24 relative">
       {/* 装饰元素 */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div 
-          className="absolute right-0 bottom-0 w-96 h-96 bg-blue-600/10 rounded-full filter blur-3xl"
+          className="absolute right-0 bottom-0 w-96 h-96 bg-blue-600/20 rounded-full filter blur-3xl"
           animate={{ 
             scale: [1, 1.1, 1],
             opacity: [0.2, 0.3, 0.2]
@@ -67,13 +67,13 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="bg-gray-800/80 backdrop-blur-sm p-8 rounded-2xl border border-gray-700 hover:shadow-xl hover:border-blue-500/30 transition-all duration-300"
+            className="bg-gray-900/70 backdrop-blur-md p-8 rounded-2xl border border-gray-700 hover:shadow-xl hover:border-blue-500/30 transition-all duration-300"
           >
               <h3 className="text-2xl font-bold text-white mb-8">联系我们</h3>
               
               <div className="space-y-8">
                 <div className="flex items-start space-x-4">
-                  <div className="text-blue-400 text-xl mt-1 bg-blue-900/20 w-12 h-12 rounded-full flex items-center justify-center">
+                  <div className="text-blue-400 text-xl mt-1 bg-blue-900/30 w-12 h-12 rounded-full flex items-center justify-center">
                     <i className="fas fa-map-marker-alt"></i>
                   </div>
                   <div>
@@ -83,7 +83,7 @@ const Contact = () => {
                 </div>
                 
                 <div className="flex items-start space-x-4">
-                  <div className="text-blue-400 text-xl mt-1 bg-blue-900/20 w-12 h-12 rounded-full flex items-center justify-center">
+                  <div className="text-blue-400 text-xl mt-1 bg-blue-900/30 w-12 h-12 rounded-full flex items-center justify-center">
                     <i className="fas fa-phone-alt"></i>
                   </div>
                   <div>
@@ -93,7 +93,7 @@ const Contact = () => {
                 </div>
                 
                 <div className="flex items-start space-x-4">
-                  <div className="text-blue-400 text-xl mt-1 bg-blue-900/20 w-12 h-12 rounded-full flex items-center justify-center">
+                  <div className="text-blue-400 text-xl mt-1 bg-blue-900/30 w-12 h-12 rounded-full flex items-center justify-center">
                     <i className="fas fa-envelope"></i>
                   </div>
                   <div>
@@ -103,7 +103,7 @@ const Contact = () => {
                 </div>
                 
                 <div className="flex items-start space-x-4">
-                  <div className="text-blue-400 text-xl mt-1 bg-blue-900/20 w-12 h-12 rounded-full flex items-center justify-center">
+                  <div className="text-blue-400 text-xl mt-1 bg-blue-900/30 w-12 h-12 rounded-full flex items-center justify-center">
                     <i className="fas fa-clock"></i>
                   </div>
                   <div>
@@ -120,7 +120,7 @@ const Contact = () => {
                     <motion.a 
                       key={index}
                       href="#" 
-                      className="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center text-blue-400 hover:bg-blue-900/30 transition-all duration-300"
+                      className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-blue-400 hover:bg-blue-900/30 transition-all duration-300"
                       whileHover={{ y: -3, scale: 1.1 }}
                       whileTap={{ scale: 0.95 }}
                     >
@@ -137,7 +137,7 @@ const Contact = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <form onSubmit={handleSubmit} className="bg-gray-800/80 backdrop-blur-sm p-8 rounded-2xl border border-gray-700 hover:shadow-xl hover:border-blue-500/30 transition-all duration-300">
+            <form onSubmit={handleSubmit} className="bg-gray-900/70 backdrop-blur-md p-8 rounded-2xl border border-gray-700 hover:shadow-xl hover:border-blue-500/30 transition-all duration-300">
               <h3 className="text-2xl font-bold text-white mb-6">发送咨询</h3>
               
               <div className="mb-6">
@@ -149,7 +149,7 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-lg border border-gray-700 bg-gray-900 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-700 bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors"
                   placeholder="请输入您的姓名"
                   whileFocus={{ scale: 1.02 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
@@ -165,7 +165,7 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-lg border border-gray-700 bg-gray-900 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-700 bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors"
                   placeholder="请输入您的邮箱"
                   whileFocus={{ scale: 1.02 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
@@ -181,7 +181,7 @@ const Contact = () => {
                   value={formData.phone}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-lg border border-gray-700 bg-gray-900 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-700 bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors"
                   placeholder="请输入您的电话"
                   whileFocus={{ scale: 1.02 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
@@ -197,7 +197,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   rows={5}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-700 bg-gray-900 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-700 bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors"
                   placeholder="请输入您关于平台的问题或合作意向"
                   whileFocus={{ scale: 1.02 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}

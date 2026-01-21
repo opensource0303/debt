@@ -3,11 +3,11 @@ import { motion } from 'framer-motion';
 
 const About = () => {  
   return (
-    <section id="about" className="py-24 bg-gray-900 bg-grid relative">
+    <section id="about" className="py-24 relative">
       {/* 装饰元素 */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div 
-          className="absolute right-0 bottom-0 w-96 h-96 bg-blue-600/10 rounded-full filter blur-3xl"
+          className="absolute right-0 bottom-0 w-96 h-96 bg-blue-600/20 rounded-full filter blur-3xl"
           animate={{ 
             scale: [1, 1.1, 1],
             opacity: [0.2, 0.3, 0.2]
@@ -77,8 +77,8 @@ const About = () => {
             
             <div className="grid grid-cols-1 gap-5 mb-10">
               <motion.div 
-                className="bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl border border-gray-700"
-                whileHover={{ y: -5, boxShadow: "0 10px 25px -5px rgba(59, 130, 246, 0.1)" }}
+                className="bg-gray-900/70 backdrop-blur-md p-6 rounded-xl border border-gray-700"
+                whileHover={{ y: -5, boxShadow: "0 10px 25px -5px rgba(59, 130, 246, 0.2)" }}
                 transition={{ duration: 0.3 }}
               >
                 <div className="text-blue-400 text-2xl font-bold mb-2 flex items-center">
@@ -87,8 +87,8 @@ const About = () => {
               </motion.div>
               
               <motion.div 
-                className="bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl border border-gray-700"
-                whileHover={{ y: -5, boxShadow: "0 10px 25px -5px rgba(59, 130, 246, 0.1)" }}
+                className="bg-gray-900/70 backdrop-blur-md p-6 rounded-xl border border-gray-700"
+                whileHover={{ y: -5, boxShadow: "0 10px 25px -5px rgba(59, 130, 246, 0.2)" }}
                 transition={{ duration: 0.3 }}
               >
                 <div className="text-blue-400 text-2xl font-bold mb-2 flex items-center">
@@ -97,8 +97,8 @@ const About = () => {
               </motion.div>
               
               <motion.div 
-                className="bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl border border-gray-700"
-                whileHover={{ y: -5, boxShadow: "0 10px 25px -5px rgba(59, 130, 246, 0.1)" }}
+                className="bg-gray-900/70 backdrop-blur-md p-6 rounded-xl border border-gray-700"
+                whileHover={{ y: -5, boxShadow: "0 10px 25px -5px rgba(59, 130, 246, 0.2)" }}
                 transition={{ duration: 0.3 }}
               >
                 <div className="text-blue-400 text-2xl font-bold mb-2 flex items-center">
