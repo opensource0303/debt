@@ -3,10 +3,10 @@ import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { toast } from 'sonner';
-import { useNavigate } from 'react-router-dom';
+
 
 const CreditorRightRegistrationPage = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   
   // 表单状态
   const [formData, setFormData] = useState({
@@ -111,7 +111,8 @@ const CreditorRightRegistrationPage = () => {
   };
   
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
+    <div className="min-h-screen text-white tech-gradient-bg">
+      <div className="bg-overlay min-h-screen">
       <Navbar />
       <main className="pt-24 pb-16">
         <motion.section 
@@ -591,6 +592,7 @@ const CreditorRightRegistrationPage = () => {
         </section>
       </main>
       <Footer />
+      </div>
     </div>
   );
 };

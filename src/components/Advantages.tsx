@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 const Advantages = () => {
   
@@ -104,15 +104,9 @@ const Advantages = () => {
           <p className="text-xl mb-8 max-w-3xl mx-auto opacity-90 leading-relaxed">
              "可信达"平台不仅解决债务问题，更能盘活存量债权资产，改善市场信用环境，为经济运行提供低成本"润滑剂"。
             </p>
-          <Link to="/solutions-cases">
-            <motion.button 
-              className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-4 rounded-full text-lg font-medium transition-all focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              阅读更多
-            </motion.button>
-          </Link>
+           <button className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-4 rounded-full text-lg font-medium transition-all focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50">
+    阅读更多
+  </button>
         </motion.div>
       </div>
     </section>

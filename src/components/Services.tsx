@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 const Services = () => {
   
@@ -120,11 +120,9 @@ const Services = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-            <Link to="/solutions-cases">
-              <button className="btn-primary text-lg px-8 py-4">
-                阅读更多
-              </button>
-            </Link>
+             <button className="btn-primary text-lg px-8 py-4">
+               阅读更多
+             </button>
         </motion.div>
       </div>
     </section>

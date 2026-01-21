@@ -5,7 +5,8 @@ import Footer from "@/components/Footer";
 
 const MacauAdvantagesPage = () => {
     return (
-        <div className="min-h-screen bg-gray-900 text-white">
+             <div className="min-h-screen text-white tech-gradient-bg">
+      <div className="bg-overlay min-h-screen">
             <Navbar />
             <main className="pt-24 pb-16">
                 {}
@@ -473,8 +474,9 @@ const MacauAdvantagesPage = () => {
                 <></>
             </main>
             <Footer />
-        </div>
-    );
+      </div>
+             </div>
+  );
 };
 
 export default MacauAdvantagesPage;

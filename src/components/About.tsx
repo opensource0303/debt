@@ -69,10 +69,10 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-                       <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">产品概述</h3>
-                        <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-                          "可信达"平台利用权威区块链技术和隐私计算，专注于解决企业间及个人间的三角债、多角债问题，通过数字化、标准化和市场化手段，实现债务有效清偿和资产盘活。
-                        </p>
+                        <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">核心价值</h3>
+                         <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+                           "可信达"平台通过创新技术和商业模式，为解决三角债问题提供了全面、高效、安全的解决方案，实现债务有效清偿和资产盘活。
+                         </p>
                         
                         <div className="grid grid-cols-1 gap-5 mb-10">
                           <motion.div 

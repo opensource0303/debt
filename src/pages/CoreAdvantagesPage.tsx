@@ -2,13 +2,14 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { toast } from 'sonner';
+// import { toast } from 'sonner';
 
 const CoreAdvantagesPage = () => {
 
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
+    <div className="min-h-screen text-white tech-gradient-bg">
+      <div className="bg-overlay min-h-screen">
       <Navbar />
       <main className="pt-24 pb-16">
         {/* 页面标题 */}
@@ -428,6 +429,7 @@ const CoreAdvantagesPage = () => {
         </section>
       </main>
       <Footer />
+      </div>
     </div>
   );
 };

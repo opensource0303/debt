@@ -6,7 +6,8 @@ import { Link } from "react-router-dom";
 
 const SolutionCasesPage = () => {
     return (
-        <div className="min-h-screen bg-gray-900 text-white">
+         <div className="min-h-screen text-white tech-gradient-bg">
+      <div className="bg-overlay min-h-screen">
             <Navbar />
             <main className="pt-24 pb-16">
                 {}
@@ -585,8 +586,9 @@ const SolutionCasesPage = () => {
                 </section>
             </main>
             <Footer />
-        </div>
-    );
+      </div>
+         </div>
+  );
 };
 
 export default SolutionCasesPage;

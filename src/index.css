@@ -104,6 +104,20 @@ body {
   background-size: 24px 24px;
 }
 
+/* 新背景样式 - 匹配用户提供的科技感背景风格 */
+.tech-gradient-bg {
+  background-image: url('https://lf-code-agent.coze.cn/obj/x-ai-cn/346738007298/attachment/背景_20260121112024.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* 渐变叠加层，增强可读性 */
+.bg-overlay {
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.85) 100%);
+}
+
 /* 按钮悬停效果优化 */
 .btn-primary {
   @apply bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-all transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50;

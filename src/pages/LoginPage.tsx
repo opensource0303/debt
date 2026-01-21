@@ -36,7 +36,9 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 flex items-center justify-center py-12 px-4">
+     <div className="min-h-screen tech-gradient-bg flex items-center justify-center py-12 px-4">
+      <div className="bg-overlay min-h-screen absolute inset-0"></div>
+      <div className="relative z-10">
       <motion.div 
         className="w-full max-w-md bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden"
         initial={{ opacity: 0, y: 20 }}
@@ -137,7 +139,8 @@ const LoginPage = () => {
           </div>
         </div>
       </motion.div>
-    </div>
+       </div>
+     </div>
   );
 };
 
