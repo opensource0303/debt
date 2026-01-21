@@ -74,6 +74,7 @@ const News = () => {
                   src={item.image} 
                   alt={item.title}
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                  loading="lazy"
                   whileHover={{ scale: 1.05 }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent opacity-70"></div>

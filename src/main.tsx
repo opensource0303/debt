@@ -1,4 +1,4 @@
-import { StrictMode } from "react";
+import { StrictMode, startTransition } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import { Toaster } from 'sonner';
@@ -7,11 +7,14 @@ import "./index.css";
 
 document.documentElement.lang = 'zh';
 
-createRoot(document.getElementById("root")!).render(
-  <StrictMode>
-    <BrowserRouter>
-      <App />
-      <Toaster />
-    </BrowserRouter>
-  </StrictMode>
-);
+// 性能优化：使用 startTransition 包裹初始渲染
+startTransition(() => {
+  createRoot(document.getElementById("root")!).render(
+    <StrictMode>
+      <BrowserRouter>
+        <App />
+        <Toaster />
+      </BrowserRouter>
+    </StrictMode>
+  );
+});

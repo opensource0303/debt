@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 
+// 优化导航栏组件性能
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
@@ -17,12 +18,14 @@ const Navbar = () => {
             }
         };
 
-        window.addEventListener("scroll", handleScroll);
+        // 使用 passive 选项提高滚动性能
+        window.addEventListener("scroll", handleScroll, { passive: true });
         return () => {
             window.removeEventListener("scroll", handleScroll);
         };
     }, []);
 
+    // 导航项目数据 - 移出组件渲染函数，避免不必要的重新创建
     const navItems = [{
         name: "首页",
         href: "/"
@@ -46,7 +49,8 @@ const Navbar = () => {
                 scrolled 
                     ? "bg-gray-900/95 backdrop-blur-md shadow-md border-b border-gray-800 py-2" 
                     : "bg-transparent backdrop-blur-sm py-4"
-            }`}>
+            }`}
+            style={{ willChange: 'background-color, box-shadow' }}>
             <div className="container mx-auto px-4">
                 <div className="flex items-center justify-between">
                     {/* 品牌标识 */}

@@ -26,6 +26,7 @@ export default function App() {
     <>
       <ScrollToTop />
       <Routes>
+        {/* 使用 React.lazy 进行组件懒加载 */}
         <Route path="/" element={<Home />} />
         <Route path="/solutions-cases" element={<SolutionCasesPage />} />
         <Route path="/macau-advantages" element={<MacauAdvantagesPage />} />

@@ -121,10 +121,12 @@ const Hero = () => {
                         <div className="relative">
                             <div
                                 className="absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl blur-lg opacity-75 animate-pulse"></div>
+          {/* 添加图片加载优化 */}
           <motion.img
             src="https://lf-code-agent.coze.cn/obj/x-ai-cn/346738007298/attachment/无汉字_20260121134928.png"
             alt="Cred Platform"
             className="relative z-10 rounded-2xl shadow-xl w-full h-auto"
+            loading="lazy"
             whileHover={{
               scale: 1.02
             }}

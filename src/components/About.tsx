@@ -57,6 +57,7 @@ const About = () => {
                 src="https://space.coze.cn/api/coze_space/gen_image?image_size=landscape_4_3&prompt=debt%20network%20visualization%20with%20privacy%20computing%20concept&sign=cb9c5db5985584e606d3986ef2835e32"
                 alt="Cred Platform Concept"
                 className="relative z-10 rounded-2xl shadow-xl w-full h-auto"
+                loading="lazy"
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
               />

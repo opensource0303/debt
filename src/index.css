@@ -43,6 +43,7 @@ body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
   min-height: 100vh;
+  overflow-x: hidden; /* 防止水平滚动条 */
 }
 
 /* 全局滚动条样式 */
@@ -66,7 +67,8 @@ body {
 }
 
 /* 全局过渡效果 - 更平滑的动画 */
-* {
+/* 优化：避免为所有元素添加过渡效果，只针对需要动画的元素 */
+a, button, input, select, textarea, .transition-all {
   transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 200ms;
@@ -106,11 +108,14 @@ body {
 
 /* 新背景样式 - 匹配用户提供的科技感背景风格 */
 .tech-gradient-bg {
-  background-image: url('https://lf-code-agent.coze.cn/obj/x-ai-cn/346738007298/attachment/无汉字_20260121133845.png');
+  background-image: url('https://lf-code-agent.coze.cn/obj/x-ai-cn/346738007298/attachment/无汉字_20260121140125.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  /* 添加硬件加速 */
+  transform: translateZ(0);
+  will-change: background-position;
 }
 
 /* 渐变叠加层，增强可读性 */
