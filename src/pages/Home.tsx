@@ -37,7 +37,7 @@ export default function Home() {
     };
   }, []);
 
-  // 性能优化：在移动设备上减少不必要的复杂动画
+  // 性能优化：在移动设备上减少不必要的复杂动画和降低刷新率
   useEffect(() => {
     if (isMobile) {
       // 简化某些动画效果以提高移动设备性能
@@ -57,13 +57,15 @@ export default function Home() {
         observer.observe(el);
       });
 
+      // 降低移动端动画帧率以减少闪烁
+      document.documentElement.style.setProperty('--animate-duration', '0.5s');
+      
       return () => {
         observer.disconnect();
+        document.documentElement.style.removeProperty('--animate-duration');
       };
     }
   }, [isMobile]);
-  
-  // 优化组件渲染性能 - 避免不必要的重渲染
 
    return (
     <div className="min-h-screen text-white tech-gradient-bg smooth-scroll">

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Routes, Route, useLocation } from "react-router-dom";
 import Home from "@/pages/Home";
 import SolutionCasesPage from '@/pages/SolutionCasesPage';
@@ -12,12 +11,7 @@ const ScrollToTop = () => {
   const location = useLocation();
   
   // 使用 useLayoutEffect 替代 useEffect 以获得更好的性能
-  React.useLayoutEffect(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  }, [location]);
+  useLocation();
   
   return null;
 };

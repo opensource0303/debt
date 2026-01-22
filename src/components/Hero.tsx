@@ -22,36 +22,30 @@ const Hero = () => {
         };
     }, []);
 
-    const slides = [{
-        id: 1,
-        title: "可信达 (Cred)",
-        subtitle: "供应链金融区块链解决方案平台",
-        description: "利用权威区块链技术和隐私计算，专注于解决企业间及个人间的三角债、多角债问题，通过数字化、标准化和市场化手段，实现债务有效清偿和资产盘活。",
-        image: "https://lf-code-agent.coze.cn/obj/x-ai-cn/346738007298/attachment/无logo_20260121201828.png",
-        ctaText: "了解解决方案"
-    }, {
-        id: 2,
-        title: "创新金融科技",
-        subtitle: "赋能实体经济",
-        description: "基于澳门独特的制度、资金和数据优势，打造领先的供应链金融创新平台，为企业提供全方位的金融解决方案。",
-        image: "https://space.coze.cn/api/coze_space/gen_image?image_size=landscape_4_3&prompt=blockchain%20supply%20chain%20finance%20technology%20platform&sign=88a83847ad1c6668d4bd2220280cb4db",
-        ctaText: "探索澳门优势"
-    }, {
-        id: 3,
-        title: "双轨制引擎",
-        subtitle: "全方位解决债务问题",
-        description: "采用'双引擎'策略：多边净额清算引擎解决存量三角债，供应链金融交易引擎解决增量融资需求，双轨制设计全方位解决不同类型的债务问题。",
-        image: "https://space.coze.cn/api/coze_space/gen_image?image_size=landscape_4_3&prompt=debt%20settlement%20platform%20with%20financial%20technology&sign=d5df69250af23356254e5f59bd876ed9",
-        ctaText: "查看成功案例"
-    }];
+  const slides = [{
+    id: 1,
+    title: "可信达 (Cred)",
+    subtitle: "供应链金融区块链解决方案平台",
+    description: "利用权威区块链技术和隐私计算，专注于解决企业间及个人间的三角债、多角债问题，通过数字化、标准化和市场化手段，实现债务有效清偿和资产盘活。",
+    image: "https://lf-code-agent.coze.cn/obj/x-ai-cn/346738007298/attachment/无logo_20260121201828.png",
+    ctaText: "了解解决方案"
+  }, {
+    id: 2,
+    title: "创新金融科技",
+    subtitle: "赋能实体经济",
+    description: "基于澳门独特的制度、资金和数据优势，打造领先的供应链金融创新平台，为企业提供全方位的金融解决方案。",
+    image: "https://lf-code-agent.coze.cn/obj/x-ai-cn/346738007298/attachment/轮播1_20260123002832.png",
+    ctaText: "探索澳门优势"
+  }, {
+    id: 3,
+    title: "双轨制引擎",
+    subtitle: "全方位解决债务问题",
+    description: "采用'双引擎'策略：多边净额清算引擎解决存量三角债，供应链金融交易引擎解决增量融资需求，双轨制设计全方位解决不同类型的债务问题。",
+    image: "https://lf-code-agent.coze.cn/obj/x-ai-cn/346738007298/attachment/轮播2_20260123002838.png",
+    ctaText: "查看成功案例"
+  }];
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setCurrentSlide(prev => (prev + 1) % slides.length);
-        }, 3000);
-
-        return () => clearInterval(interval);
-    }, [slides.length]);
+// 移除自动轮播的定时器，保留手动控制功能
 
     const goToSlide = (index: number) => {
         setCurrentSlide(index);

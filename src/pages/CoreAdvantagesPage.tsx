@@ -2,7 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-// import { toast } from 'sonner';
 
 const CoreAdvantagesPage = () => {
 

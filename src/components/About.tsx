@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-// 使用 React.memo 优化组件性能
 
 const About = () => {
   const [isMobile, setIsMobile] = useState(false);
