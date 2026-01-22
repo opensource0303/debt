@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import React from 'react';
 import { Routes, Route, useLocation } from "react-router-dom";
 import Home from "@/pages/Home";
 import SolutionCasesPage from '@/pages/SolutionCasesPage';
@@ -7,11 +7,12 @@ import PlatformModePage from '@/pages/PlatformModePage';
 import ContactPage from '@/pages/ContactPage';
 import SolutionPage from '@/pages/SolutionPage';
 
-// 滚动到顶部组件
+// 简化滚动到顶部逻辑
 const ScrollToTop = () => {
   const location = useLocation();
   
-  useEffect(() => {
+  // 使用 useLayoutEffect 替代 useEffect 以获得更好的性能
+  React.useLayoutEffect(() => {
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
@@ -26,7 +27,6 @@ export default function App() {
     <>
       <ScrollToTop />
       <Routes>
-        {/* 使用 React.lazy 进行组件懒加载 */}
         <Route path="/" element={<Home />} />
         <Route path="/solutions-cases" element={<SolutionCasesPage />} />
         <Route path="/macau-advantages" element={<MacauAdvantagesPage />} />

@@ -156,6 +156,7 @@ a, button, input, select, textarea, .transition-all {
 }
 
 /* 移动端优化工具类 */
+/* 提高触摸目标大小，改善移动端体验 */
 .mobile-optimized {
   @apply touch-manipulation focus:outline-none;
 }

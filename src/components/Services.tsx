@@ -1,45 +1,34 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+// 添加 React.memo 以优化性能
 
 const Services = () => {
   
-  // 核心功能数据
+  // 核心业务数据
   const services = [
     {
-      title: "三角债、多角债清算",
-      description: "利用权威区块链技术和隐私计算，为省/市、园区/行业/核心企业提供专项化债清算服务，实现债务高效冲抵。",
+      title: "智能化债",
+      description: "电子确权+智能轧差，把乱账变清账，化解三角债、多角债。通过先进的区块链技术和智能算法，实现债权债务的快速匹配和高效冲抵，为企业和政府解决债务难题。",
       icon: "fa-balance-scale",
       color: "bg-blue-600"
     },
     {
-      title: "澳门交易所(MOX)合作发债",
-      description: "与澳门交易所深度合作，增强融资能力，为企业提供多元化融资渠道，降低融资成本。",
+      title: "国际发债",
+      description: "专注离岸人民币债券发行，助力全球化融资，拓展国际市场资本。利用澳门独特的金融优势和国际化平台，为企业提供便捷高效的跨境融资渠道，降低融资成本，提升国际影响力。",
       icon: "fa-exchange-alt",
       color: "bg-green-600"
     },
     {
-      title: "数字化电子债权凭证多级流转 ABS",
-      description: "利用丰富的跨境金融供应链，提供资产证券化服务，实现债权凭证的高效流转和价值提升。",
-      icon: "fa-chart-line",
-      color: "bg-indigo-600"
-    },
-    {
-      title: "债权\"清洁化与标准化\"工厂",
-      description: "引入境内外资金消化债权产品，提升资产流动性，实现不良资产的价值重估和有效利用。",
+      title: "债权资产工厂",
+      description: "打造AAA级高可信资产供给端，运用AI、区块链、大数据等技术，筛选并盘活应收账款、债权和困境资产，构建标准化、清洁、可审计、可披露、可定价、可转让的资产包/产品。",
       icon: "fa-industry",
       color: "bg-purple-600"
     },
     {
-      title: "隐私计算与安全",
-      description: "采用零知识证明和多方安全计算技术，在加密域内完成债务匹配，保护企业商业秘密和个人隐私。",
-      icon: "fa-shield-alt",
-      color: "bg-amber-600"
-    },
-    {
-      title: "法律认可的证据链",
-      description: "将债务登记信息、双向确权记录等关键节点数据实时上链，提供标准化冲抵协议和电子签章服务。",
-      icon: "fa-gavel",
-      color: "bg-red-600"
+      title: "资产持续管理",
+      description: "为投资者提供全面的尽职调查、法律结构设计、资产接管、重组谈判与管理、风险分层、持续回款报告及资产处置建议，确保投资增值，并定期提供执行与处置报告。",
+      icon: "fa-chart-line",
+      color: "bg-indigo-600"
     }
   ];
 
@@ -69,23 +58,23 @@ const Services = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="section-title">产品与服务</h2>
+          <h2 className="section-title">核心业务</h2>
           <p className="section-description">
-            "可信达"平台专注于解决三角债、多角债问题，通过区块链技术和创新商业模式，提供全方位的债务清偿和资产盘活服务
+            Cred可信达，信任驱动，智能引领。致力于解决中国企业与政府的债务问题，激活资产潜力，连接全球资金，推动经济高效、可持续发展。
           </p>
         </motion.div>
         
-                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {services.map((service, index) => (
-                    <motion.div
-                      key={index}
-                      className="flex flex-col bg-gray-900/70 backdrop-blur-md rounded-2xl border border-gray-700 overflow-hidden group hover:shadow-xl hover:border-blue-500/30 transition-all duration-300"
-                      initial={{ opacity: 0, y: 30 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.6, delay: index * 0.1 }}
-                      whileHover={{ y: -8 }}
-                    >
+        <div className="grid md:grid-cols-2 gap-8">
+          {services.map((service, index) => (
+            <motion.div
+              key={index}
+              className="flex flex-col bg-gray-900/70 backdrop-blur-md rounded-2xl border border-gray-700 overflow-hidden group hover:shadow-xl hover:border-blue-500/30 transition-all duration-300"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              whileHover={{ y: -8 }}
+            >
               <div className="w-full p-6 flex items-start space-x-5">
                 <motion.div 
                   className={`w-14 h-14 rounded-full ${service.color} flex items-center justify-center text-white`}
@@ -113,19 +102,25 @@ const Services = () => {
         </div>
 
         <motion.div 
-          className="text-center mt-16"
-          initial={{ opacity: 0, y: 20 }}
+          className="mt-20 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-3xl p-10 text-center text-white"
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
+          whileHover={{ scale: 1.02 }}
         >
-          <button className="btn-primary text-lg px-8 py-4">
-            阅读更多
+          <h3 className="text-2xl md:text-3xl font-bold mb-6">安全、智能、可靠的国际化资产交易与管理平台</h3>
+          <p className="text-xl mb-8 max-w-3xl mx-auto opacity-90 leading-relaxed">
+            凭借AAA级信用保障，我们打造一个安全、智能、可靠的国际化资产交易与管理平台，助力全球投资者实现资产增值。
+          </p>
+          <button className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-4 rounded-full text-lg font-medium transition-all focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50">
+            了解更多
           </button>
         </motion.div>
       </div>
     </section>
   );
-};
+}
 
-export default Services;
+// 使用 React.memo 优化组件渲染性能
+export default React.memo(Services);

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+// 使用 React.memo 优化组件性能
 
 const About = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -44,9 +45,9 @@ const About = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="section-title">产品概述</h2>
+          <h2 className="section-title">关于我们</h2>
           <p className="section-description">
-            "可信达"平台利用权威区块链技术和隐私计算，专注于解决企业间及个人间的三角债、多角债问题，通过数字化、标准化和市场化手段，实现债务有效清偿和资产盘活。
+            Cred可信达，信任驱动，智能引领。致力于解决中国企业与政府的债务问题，激活资产潜力，连接全球资金，推动经济高效、可持续发展。凭借AAA级信用保障，我们打造一个安全、智能、可靠的国际化资产交易与管理平台。
           </p>
         </motion.div>
         
@@ -131,4 +132,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default React.memo(About);

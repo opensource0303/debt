@@ -28,7 +28,8 @@ const MacauAdvantagesPage = () => {
                                                           </p>
                 </motion.section>
                 {}
-                <section className="py-16 bg-gray-900 bg-grid relative">
+                <section className="py-16 bg-gray-900 relative">
+                    {/* 移除未使用的背景网格类 */}
                     <div className="absolute inset-0 overflow-hidden">
                         <div
                             className="absolute right-0 top-1/2 w-80 h-80 bg-blue-600/10 rounded-full filter blur-3xl transform -translate-y-1/2"></div>
@@ -245,7 +246,8 @@ const MacauAdvantagesPage = () => {
                     </div>
                 </section>
                 {}
-                <section className="py-16 bg-gray-900 bg-grid relative">
+                <section className="py-16 bg-gray-900 relative">
+                    {/* 移除未使用的背景网格类 */}
                     <div className="absolute inset-0 overflow-hidden">
                         <div
                             className="absolute -left-32 top-20 w-64 h-64 bg-purple-600/10 rounded-full filter blur-3xl"></div>
@@ -325,7 +327,8 @@ const MacauAdvantagesPage = () => {
                     </div>
                 </section>
                 {}
-                <section className="py-16 bg-gray-900 bg-grid relative">
+                <section className="py-16 bg-gray-900 relative">
+                    {/* 移除未使用的背景网格类 */}
                     <div className="absolute inset-0 overflow-hidden">
                         <div
                             className="absolute left-0 bottom-0 w-80 h-80 bg-blue-600/10 rounded-full filter blur-3xl"></div>

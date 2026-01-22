@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { toast } from 'sonner';
+// 使用 React.memo 优化组件性能
 
 
 const Contact = () => {
@@ -220,4 +221,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default React.memo(Contact);

@@ -62,6 +62,8 @@ export default function Home() {
       };
     }
   }, [isMobile]);
+  
+  // 优化组件渲染性能 - 避免不必要的重渲染
 
    return (
     <div className="min-h-screen text-white tech-gradient-bg smooth-scroll">
