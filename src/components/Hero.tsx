@@ -47,17 +47,18 @@ const Hero = () => {
 
 // 移除自动轮播的定时器，保留手动控制功能
 
-    const goToSlide = (index: number) => {
-        setCurrentSlide(index);
-    };
+  // 使用 React.useCallback 优化函数引用，避免不必要的重渲染
+  const goToSlide = React.useCallback((index: number) => {
+    setCurrentSlide(index);
+  }, []);
 
-    const nextSlide = () => {
-        setCurrentSlide(prev => (prev + 1) % slides.length);
-    };
+  const nextSlide = React.useCallback(() => {
+    setCurrentSlide(prev => (prev + 1) % slides.length);
+  }, [slides.length]);
 
-    const prevSlide = () => {
-        setCurrentSlide(prev => (prev - 1 + slides.length) % slides.length);
-    };
+  const prevSlide = React.useCallback(() => {
+    setCurrentSlide(prev => (prev - 1 + slides.length) % slides.length);
+  }, [slides.length]);
 
     const handleTouchStart = (e: React.TouchEvent) => {
         setStartX(e.touches[0].clientX);
@@ -157,7 +158,8 @@ const Hero = () => {
                         ref={sliderRef}
                         className="relative w-full overflow-hidden"
                         style={{
-                            height: isMobile ? "400px" : "550px"
+                            height: isMobile ? "400px" : "550px",
+                            willChange: 'transform'
                         }}
                         onTouchStart={handleTouchStart}
                         onTouchMove={handleTouchMove}
@@ -165,86 +167,87 @@ const Hero = () => {
                         onMouseDown={handleMouseDown}
                         onMouseMove={handleMouseMove}
                         onMouseUp={handleMouseUp}
-                        onMouseLeave={handleMouseLeave}>
-                        {slides.map((slide, index) => <motion.div
-                            key={slide.id}
-                            className={`absolute inset-0 flex flex-col md:flex-row items-center justify-center p-6 md:p-12 transition-opacity duration-500 ${index === currentSlide ? "opacity-100 z-20" : "opacity-0 z-10"}`}
-                            initial={{
-                                opacity: 0
-                            }}
-                            animate={{
-                                opacity: index === currentSlide ? 1 : 0
-                            }}
-                            transition={{
-                                duration: 0.8
-                            }}>
-                            <div className="absolute inset-0 z-0">
-                                <motion.img
-                                    src={slide.image}
-                                    alt={slide.title}
-                                    className="w-full h-full object-cover object-center"
-                                    initial={{
-                                        scale: 1.05
-                                    }}
-                                    animate={{
-                                        scale: 1
-                                    }}
-                                    transition={{
-                                        duration: 1.5
-                                    }}
-                                    loading="lazy" />
-                                <div className="absolute inset-0 bg-black/30 z-10"></div>
-                            </div>
-                            <div className="relative z-20 w-full md:w-1/2 text-center md:text-left">
-                                <motion.div
-                                    initial={{
-                                        y: 30,
-                                        opacity: 0
-                                    }}
-                                    animate={{
-                                        y: 0,
-                                        opacity: 1
-                                    }}
-                                    transition={{
-                                        delay: 0.2,
-                                        duration: 0.8
-                                    }}>
-                                    <h1
-                                        className={`font-bold text-white mb-3 leading-tight ${isMobile ? "text-2xl" : "text-3xl md:text-4xl lg:text-5xl"}`}>
-                                        {slide.title}
-                                    </h1>
-                                    <h2
-                                        className={`text-blue-300 mb-4 ${isMobile ? "text-lg" : "text-xl md:text-2xl"}`}>
-                                        {slide.subtitle}
-                                    </h2>
-                                    <p
-                                        className={`text-gray-200 mb-6 max-w-md md:max-w-lg mx-auto md:mx-0 leading-relaxed ${isMobile ? "text-sm" : "text-base md:text-lg"}`}>
-                                        {slide.description}
-                                    </p>
-                                    {}
-                                    <div
-                                        className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center md:justify-start">
-                                        <></>
-                                        <></>
-                                    </div>
-                                </motion.div>
-                            </div>
-                            <div className="hidden lg:block w-1/2 relative z-20"></div>
-                        </motion.div>)}
+                        onMouseLeave={handleMouseLeave}
+                    >
+                        {slides.map((slide, index) => (
+                            <motion.div
+                                key={slide.id}
+                                className={`absolute inset-0 flex flex-col md:flex-row items-center justify-center p-6 md:p-12 ${index === currentSlide ? "z-20" : "z-10"}`}
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ 
+                                    opacity: index === currentSlide ? 1 : 0,
+                                    y: index === currentSlide ? 0 : 20
+                                }}
+                                transition={{ 
+                                    duration: 0.5,
+                                    ease: "easeInOut"
+                                }}
+                            >
+                                <div className="absolute inset-0 z-0">
+                                    <motion.img
+                                        src={slide.image}
+                                        alt={slide.title}
+                                        className="w-full h-full object-cover object-center"
+                                        initial={{ scale: 1.05 }}
+                                        animate={{ scale: 1 }}
+                                        transition={{ duration: 1.5 }}
+                                        loading="lazy"
+                                        style={{ willChange: 'transform' }} // 添加硬件加速
+                                    />
+                                    <div className="absolute inset-0 bg-black/30 z-10"></div>
+                                </div>
+                                <div className="relative z-20 w-full md:w-1/2 text-center md:text-left">
+                                    <motion.div
+                                        initial={{
+                                            y: 30,
+                                            opacity: 0
+                                        }}
+                                        animate={{
+                                            y: 0,
+                                            opacity: 1
+                                        }}
+                                        transition={{
+                                            delay: 0.2,
+                                            duration: 0.8
+                                        }}>
+                                        <h1
+                                            className={`font-bold text-white mb-3 leading-tight ${isMobile ? "text-2xl" : "text-3xl md:text-4xl lg:text-5xl"}`}>
+                                            {slide.title}
+                                        </h1>
+                                        <h2
+                                            className={`text-blue-300 mb-4 ${isMobile ? "text-lg" : "text-xl md:text-2xl"}`}>
+                                            {slide.subtitle}
+                                        </h2>
+                                        <p
+                                            className={`text-gray-200 mb-6 max-w-md md:max-w-lg mx-auto md:mx-0 leading-relaxed ${isMobile ? "text-sm" : "text-base md:text-lg"}`}>
+                                            {slide.description}
+                                        </p>
+                                        <div
+                                            className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center md:justify-start">
+                                            <></>
+                                            <></>
+                                        </div>
+                                    </motion.div>
+                                </div>
+                                <div className="hidden lg:block w-1/2 relative z-20"></div>
+                            </motion.div>
+                        ))}
                     </div>
-                     <div
-                         className={`absolute bottom-6 left-1/2 transform -translate-x-1/2 z-30 flex space-x-2 md:space-x-3 ${isMobile ? "space-x-3" : ""}`}>
-                        {slides.map((_, index) => <button
-                            key={index}
-                            className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-all duration-300 ${index === currentSlide ? "bg-blue-500 w-8 md:w-12" : "bg-white/50"} ${isMobile ? "h-2" : ""}`}
-                            onClick={() => goToSlide(index)}
-                            aria-label={`Go to slide ${index + 1}`}
-                            style={{
-                                minWidth: isMobile ? "10px" : "8px",
-                                minHeight: isMobile ? "10px" : "8px"
-                            }} />)}
+                    <div
+                        className={`absolute bottom-6 left-1/2 transform -translate-x-1/2 z-30 flex space-x-2 md:space-x-3 ${isMobile ? "space-x-3" : ""}`}>
+                        {slides.map((_, index) => (
+                            <button
+                                key={index}
+                                className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-all duration-300 ${index === currentSlide ? "bg-blue-500 w-8 md:w-12" : "bg-white/50"} ${isMobile ? "h-2" : ""}`}
+                                onClick={() => goToSlide(index)}
+                                aria-label={`Go to slide ${index + 1}`}
+                                style={{
+                                    minWidth: isMobile ? "10px" : "8px",
+                                    minHeight: isMobile ? "10px" : "8px"
+                                }}
+                            />
+                        ))}
                     </div>
-                    {}
                     <button
                         className={`absolute left-3 top-1/2 transform -translate-y-1/2 z-30 w-10 h-10 md:w-12 md:h-12 bg-black/50 backdrop-blur-md hover:bg-black/70 rounded-full flex items-center justify-center text-white transition-all shadow-lg ${isMobile ? "w-12 h-12" : ""}`}
                         onClick={prevSlide}
@@ -268,7 +271,7 @@ const Hero = () => {
                             className={`fas fa-chevron-right ${isMobile ? "text-xl" : "text-lg md:text-xl"}`}></i>
                     </button>
                 </div>
-                     <motion.div
+                <motion.div
                     className="mt-32"
                     initial={{
                         opacity: 0,
