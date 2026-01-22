@@ -68,8 +68,8 @@ const ContactPage = () => {
                         <div
                             className="absolute right-0 bottom-0 w-80 h-80 bg-blue-600/20 rounded-full filter blur-3xl"></div>
                     </div>
-                    <div className="container mx-auto px-4 relative z-10">
-                        <div className="grid md:grid-cols-2 gap-12">
+                     <div className="container mx-auto px-4 relative z-10">
+                         <div className="grid md:grid-cols-2 gap-8">
                             <motion.div
                                 initial={{
                                     opacity: 0,
@@ -169,15 +169,15 @@ const ContactPage = () => {
                                         <label
                                             htmlFor="name"
                                             className="block text-gray-300 mb-2 font-medium">姓名</label>
-                                        <input
-                                            type="text"
-                                            id="name"
-                                            name="name"
-                                            value={formData.name}
-                                            onChange={handleChange}
-                                            required
-                                            className="w-full px-4 py-3 rounded-lg border border-gray-700 bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors"
-                                            placeholder="请输入您的姓名" />
+                     <input
+                       type="text"
+                       id="name"
+                       name="name"
+                       value={formData.name}
+                       onChange={handleChange}
+                       required
+                       className="w-full px-4 py-3 rounded-lg border border-gray-700 bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors mobile-optimized"
+                       placeholder="请输入您的姓名" />
                                     </div>
                                     <div className="mb-6">
                                         <label

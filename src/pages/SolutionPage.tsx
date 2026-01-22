@@ -319,44 +319,44 @@ const SolutionPage = () => {
               </motion.div>
               
               {/* 银行层 */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden"
-              >
-                <div className="h-2 bg-green-600"></div>
-                <div className="p-8">
-                  <div className="text-green-600 dark:text-green-400 text-3xl mb-6">
-                    <i className="fas fa-university"></i>
-                  </div>
-                  <h3 className="text-xl font-bold mb-4">银行层：资金结算与支付执行</h3>
-                  <div className="mb-6">
-                    <h4 className="font-semibold text-green-600 dark:text-green-400">核心流程</h4>
-                    <ul className="text-gray-600 dark:text-gray-300 space-y-2">
-                      <li className="flex items-start">
-                        <i className="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
-                        <span>澳门清算中心不设立资金池，不触碰资金流</span>
-                      </li>
-                      <li className="flex items-start">
-                        <i className="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
-                        <span>各参与企业在其开户银行，依据《净额结算指令》完成资金划转</span>
-                      </li>
-                      <li className="flex items-start">
-                        <i className="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
-                        <span>严格按照事先签订的多方协议执行</span>
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="bg-green-50 dark:bg-gray-700 p-4 rounded-lg">
-                    <h4 className="font-semibold mb-2 text-green-600 dark:text-green-400">融资功能补充</h4>
-                    <p className="text-gray-600 dark:text-gray-300 text-sm">
-                      如需要融资功能，已设立CRED澳门数字债权交易所，一家注册于开曼的"区块链债券交易所"，可把确权后的债权/净额后余额标准化为债券型数字凭证，在该交易所发行、流通。
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
+               <motion.div
+                 initial={{ opacity: 0, y: 20 }}
+                 whileInView={{ opacity: 1, y: 0 }}
+                 viewport={{ once: true }}
+                 transition={{ duration: 0.5, delay: 0.2 }}
+                 className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden"
+               >
+                 <div className="h-2 bg-green-600"></div>
+                 <div className="p-6 md:p-8">
+                   <div className="text-green-600 dark:text-green-400 text-3xl mb-6">
+                     <i className="fas fa-university"></i>
+                   </div>
+                   <h3 className="text-xl font-bold mb-4">银行层：资金结算与支付执行</h3>
+                   <div className="mb-6">
+                     <h4 className="font-semibold text-green-600 dark:text-green-400">核心流程</h4>
+                     <ul className="text-gray-600 dark:text-gray-300 space-y-2">
+                       <li className="flex items-start">
+                         <i className="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                         <span>澳门清算中心不设立资金池，不触碰资金流</span>
+                       </li>
+                       <li className="flex items-start">
+                         <i className="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                         <span>各参与企业在其开户银行，依据《净额结算指令》完成资金划转</span>
+                       </li>
+                       <li className="flex items-start">
+                         <i className="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                         <span>严格按照事先签订的多方协议执行</span>
+                       </li>
+                     </ul>
+                   </div>
+                   <div className="bg-green-50 dark:bg-gray-700 p-4 rounded-lg">
+                     <h4 className="font-semibold mb-2 text-green-600 dark:text-green-400">融资功能补充</h4>
+                     <p className="text-gray-600 dark:text-gray-300 text-sm">
+                       如需要融资功能，已设立CRED澳门数字债权交易所，一家注册于开曼的"区块链债券交易所"，可把确权后的债权/净额后余额标准化为债券型数字凭证，在该交易所发行、流通。
+                     </p>
+                   </div>
+                 </div>
+               </motion.div>
             </div>
           </div>
         </section>

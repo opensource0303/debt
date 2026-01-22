@@ -69,17 +69,17 @@ const Advantages = () => {
           </p>
         </motion.div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {advantages.map((advantage, index) => (
-            <motion.div
-              key={index}
-              className="flex items-start p-6 bg-gray-900/70 backdrop-blur-md rounded-2xl border border-gray-700 hover:shadow-xl hover:border-blue-500/30 transition-all duration-300"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              whileHover={{ y: -5 }}
-            >
+                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {advantages.map((advantage, index) => (
+                    <motion.div
+                      key={index}
+                      className="flex items-start p-6 bg-gray-900/70 backdrop-blur-md rounded-2xl border border-gray-700 hover:shadow-xl hover:border-blue-500/30 transition-all duration-300"
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.6, delay: index * 0.1 }}
+                      whileHover={{ y: -5 }}
+                    >
               <div className="text-blue-400 text-2xl mr-4 mt-1">
                 <i className={`fas ${advantage.icon}`}></i>
               </div>

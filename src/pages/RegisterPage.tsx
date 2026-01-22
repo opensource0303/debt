@@ -66,16 +66,16 @@ const RegisterPage = () => {
           <form onSubmit={handleSubmit}>
             <div className="mb-6">
               <label htmlFor="username" className="block text-gray-700 dark:text-gray-300 mb-2 font-medium">用户名</label>
-              <input
-                type="text"
-                id="username"
-                name="username"
-                value={formData.username}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-purple-500 transition-colors"
-                placeholder="请输入您的用户名"
-              />
+               <input
+                 type="text"
+                 id="username"
+                 name="username"
+                 value={formData.username}
+                 onChange={handleChange}
+                 required
+                 className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-purple-500 transition-colors mobile-optimized"
+                 placeholder="请输入您的用户名"
+               />
             </div>
             
             <div className="mb-6">

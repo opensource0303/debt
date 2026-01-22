@@ -75,17 +75,17 @@ const Services = () => {
           </p>
         </motion.div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <motion.div
-              key={index}
-              className="flex flex-col bg-gray-900/70 backdrop-blur-md rounded-2xl border border-gray-700 overflow-hidden group hover:shadow-xl hover:border-blue-500/30 transition-all duration-300"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              whileHover={{ y: -8 }}
-            >
+                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {services.map((service, index) => (
+                    <motion.div
+                      key={index}
+                      className="flex flex-col bg-gray-900/70 backdrop-blur-md rounded-2xl border border-gray-700 overflow-hidden group hover:shadow-xl hover:border-blue-500/30 transition-all duration-300"
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.6, delay: index * 0.1 }}
+                      whileHover={{ y: -8 }}
+                    >
               <div className="w-full p-6 flex items-start space-x-5">
                 <motion.div 
                   className={`w-14 h-14 rounded-full ${service.color} flex items-center justify-center text-white`}
