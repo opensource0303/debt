@@ -39,9 +39,9 @@ const PlatformModePage = () => {
             <div className="bg-overlay min-h-screen">
                 <Navbar />
                 <main className="pt-24 pb-16">
-                    {}
+                    {/* 页面标题部分 */}
                     <motion.section
-                        className="container mx-auto px-4 mb-20"
+                        className="container mx-auto px-4 mb-24 section-spacing"
                         initial={{
                             opacity: 0,
                             y: 20
@@ -57,8 +57,9 @@ const PlatformModePage = () => {
                         <p className="text-xl text-gray-300 max-w-3xl mx-auto text-center">Cred可信达凭借四大核心能力，为解决债务问题提供全方位解决方案
                                                     </p>
                     </motion.section>
-                    {}
-                    <section className="py-16 relative">
+                    
+                    {/* 核心优势板块 */}
+                    <section className="py-16 relative mb-20 section-spacing">
                         <div className="absolute inset-0 overflow-hidden">
                             <motion.div
                                 className="absolute right-0 top-1/2 w-80 h-80 bg-blue-600/10 rounded-full filter blur-3xl transform -translate-y-1/2"
@@ -73,10 +74,10 @@ const PlatformModePage = () => {
                                 }}></motion.div>
                         </div>
                         <div className="container mx-auto px-4 relative z-10">
-                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 card-gap">
                                 {advantages.map((advantage, index) => <motion.div
                                     key={index}
-                                    className="bg-gray-800/90 backdrop-blur-md rounded-2xl shadow-xl overflow-hidden border border-gray-700"
+                                    className="bg-gray-800/90 backdrop-blur-md rounded-2xl shadow-xl overflow-hidden border border-gray-700 card-hover"
                                     initial={{
                                         opacity: 0,
                                         y: 30
@@ -131,8 +132,9 @@ const PlatformModePage = () => {
                             </div>
                         </div>
                     </section>
-                    {}
-                    <section className="py-16 bg-gray-900/70 relative">
+                    
+                    {/* 技术与创新板块 */}
+                    <section className="py-16 bg-gray-900/70 relative mb-20 section-spacing">
                         <div className="absolute inset-0 overflow-hidden">
                             <motion.div
                                 className="absolute -left-32 bottom-0 w-96 h-96 bg-purple-600/10 rounded-full filter blur-3xl"
@@ -165,9 +167,9 @@ const PlatformModePage = () => {
                                 }}>
                                 <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">技术与创新</h2>
                                 <p className="text-xl text-gray-300 max-w-3xl mx-auto">我们融合先进技术与创新模式，打造高效、安全、可靠的资产交易与管理平台
-                                                                    </p>
+                                                                     </p>
                             </motion.div>
-                            <div className="grid md:grid-cols-3 gap-8">
+                            <div className="grid md:grid-cols-3 gap-8 card-gap">
                                 <motion.div
                                     initial={{
                                         opacity: 0,
@@ -183,13 +185,13 @@ const PlatformModePage = () => {
                                     transition={{
                                         duration: 0.5
                                     }}
-                                    className="bg-gray-800/90 backdrop-blur-md p-8 rounded-2xl border border-gray-700">
+                                    className="bg-gray-800/90 backdrop-blur-md p-8 rounded-2xl border border-gray-700 card-hover">
                                     <div className="text-blue-400 text-3xl mb-6">
                                         <i className="fas fa-shield-alt"></i>
                                     </div>
                                     <h3 className="text-xl font-bold mb-4">隐私计算技术</h3>
                                     <p className="text-gray-300">采用零知识证明和多方安全计算技术，在严格保护参与方商业秘密与隐私信息的前提下，精准挖掘债务闭环。
-                                                                            </p>
+                                                                             </p>
                                 </motion.div>
                                 <motion.div
                                     initial={{
@@ -207,13 +209,13 @@ const PlatformModePage = () => {
                                         duration: 0.5,
                                         delay: 0.1
                                     }}
-                                    className="bg-gray-800/90 backdrop-blur-md p-8 rounded-2xl border border-gray-700">
+                                    className="bg-gray-800/90 backdrop-blur-md p-8 rounded-2xl border border-gray-700 card-hover">
                                     <div className="text-green-400 text-3xl mb-6">
                                         <i className="fas fa-link"></i>
                                     </div>
                                     <h3 className="text-xl font-bold mb-4">权威区块链存证</h3>
                                     <p className="text-gray-300">区块链存证和电子签章技术确保债务清偿全流程具备法律效力，为后续司法衔接提供标准化证据。
-                                                                            </p>
+                                                                             </p>
                                 </motion.div>
                                 <motion.div
                                     initial={{
@@ -231,20 +233,21 @@ const PlatformModePage = () => {
                                         duration: 0.5,
                                         delay: 0.2
                                     }}
-                                    className="bg-gray-800/90 backdrop-blur-md p-8 rounded-2xl border border-gray-700">
+                                    className="bg-gray-800/90 backdrop-blur-md p-8 rounded-2xl border border-gray-700 card-hover">
                                     <div className="text-purple-400 text-3xl mb-6">
                                         <i className="fas fa-brain"></i>
                                     </div>
                                     <h3 className="text-xl font-bold mb-4">AI与大数据分析</h3>
                                     <p className="text-gray-300">运用人工智能和大数据技术，构建智能风控模型，提升风险管理能力和决策效率，实现资产精准定价。
-                                                                            </p>
+                                                                             </p>
                                 </motion.div>
                             </div>
                         </div>
                     </section>
-                    {}
+                    
+                    {/* 结语板块 */}
                     <motion.section
-                        className="py-20 text-center relative"
+                        className="py-20 text-center relative section-spacing"
                         initial={{
                             opacity: 0
                         }}
@@ -274,7 +277,7 @@ const PlatformModePage = () => {
                                         duration: 0.6,
                                         delay: 0.2
                                     }}>Cred可信达，连接资产，连接信任
-                                                                    </motion.h2>
+                                                                     </motion.h2>
                                 <motion.p
                                     className="text-xl text-gray-300"
                                     initial={{
@@ -290,7 +293,7 @@ const PlatformModePage = () => {
                                         duration: 0.6,
                                         delay: 0.4
                                     }}>我们致力于通过创新技术和专业服务，构建安全、智能、可靠的国际化资产交易与管理平台
-                                                                    </motion.p>
+                                                                     </motion.p>
                             </div>
                         </div>
                     </motion.section>

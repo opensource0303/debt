@@ -4,9 +4,8 @@ import { Link } from "react-router-dom";
 
 const Hero = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
-    const [startX, setStartX] = useState(0);
-    const [isDragging, setIsDragging] = useState(false);
-    const sliderRef = useRef<HTMLDivElement>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const sliderRef = useRef<HTMLDivElement>(null);
     const [isMobile, setIsMobile] = useState(false);
     const [isLowPerformance, setIsLowPerformance] = useState(false);
 
@@ -85,64 +84,37 @@ const Hero = () => {
         setCurrentSlide(prev => (prev - 1 + slides.length) % slides.length);
     }, [slides.length]);
 
-    // 触摸和鼠标事件处理
-    const handleTouchStart = useCallback((e: React.TouchEvent) => {
-        setStartX(e.touches[0].clientX);
-        setIsDragging(true);
-    }, []);
+  // 触摸和鼠标事件处理
+  const handleTouchStart = useCallback((e: React.TouchEvent) => {
+    setIsDragging(true);
+  }, []);
 
-    const handleTouchMove = useCallback((e: React.TouchEvent) => {
-        if (!isDragging) return;
-        e.preventDefault();
-    }, [isDragging]);
+  const handleTouchMove = useCallback((e: React.TouchEvent) => {
+    if (!isDragging) return;
+    e.preventDefault();
+  }, [isDragging]);
 
-    const handleTouchEnd = useCallback((e: React.TouchEvent) => {
-        if (!isDragging) return;
+  const handleTouchEnd = useCallback((e: React.TouchEvent) => {
+    if (!isDragging) return;
+    setIsDragging(false);
+  }, [isDragging]);
 
-        const endX = e.changedTouches[0].clientX;
-        const diff = startX - endX;
-        const threshold = isMobile ? 20 : 30;
+  // 鼠标事件只在非移动设备上处理
+  const handleMouseDown = useCallback((e: React.MouseEvent) => {
+    if (!isMobile) {
+      setIsDragging(true);
+    }
+  }, [isMobile]);
 
-        if (Math.abs(diff) > threshold) {
-            if (diff > 0) {
-                nextSlide();
-            } else {
-                prevSlide();
-            }
-        }
+  const handleMouseMove = useCallback((e: React.MouseEvent) => {
+    if (!isDragging || isMobile) return;
+    e.preventDefault();
+  }, [isDragging, isMobile]);
 
-        setIsDragging(false);
-    }, [isDragging, startX, nextSlide, prevSlide, isMobile]);
-
-    // 鼠标事件只在非移动设备上处理
-    const handleMouseDown = useCallback((e: React.MouseEvent) => {
-        if (!isMobile) {
-            setStartX(e.clientX);
-            setIsDragging(true);
-        }
-    }, [isMobile]);
-
-    const handleMouseMove = useCallback((e: React.MouseEvent) => {
-        if (!isDragging || isMobile) return;
-        e.preventDefault();
-    }, [isDragging, isMobile]);
-
-    const handleMouseUp = useCallback((e: React.MouseEvent) => {
-        if (!isDragging || isMobile) return;
-
-        const endX = e.clientX;
-        const diff = startX - endX;
-
-        if (Math.abs(diff) > 50) {
-            if (diff > 0) {
-                nextSlide();
-            } else {
-                prevSlide();
-            }
-        }
-
-        setIsDragging(false);
-    }, [isDragging, startX, nextSlide, prevSlide, isMobile]);
+  const handleMouseUp = useCallback((e: React.MouseEvent) => {
+    if (!isDragging || isMobile) return;
+    setIsDragging(false);
+  }, [isDragging, isMobile]);
 
     const handleMouseLeave = useCallback(() => {
         if (!isMobile) {

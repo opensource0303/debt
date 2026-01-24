@@ -317,6 +317,11 @@ a, button, input, select, textarea, .transition-all {
   @apply py-16 md:py-24;
 }
 
+/* 组件间距标准化 */
+.component-spacing {
+  @apply mb-24;
+}
+
 .card-gap {
   @apply gap-6 md:gap-8;
 }
