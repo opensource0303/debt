@@ -44,25 +44,29 @@ const Footer = () => {
                         <h4 className="text-lg font-bold mb-6">快速链接</h4>
                         <ul className="space-y-3">
                             {quickLinks.map((link, index) => <li key={index}>
-                                 <Link
+                                <Link
                                     to={link.href}
                                     className="text-gray-400 hover:text-blue-400 transition-colors duration-300 py-2 block text-left w-full pl-0 mobile-optimized"
-                                    style={{ touchAction: "manipulation" }}>
+                                    style={{
+                                        touchAction: "manipulation"
+                                    }}>
                                     {link.name}
                                 </Link>
                             </li>)}
                             <li>
                                 <Link
-                                     to="/contact"
-                                     className="text-gray-400 hover:text-blue-400 transition-colors duration-300 py-2 block text-left w-full pl-0 mobile-optimized"
-                                     style={{ touchAction: "manipulation" }}>咨询我们</Link>
+                                    to="/contact"
+                                    className="text-gray-400 hover:text-blue-400 transition-colors duration-300 py-2 block text-left w-full pl-0 mobile-optimized"
+                                    style={{
+                                        touchAction: "manipulation"
+                                    }}>咨询我们</Link>
                             </li>
                         </ul>
                     </div>
                     <div
                         className="md:col-span-1 lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div>
-                            <h4 className="text-lg font-bold mb-6">联系我们</h4>
+                            <></>
                             <ul className="space-y-4">
                                 <li className="flex items-start space-x-3">
                                     <i className="fas fa-map-marker-alt text-blue-400 mt-1"></i>
@@ -93,7 +97,7 @@ const Footer = () => {
                                 <button
                                     type="submit"
                                     className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-colors whitespace-nowrap">订阅
-                                                                                                        </button>
+                                                                                                                                            </button>
                             </form>
                         </div>
                     </div>
@@ -101,7 +105,7 @@ const Footer = () => {
                 <div
                     className="border-t border-gray-800 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
                     <p className="text-gray-500 text-center md:text-left mb-4 md:mb-0">© {new Date().getFullYear()}澳门债权交易中心. 保留所有权利.
-                                                                    </p>
+                                                                                            </p>
                     <div className="flex flex-wrap justify-center gap-4 md:gap-6">
                         <a href="#" className="text-gray-500 hover:text-gray-300 transition-colors">隐私政策</a>
                         <a href="#" className="text-gray-500 hover:text-gray-300 transition-colors">使用条款</a>
