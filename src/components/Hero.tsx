@@ -47,29 +47,29 @@ const Hero = () => {
         };
     }, []);
 
-    // 幻灯片数据
-    const slides = useMemo(() => [{
-        id: 1,
-        title: "可信达 (Cred)",
-        subtitle: "供应链金融区块链解决方案平台",
-        description: "利用权威区块链技术和隐私计算，专注于解决企业间及个人间的三角债、多角债问题，通过数字化、标准化和市场化手段，实现债务有效清偿和资产盘活。",
-        image: "https://lf-code-agent.coze.cn/obj/x-ai-cn/346738007298/attachment/无logo_20260121201828.png",
-        ctaText: "了解解决方案"
-    }, {
-        id: 2,
-        title: "创新金融科技",
-        subtitle: "赋能实体经济",
-        description: "提供智能化债、国际发债、债权资产工厂、资产持续管理等全方位金融服务，帮助企业解决债务问题，优化资产结构，提升融资能力。",
-        image: "https://lf-code-agent.coze.cn/obj/x-ai-cn/346738007298/attachment/轮播1_20260123002832.png",
-        ctaText: "探索产品服务"
-    }, {
-        id: 3,
-        title: "双轨制引擎",
-        subtitle: "全方位解决债务问题",
-        description: "采用'双引擎'策略：多边净额清算引擎解决存量三角债，供应链金融交易引擎解决增量融资需求，双轨制设计全方位解决不同类型的债务问题。",
-        image: "https://lf-code-agent.coze.cn/obj/x-ai-cn/346738007298/attachment/轮播2_20260123002838.png",
-        ctaText: "了解产品优势"
-    }], []);
+  // 幻灯片数据
+  const slides = useMemo(() => [{
+    id: 1,
+    title: "Cred可信达",
+    subtitle: "政府与市场双重视角",
+    description: "兼顾稳风险与促发展",
+    image: "https://lf-code-agent.coze.cn/obj/x-ai-cn/346738007298/attachment/无logo_20260121201828.png",
+    ctaText: "了解解决方案"
+  }, {
+    id: 2,
+    title: "Cred可信达",
+    subtitle: "为国分忧、为企排雷",
+    description: "化债发债，资产盘活",
+    image: "https://lf-code-agent.coze.cn/obj/x-ai-cn/346738007298/attachment/轮播1_20260123002832.png",
+    ctaText: "探索产品服务"
+  }, {
+    id: 3,
+    title: "Cred可信达",
+    subtitle: "科技赋能、AAA信用",
+    description: "连接资产，连接信任",
+    image: "https://lf-code-agent.coze.cn/obj/x-ai-cn/346738007298/attachment/轮播2_20260123002838.png",
+    ctaText: "了解产品优势"
+  }], []);
 
     // 幻灯片控制函数
     const goToSlide = useCallback((index: number) => {
@@ -261,8 +261,8 @@ const Hero = () => {
                                             className={`text-blue-300 mb-4 ${isMobile ? "text-lg" : "text-xl md:text-2xl"}`}>
                                             {slide.subtitle}
                                         </h2>
-                                        <p
-                                            className={`text-gray-200 mb-6 max-w-md md:max-w-lg mx-auto md:mx-0 leading-relaxed ${isMobile ? "text-sm md:text-base" : "text-base md:text-lg"}`}>
+                                         <p
+                                            className={`text-blue-300 mb-4 ${isMobile ? "text-lg" : "text-xl md:text-2xl"}`}>
                                             {slide.description}
                                         </p>
                                     </motion.div>
