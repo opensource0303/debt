@@ -20,7 +20,7 @@ export default function Home() {
     };
     
     checkIsMobile();
-    window.addEventListener('resize', checkIsMobile);
+    window.addEventListener('resize', checkIsMobile, { passive: true });
     
     return () => {
       window.removeEventListener('resize', checkIsMobile);
@@ -38,45 +38,75 @@ export default function Home() {
   }, []);
 
   // 性能优化：在移动设备上减少不必要的复杂动画和降低刷新率
-  useEffect(() => {
+   useEffect(() => {
     if (isMobile) {
-      // 简化某些动画效果以提高移动设备性能
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('mobile-simplify');
-            }
-          });
-        },
-        { threshold: 0.1 }
-      );
-
-      // 为需要优化的元素添加观察器
-      document.querySelectorAll('.card-hover, .animate-fadeIn').forEach(el => {
-        observer.observe(el);
-      });
-
-      // 降低移动端动画帧率以减少闪烁
-      document.documentElement.style.setProperty('--animate-duration', '0.5s');
+      // 检测是否为低端移动设备
+      const isLowEndMobile = 
+        navigator.userAgent.includes('Android') && !navigator.userAgent.includes('Chrome/') ||
+        navigator.userAgent.includes('iPhone') && /iPhone OS [1-9]/.test(navigator.userAgent) ||
+        window.devicePixelRatio < 1.5 ||
+        window.innerWidth < 360;
       
-      return () => {
-        observer.disconnect();
-        document.documentElement.style.removeProperty('--animate-duration');
-      };
+      if (isLowEndMobile) {
+        // 简化某些动画效果以提高移动设备性能
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('mobile-simplify');
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+
+        // 为需要优化的元素添加观察器
+        document.querySelectorAll('.card-hover, .animate-fadeIn').forEach(el => {
+          observer.observe(el);
+        });
+
+        // 降低低端设备上的动画复杂度
+        const style = document.createElement('style');
+        style.textContent = `
+          @media (max-width: 768px) {
+            .motion-safe\\:animate-simplify {
+              transition: opacity 0.2s ease-out, transform 0.2s ease-out !important;
+              animation-duration: 0.3s !important;
+            }
+            
+            .card-hover {
+              transform: translateY(0) !important;
+              transition: box-shadow 0.2s ease-out !important;
+            }
+            
+            /* 禁用背景模糊效果以提高性能 */
+            .backdrop-blur-md,
+            .backdrop-blur-sm {
+              backdrop-filter: none !important;
+              background-color: rgba(15, 23, 42, 0.95) !important;
+            }
+          }
+        `;
+        document.head.appendChild(style);
+        
+        return () => {
+          observer.disconnect();
+          document.head.removeChild(style);
+        };
+      }
     }
   }, [isMobile]);
 
-   return (
+  return (
     <div className="min-h-screen text-white tech-gradient-bg smooth-scroll">
       <div className="bg-overlay min-h-screen">
         <Navbar />
         <main className="pb-12">
-           <Hero />
-           <About />
-           <Advantages />
-           <News />
-           <Contact />
+          <Hero />
+          <About />
+          <Advantages />
+          <News />
+          <Contact />
         </main>
         <Footer />
       </div>

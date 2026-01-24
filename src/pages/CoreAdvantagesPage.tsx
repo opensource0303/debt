@@ -24,9 +24,10 @@ const CoreAdvantagesPage = () => {
           </p>
         </motion.section>
 
-        {/* 三大核心优势 */}
-        <section className="py-16 bg-gray-50 dark:bg-gray-900">
-          <div className="container mx-auto px-4">
+         {/* 三大核心优势 */}
+        <section className="py-16 bg-gray-50 dark:bg-gray-900 relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900/50 dark:to-transparent z-0"></div>
+          <div className="container mx-auto px-4 relative z-10">
             <div className="grid md:grid-cols-3 gap-8">
               {/* 法律优势 */}
               <motion.div

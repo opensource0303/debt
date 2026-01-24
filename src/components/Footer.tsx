@@ -6,13 +6,10 @@ const Footer = () => {
         name: "首页",
         href: "/"
     }, {
-        name: "解决方案与案例",
-        href: "/solutions-cases"
+        name: "产品服务",
+        href: "/product-services"
     }, {
-        name: "澳门优势",
-        href: "/macau-advantages"
-    }, {
-        name: "产品优势",
+        name: "特色优势",
         href: "/platform-mode"
     }];
 
@@ -47,17 +44,18 @@ const Footer = () => {
                         <h4 className="text-lg font-bold mb-6">快速链接</h4>
                         <ul className="space-y-3">
                             {quickLinks.map((link, index) => <li key={index}>
-                                <Link
+                                 <Link
                                     to={link.href}
-                                    className="text-gray-400 hover:text-blue-400 transition-colors duration-300 py-2 block text-left w-full pl-0">
+                                    className="text-gray-400 hover:text-blue-400 transition-colors duration-300 py-2 block text-left w-full pl-0 mobile-optimized"
+                                    style={{ touchAction: "manipulation" }}>
                                     {link.name}
                                 </Link>
                             </li>)}
                             <li>
                                 <Link
-                                    to="/contact"
-                                    className="text-gray-400 hover:text-blue-400 transition-colors duration-300 py-2 block text-left w-full pl-0">联系我们
-                                                                    </Link>
+                                     to="/contact"
+                                     className="text-gray-400 hover:text-blue-400 transition-colors duration-300 py-2 block text-left w-full pl-0 mobile-optimized"
+                                     style={{ touchAction: "manipulation" }}>咨询我们</Link>
                             </li>
                         </ul>
                     </div>
@@ -95,7 +93,7 @@ const Footer = () => {
                                 <button
                                     type="submit"
                                     className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-colors whitespace-nowrap">订阅
-                                                                    </button>
+                                                                                                        </button>
                             </form>
                         </div>
                     </div>
@@ -103,7 +101,7 @@ const Footer = () => {
                 <div
                     className="border-t border-gray-800 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
                     <p className="text-gray-500 text-center md:text-left mb-4 md:mb-0">© {new Date().getFullYear()}澳门债权交易中心. 保留所有权利.
-                                            </p>
+                                                                    </p>
                     <div className="flex flex-wrap justify-center gap-4 md:gap-6">
                         <a href="#" className="text-gray-500 hover:text-gray-300 transition-colors">隐私政策</a>
                         <a href="#" className="text-gray-500 hover:text-gray-300 transition-colors">使用条款</a>

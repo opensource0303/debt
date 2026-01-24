@@ -165,6 +165,7 @@ a, button, input, select, textarea, .transition-all {
 /* 触摸目标优化 */
 .touch-target {
   @apply min-w-[48px] min-h-[48px] flex items-center justify-center;
+  touch-action: manipulation; /* 防止双击缩放 */
 }
 
 /* 移动端字体大小响应式调整 */
@@ -283,5 +284,86 @@ a, button, input, select, textarea, .transition-all {
   .card-mobile {
     margin-bottom: 1.5rem;
   }
+  
+  /* 增强移动端文本可读性 */
+  .text-mobile-readable {
+    font-size: 16px;
+    letter-spacing: 0.02em;
+    line-height: 1.6;
+  }
+  
+  /* 优化移动端触摸区域 */
+  .mobile-touch-target {
+    min-width: 44px;
+    min-height: 44px;
+  }
+}
+
+/* 布局优化工具类 */
+.flex-center {
+  @apply flex items-center justify-center;
+}
+
+.flex-between {
+  @apply flex items-center justify-between;
+}
+
+.flex-column {
+  @apply flex flex-col;
+}
+
+/* 卡片和容器间距标准化 */
+.section-spacing {
+  @apply py-16 md:py-24;
+}
+
+.card-gap {
+  @apply gap-6 md:gap-8;
+}
+
+/* 响应式网格布局优化 */
+.grid-responsive {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
+}
+
+/* 内容区域最大宽度限制 */
+.content-wrapper {
+  @apply max-w-7xl mx-auto px-4;
+}
+
+/* 阴影效果分级 */
+.shadow-level-1 {
+  @apply shadow-lg;
+}
+
+.shadow-level-2 {
+  @apply shadow-xl;
+}
+
+.shadow-level-3 {
+  @apply shadow-2xl;
+}
+
+/* 圆角标准化 */
+.rounded-standard {
+  @apply rounded-xl;
+}
+
+.rounded-lg-standard {
+  @apply rounded-2xl;
+}
+
+/* 过渡动画优化 */
+.transition-custom {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+/* 背景渐变标准化 */
+.gradient-primary {
+  @apply bg-gradient-to-r from-blue-600 to-indigo-600;
+}
+
+.gradient-secondary {
+  @apply bg-gradient-to-r from-purple-600 to-pink-600;
 }
 

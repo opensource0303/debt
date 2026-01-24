@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback, useMemo } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
@@ -8,77 +8,100 @@ const Hero = () => {
     const [isDragging, setIsDragging] = useState(false);
     const sliderRef = useRef<HTMLDivElement>(null);
     const [isMobile, setIsMobile] = useState(false);
+    const [isLowPerformance, setIsLowPerformance] = useState(false);
 
+    // 检测设备性能和尺寸
     useEffect(() => {
-        const checkIsMobile = () => {
-            setIsMobile(window.innerWidth < 768);
+        const checkDevicePerformance = () => {
+            // 检测是否为移动设备
+            const mobile = window.innerWidth < 768;
+            setIsMobile(mobile);
+            
+            // 简单的性能检测
+            if (mobile) {
+                // 检测是否为低端设备
+                const isLowEnd = 
+                    navigator.userAgent.includes('Android') && !navigator.userAgent.includes('Chrome/') ||
+                    navigator.userAgent.includes('iPhone') && /iPhone OS [1-9]/.test(navigator.userAgent) ||
+                    window.devicePixelRatio < 1.5;
+                
+                setIsLowPerformance(isLowEnd);
+            } else {
+                setIsLowPerformance(false);
+            }
         };
 
-        checkIsMobile();
-        window.addEventListener("resize", checkIsMobile);
+        checkDevicePerformance();
+        
+        // 节流处理窗口大小变化事件
+        let resizeTimeout: number;
+        const handleResize = () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(checkDevicePerformance, 100);
+        };
+        
+        window.addEventListener("resize", handleResize, { passive: true });
 
         return () => {
-            window.removeEventListener("resize", checkIsMobile);
+            window.removeEventListener("resize", handleResize);
+            clearTimeout(resizeTimeout);
         };
     }, []);
 
-  const slides = [{
-    id: 1,
-    title: "可信达 (Cred)",
-    subtitle: "供应链金融区块链解决方案平台",
-    description: "利用权威区块链技术和隐私计算，专注于解决企业间及个人间的三角债、多角债问题，通过数字化、标准化和市场化手段，实现债务有效清偿和资产盘活。",
-    image: "https://lf-code-agent.coze.cn/obj/x-ai-cn/346738007298/attachment/无logo_20260121201828.png",
-    ctaText: "了解解决方案"
-  }, {
-    id: 2,
-    title: "创新金融科技",
-    subtitle: "赋能实体经济",
-    description: "基于澳门独特的制度、资金和数据优势，打造领先的供应链金融创新平台，为企业提供全方位的金融解决方案。",
-    image: "https://lf-code-agent.coze.cn/obj/x-ai-cn/346738007298/attachment/轮播1_20260123002832.png",
-    ctaText: "探索澳门优势"
-  }, {
-    id: 3,
-    title: "双轨制引擎",
-    subtitle: "全方位解决债务问题",
-    description: "采用'双引擎'策略：多边净额清算引擎解决存量三角债，供应链金融交易引擎解决增量融资需求，双轨制设计全方位解决不同类型的债务问题。",
-    image: "https://lf-code-agent.coze.cn/obj/x-ai-cn/346738007298/attachment/轮播2_20260123002838.png",
-    ctaText: "查看成功案例"
-  }];
+    // 幻灯片数据
+    const slides = useMemo(() => [{
+        id: 1,
+        title: "可信达 (Cred)",
+        subtitle: "供应链金融区块链解决方案平台",
+        description: "利用权威区块链技术和隐私计算，专注于解决企业间及个人间的三角债、多角债问题，通过数字化、标准化和市场化手段，实现债务有效清偿和资产盘活。",
+        image: "https://lf-code-agent.coze.cn/obj/x-ai-cn/346738007298/attachment/无logo_20260121201828.png",
+        ctaText: "了解解决方案"
+    }, {
+        id: 2,
+        title: "创新金融科技",
+        subtitle: "赋能实体经济",
+        description: "提供智能化债、国际发债、债权资产工厂、资产持续管理等全方位金融服务，帮助企业解决债务问题，优化资产结构，提升融资能力。",
+        image: "https://lf-code-agent.coze.cn/obj/x-ai-cn/346738007298/attachment/轮播1_20260123002832.png",
+        ctaText: "探索产品服务"
+    }, {
+        id: 3,
+        title: "双轨制引擎",
+        subtitle: "全方位解决债务问题",
+        description: "采用'双引擎'策略：多边净额清算引擎解决存量三角债，供应链金融交易引擎解决增量融资需求，双轨制设计全方位解决不同类型的债务问题。",
+        image: "https://lf-code-agent.coze.cn/obj/x-ai-cn/346738007298/attachment/轮播2_20260123002838.png",
+        ctaText: "了解产品优势"
+    }], []);
 
-// 移除自动轮播的定时器，保留手动控制功能
+    // 幻灯片控制函数
+    const goToSlide = useCallback((index: number) => {
+        setCurrentSlide(index);
+    }, []);
 
-  // 使用 React.useCallback 优化函数引用，避免不必要的重渲染
-  const goToSlide = React.useCallback((index: number) => {
-    setCurrentSlide(index);
-  }, []);
+    const nextSlide = useCallback(() => {
+        setCurrentSlide(prev => (prev + 1) % slides.length);
+    }, [slides.length]);
 
-  const nextSlide = React.useCallback(() => {
-    setCurrentSlide(prev => (prev + 1) % slides.length);
-  }, [slides.length]);
+    const prevSlide = useCallback(() => {
+        setCurrentSlide(prev => (prev - 1 + slides.length) % slides.length);
+    }, [slides.length]);
 
-  const prevSlide = React.useCallback(() => {
-    setCurrentSlide(prev => (prev - 1 + slides.length) % slides.length);
-  }, [slides.length]);
-
-    const handleTouchStart = (e: React.TouchEvent) => {
+    // 触摸和鼠标事件处理
+    const handleTouchStart = useCallback((e: React.TouchEvent) => {
         setStartX(e.touches[0].clientX);
         setIsDragging(true);
-    };
+    }, []);
 
-    const handleTouchMove = (e: React.TouchEvent) => {
-        if (!isDragging)
-            return;
-
+    const handleTouchMove = useCallback((e: React.TouchEvent) => {
+        if (!isDragging) return;
         e.preventDefault();
-    };
+    }, [isDragging]);
 
-    const handleTouchEnd = (e: React.TouchEvent) => {
-        if (!isDragging)
-            return;
+    const handleTouchEnd = useCallback((e: React.TouchEvent) => {
+        if (!isDragging) return;
 
         const endX = e.changedTouches[0].clientX;
         const diff = startX - endX;
-        const threshold = isMobile ? 30 : 50;
+        const threshold = isMobile ? 20 : 30;
 
         if (Math.abs(diff) > threshold) {
             if (diff > 0) {
@@ -89,23 +112,23 @@ const Hero = () => {
         }
 
         setIsDragging(false);
-    };
+    }, [isDragging, startX, nextSlide, prevSlide, isMobile]);
 
-    const handleMouseDown = (e: React.MouseEvent) => {
-        setStartX(e.clientX);
-        setIsDragging(true);
-    };
+    // 鼠标事件只在非移动设备上处理
+    const handleMouseDown = useCallback((e: React.MouseEvent) => {
+        if (!isMobile) {
+            setStartX(e.clientX);
+            setIsDragging(true);
+        }
+    }, [isMobile]);
 
-    const handleMouseMove = (e: React.MouseEvent) => {
-        if (!isDragging)
-            return;
-
+    const handleMouseMove = useCallback((e: React.MouseEvent) => {
+        if (!isDragging || isMobile) return;
         e.preventDefault();
-    };
+    }, [isDragging, isMobile]);
 
-    const handleMouseUp = (e: React.MouseEvent) => {
-        if (!isDragging)
-            return;
+    const handleMouseUp = useCallback((e: React.MouseEvent) => {
+        if (!isDragging || isMobile) return;
 
         const endX = e.clientX;
         const diff = startX - endX;
@@ -119,39 +142,85 @@ const Hero = () => {
         }
 
         setIsDragging(false);
-    };
+    }, [isDragging, startX, nextSlide, prevSlide, isMobile]);
 
-    const handleMouseLeave = () => {
-        setIsDragging(false);
-    };
+    const handleMouseLeave = useCallback(() => {
+        if (!isMobile) {
+            setIsDragging(false);
+        }
+    }, [isMobile]);
+
+    // 根据设备性能调整动画配置
+    const animationConfig = useMemo(() => {
+        if (isLowPerformance) {
+            return {
+                duration: 0.2,
+                ease: "linear"
+            };
+        }
+        return {
+            duration: isMobile ? 0.3 : 0.5,
+            ease: "easeInOut"
+        };
+    }, [isMobile, isLowPerformance]);
+
+    const imageAnimationConfig = useMemo(() => {
+        if (isLowPerformance) {
+            return {
+                duration: 0.5,
+                ease: "linear"
+            };
+        }
+        return {
+            duration: isMobile ? 1 : 1.5,
+            ease: "easeInOut"
+        };
+    }, [isMobile, isLowPerformance]);
+
+    const titleAnimationConfig = useMemo(() => {
+        if (isLowPerformance) {
+            return {
+                delay: 0.1,
+                duration: 0.3
+            };
+        }
+        return {
+            delay: 0.2,
+            duration: isMobile ? 0.5 : 0.8
+        };
+    }, [isMobile, isLowPerformance]);
 
     return (
         <section
             className="pt-24 pb-24 overflow-hidden relative min-h-[60vh] flex items-center">
-            <div className="absolute inset-0 overflow-hidden">
-                <motion.div
-                    className="absolute -right-32 top-20 w-96 h-96 bg-blue-600/20 rounded-full filter blur-3xl"
-                    animate={{
-                        scale: [1, 1.05, 1],
-                        opacity: [0.3, 0.4, 0.3]
-                    }}
-                    transition={{
-                        duration: 8,
-                        repeat: Infinity,
-                        repeatType: "reverse"
-                    }}></motion.div>
-                <motion.div
-                    className="absolute left-1/4 bottom-10 w-96 h-96 bg-purple-600/20 rounded-full filter blur-3xl"
-                    animate={{
-                        scale: [1, 1.1, 1],
-                        opacity: [0.2, 0.3, 0.2]
-                    }}
-                    transition={{
-                        duration: 10,
-                        repeat: Infinity,
-                        repeatType: "reverse"
-                    }}></motion.div>
-            </div>
+            {/* 背景装饰元素 - 只在非移动设备上显示 */}
+            {!isMobile && (
+                <div className="absolute inset-0 overflow-hidden">
+                    <motion.div
+                        className="absolute -right-32 top-20 w-96 h-96 bg-blue-600/20 rounded-full filter blur-3xl"
+                        animate={{
+                            scale: [1, 1.05, 1],
+                            opacity: [0.3, 0.4, 0.3]
+                        }}
+                        transition={{
+                            duration: 8,
+                            repeat: Infinity,
+                            repeatType: "reverse"
+                        }}></motion.div>
+                    <motion.div
+                        className="absolute left-1/4 bottom-10 w-96 h-96 bg-purple-600/20 rounded-full filter blur-3xl"
+                        animate={{
+                            scale: [1, 1.1, 1],
+                            opacity: [0.2, 0.3, 0.2]
+                        }}
+                        transition={{
+                            duration: 10,
+                            repeat: Infinity,
+                            repeatType: "reverse"
+                        }}></motion.div>
+                </div>
+            )}
+            
             <div className="container mx-auto px-4 relative z-10">
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                     <div
@@ -159,7 +228,8 @@ const Hero = () => {
                         className="relative w-full overflow-hidden"
                         style={{
                             height: isMobile ? "400px" : "550px",
-                            willChange: 'transform'
+                            willChange: "transform",
+                            touchAction: "manipulation" // 优化触摸行为
                         }}
                         onTouchStart={handleTouchStart}
                         onTouchMove={handleTouchMove}
@@ -167,33 +237,37 @@ const Hero = () => {
                         onMouseDown={handleMouseDown}
                         onMouseMove={handleMouseMove}
                         onMouseUp={handleMouseUp}
-                        onMouseLeave={handleMouseLeave}
-                    >
+                        onMouseLeave={handleMouseLeave}>
                         {slides.map((slide, index) => (
                             <motion.div
                                 key={slide.id}
                                 className={`absolute inset-0 flex flex-col md:flex-row items-center justify-center p-6 md:p-12 ${index === currentSlide ? "z-20" : "z-10"}`}
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ 
+                                initial={{
+                                    opacity: 0,
+                                    y: 20
+                                }}
+                                animate={{
                                     opacity: index === currentSlide ? 1 : 0,
                                     y: index === currentSlide ? 0 : 20
                                 }}
-                                transition={{ 
-                                    duration: 0.5,
-                                    ease: "easeInOut"
-                                }}
+                                transition={animationConfig}
                             >
                                 <div className="absolute inset-0 z-0">
                                     <motion.img
                                         src={slide.image}
                                         alt={slide.title}
                                         className="w-full h-full object-cover object-center"
-                                        initial={{ scale: 1.05 }}
-                                        animate={{ scale: 1 }}
-                                        transition={{ duration: 1.5 }}
+                                        initial={{
+                                            scale: 1.05
+                                        }}
+                                        animate={{
+                                            scale: 1
+                                        }}
+                                        transition={imageAnimationConfig}
                                         loading="lazy"
-                                        style={{ willChange: 'transform' }} // 添加硬件加速
-                                    />
+                                        style={{
+                                            willChange: "transform"
+                                        }} />
                                     <div className="absolute inset-0 bg-black/30 z-10"></div>
                                 </div>
                                 <div className="relative z-20 w-full md:w-1/2 text-center md:text-left">
@@ -206,12 +280,9 @@ const Hero = () => {
                                             y: 0,
                                             opacity: 1
                                         }}
-                                        transition={{
-                                            delay: 0.2,
-                                            duration: 0.8
-                                        }}>
+                                        transition={titleAnimationConfig}>
                                         <h1
-                                            className={`font-bold text-white mb-3 leading-tight ${isMobile ? "text-2xl" : "text-3xl md:text-4xl lg:text-5xl"}`}>
+                                            className={`font-bold text-white mb-3 leading-tight ${isMobile ? "text-2xl md:text-3xl" : "text-3xl md:text-4xl lg:text-5xl"}`}>
                                             {slide.title}
                                         </h1>
                                         <h2
@@ -219,159 +290,62 @@ const Hero = () => {
                                             {slide.subtitle}
                                         </h2>
                                         <p
-                                            className={`text-gray-200 mb-6 max-w-md md:max-w-lg mx-auto md:mx-0 leading-relaxed ${isMobile ? "text-sm" : "text-base md:text-lg"}`}>
+                                            className={`text-gray-200 mb-6 max-w-md md:max-w-lg mx-auto md:mx-0 leading-relaxed ${isMobile ? "text-sm md:text-base" : "text-base md:text-lg"}`}>
                                             {slide.description}
                                         </p>
-                                        <div
-                                            className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center md:justify-start">
-                                            <></>
-                                            <></>
-                                        </div>
                                     </motion.div>
                                 </div>
                                 <div className="hidden lg:block w-1/2 relative z-20"></div>
                             </motion.div>
                         ))}
                     </div>
+                    
+                    {/* 幻灯片指示器 */}
                     <div
-                        className={`absolute bottom-6 left-1/2 transform -translate-x-1/2 z-30 flex space-x-2 md:space-x-3 ${isMobile ? "space-x-3" : ""}`}>
+                        className={`absolute bottom-6 left-1/2 transform -translate-x-1/2 z-30 flex space-x-3`}>
                         {slides.map((_, index) => (
                             <button
                                 key={index}
-                                className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-all duration-300 ${index === currentSlide ? "bg-blue-500 w-8 md:w-12" : "bg-white/50"} ${isMobile ? "h-2" : ""}`}
+                                className={`w-2 h-2 rounded-full transition-all duration-300 ${index === currentSlide ? "bg-blue-500 w-8" : "bg-white/50"}`}
                                 onClick={() => goToSlide(index)}
                                 aria-label={`Go to slide ${index + 1}`}
                                 style={{
-                                    minWidth: isMobile ? "10px" : "8px",
-                                    minHeight: isMobile ? "10px" : "8px"
+                                    minWidth: "8px",
+                                    minHeight: "8px",
+                                    touchAction: "manipulation"
                                 }}
                             />
                         ))}
                     </div>
+                    
+                    {/* 导航按钮 */}
                     <button
-                        className={`absolute left-3 top-1/2 transform -translate-y-1/2 z-30 w-10 h-10 md:w-12 md:h-12 bg-black/50 backdrop-blur-md hover:bg-black/70 rounded-full flex items-center justify-center text-white transition-all shadow-lg ${isMobile ? "w-12 h-12" : ""}`}
+                        className={`absolute left-3 top-1/2 transform -translate-y-1/2 z-30 w-12 h-12 bg-black/50 backdrop-blur-md hover:bg-black/70 rounded-full flex items-center justify-center text-white transition-all shadow-lg touch-target`}
                         onClick={prevSlide}
                         aria-label="Previous slide"
                         style={{
                             minWidth: "48px",
-                            minHeight: "48px"
+                            minHeight: "48px",
+                            touchAction: "manipulation"
                         }}>
-                        <i
-                            className={`fas fa-chevron-left ${isMobile ? "text-xl" : "text-lg md:text-xl"}`}></i>
+                        <i className="fas fa-chevron-left text-xl"></i>
                     </button>
                     <button
-                        className={`absolute right-3 top-1/2 transform -translate-y-1/2 z-30 w-10 h-10 md:w-12 md:h-12 bg-black/50 backdrop-blur-md hover:bg-black/70 rounded-full flex items-center justify-center text-white transition-all shadow-lg ${isMobile ? "w-12 h-12" : ""}`}
+                        className={`absolute right-3 top-1/2 transform -translate-y-1/2 z-30 w-12 h-12 bg-black/50 backdrop-blur-md hover:bg-black/70 rounded-full flex items-center justify-center text-white transition-all shadow-lg touch-target`}
                         onClick={nextSlide}
                         aria-label="Next slide"
                         style={{
                             minWidth: "48px",
-                            minHeight: "48px"
+                            minHeight: "48px",
+                            touchAction: "manipulation"
                         }}>
-                        <i
-                            className={`fas fa-chevron-right ${isMobile ? "text-xl" : "text-lg md:text-xl"}`}></i>
+                        <i className="fas fa-chevron-right text-xl"></i>
                     </button>
                 </div>
-                <motion.div
-                    className="mt-32"
-                    initial={{
-                        opacity: 0,
-                        y: 30
-                    }}
-                    whileInView={{
-                        opacity: 1,
-                        y: 0
-                    }}
-                    viewport={{
-                        once: true
-                    }}
-                    transition={{
-                        duration: 0.8
-                    }}>
-                    <h2 className="section-title text-center">平台核心亮点</h2>
-                    <div
-                        className={`grid gap-6 md:gap-8 ${isMobile ? "grid-cols-1" : "grid-cols-1 md:grid-cols-3"}`}>
-                        <motion.div
-                            className="bg-gray-900/70 backdrop-blur-md p-5 md:p-6 rounded-xl border border-gray-700 hover:shadow-lg transition-all duration-300 hover:border-blue-500/50 card-hover"
-                            whileHover={{
-                                y: -5
-                            }}
-                            initial={{
-                                opacity: 0,
-                                y: 20
-                            }}
-                            whileInView={{
-                                opacity: 1,
-                                y: 0
-                            }}
-                            viewport={{
-                                once: true
-                            }}
-                            transition={{
-                                duration: 0.5
-                            }}>
-                            <div className="text-blue-400 text-3xl mb-4">
-                                <i className="fas fa-balance-scale"></i>
-                            </div>
-                            <h3 className="text-xl font-bold text-white mb-3">法律优势</h3>
-                            <p className="text-gray-400 leading-relaxed">澳门《商业法典》与葡萄牙及欧洲大陆法系一脉相承，为引入成熟的欧洲清算规则提供了法理基础。</p>
-                        </motion.div>
-                        <motion.div
-                            className="bg-gray-900/70 backdrop-blur-md p-5 md:p-6 rounded-xl border border-gray-700 hover:shadow-lg transition-all duration-300 hover:border-blue-500/50 card-hover"
-                            whileHover={{
-                                y: -5
-                            }}
-                            initial={{
-                                opacity: 0,
-                                y: 20
-                            }}
-                            whileInView={{
-                                opacity: 1,
-                                y: 0
-                            }}
-                            viewport={{
-                                once: true
-                            }}
-                            transition={{
-                                duration: 0.5,
-                                delay: 0.1
-                            }}>
-                            <div className="text-blue-400 text-3xl mb-4">
-                                <i className="fas fa-money-bill-wave"></i>
-                            </div>
-                            <h3 className="text-xl font-bold text-white mb-3">资金优势</h3>
-                            <p className="text-gray-400 leading-relaxed">澳门作为自由港，资金成本显著低于内地，且拥有大量沉淀的离岸人民币，为平台提供资金支持。</p>
-                        </motion.div>
-                        <motion.div
-                            className="bg-gray-900/70 backdrop-blur-md p-5 md:p-6 rounded-xl border border-gray-700 hover:shadow-lg transition-all duration-300 hover:border-blue-500/50 card-hover"
-                            whileHover={{
-                                y: -5
-                            }}
-                            initial={{
-                                opacity: 0,
-                                y: 20
-                            }}
-                            whileInView={{
-                                opacity: 1,
-                                y: 0
-                            }}
-                            viewport={{
-                                once: true
-                            }}
-                            transition={{
-                                duration: 0.5,
-                                delay: 0.2
-                            }}>
-                            <div className="text-blue-400 text-3xl mb-4">
-                                <i className="fas fa-shield-alt"></i>
-                            </div>
-                            <h3 className="text-xl font-bold text-white mb-3">隐私计算</h3>
-                            <p className="text-gray-400 leading-relaxed">采用零知识证明和多方安全计算技术，在保护商业秘密的同时实现数据有效利用，解决跨境风控痛点。</p>
-                        </motion.div>
-                    </div>
-                </motion.div>
             </div>
         </section>
     );
 };
 
-export default Hero;
+// 使用 React.memo 优化组件渲染
+export default React.memo(Hero);

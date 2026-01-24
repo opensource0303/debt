@@ -120,7 +120,7 @@ const Contact = () => {
                     <motion.a 
                       key={index}
                       href="#" 
-                      className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-blue-400 hover:bg-blue-900/30 transition-all duration-300"
+                      className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-blue-400 hover:bg-blue-900/30 transition-all duration-300 mobile-touch-target"
                       whileHover={{ y: -3, scale: 1.1 }}
                       whileTap={{ scale: 0.95 }}
                     >
@@ -149,7 +149,7 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-lg border border-gray-700 bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors mobile-optimized"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-700 bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors mobile-optimized form-input-mobile"
                   placeholder="请输入您的姓名"
                   whileFocus={{ scale: 1.02 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
@@ -165,7 +165,7 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-lg border border-gray-700 bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors mobile-optimized"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-700 bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors form-input-mobile"
                   placeholder="请输入您的邮箱"
                   whileFocus={{ scale: 1.02 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
@@ -181,7 +181,7 @@ const Contact = () => {
                   value={formData.phone}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-lg border border-gray-700 bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors mobile-optimized"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-700 bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors form-input-mobile"
                   placeholder="请输入您的电话"
                   whileFocus={{ scale: 1.02 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
@@ -197,7 +197,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   rows={5}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-700 bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors mobile-optimized"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-700 bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors form-input-mobile"
                   placeholder="请输入您关于平台的问题或合作意向"
                   whileFocus={{ scale: 1.02 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
@@ -206,7 +206,7 @@ const Contact = () => {
               
               <motion.button
                 type="submit"
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-4 rounded-lg font-medium transition-all focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-4 rounded-lg font-medium transition-all focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 mobile-touch-target"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >

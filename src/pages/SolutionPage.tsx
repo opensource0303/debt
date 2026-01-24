@@ -205,9 +205,10 @@ const SolutionPage = () => {
           </div>
         </section>
 
-         {/* 三层架构解决方案 */}
-        <section className="py-16 bg-gray-50 dark:bg-gray-900">
-          <div className="container mx-auto px-4">
+          {/* 三层架构解决方案 */}
+        <section className="py-16 bg-gray-50 dark:bg-gray-900 relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900/50 dark:to-transparent z-0"></div>
+          <div className="container mx-auto px-4 relative z-10">
             <motion.div 
               className="text-center mb-16"
               initial={{ opacity: 0, y: 20 }}
