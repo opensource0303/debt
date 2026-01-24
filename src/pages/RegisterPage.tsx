@@ -50,9 +50,9 @@ const RegisterPage = () => {
   return (
       <div className="min-h-screen tech-gradient-bg flex items-center justify-center py-12 px-4">
        <div className="bg-overlay min-h-screen absolute inset-0 opacity-70"></div>
-      <div className="relative z-10">
+      <div className="relative z-10 w-full max-w-md px-4 safe-top safe-bottom">
       <motion.div 
-        className="w-full max-w-md bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden"
+        className="w-full bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -62,9 +62,9 @@ const RegisterPage = () => {
           <p className="text-purple-100 text-center mt-2">加入澳门债权交易中心</p>
         </div>
         
-        <div className="p-8">
+        <div className="p-6 md:p-8">
           <form onSubmit={handleSubmit}>
-            <div className="mb-6">
+            <div className="mb-4">
               <label htmlFor="username" className="block text-gray-700 dark:text-gray-300 mb-2 font-medium">用户名</label>
                <input
                  type="text"
@@ -73,13 +73,13 @@ const RegisterPage = () => {
                  value={formData.username}
                  onChange={handleChange}
                  required
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-purple-500 transition-colors mobile-optimized form-input-mobile"
-                  placeholder="请输入您的用户名"
-                  style={{ touchAction: "manipulation" }}
-               />
+                     className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-purple-500 transition-colors mobile-optimized form-input-mobile"
+                     placeholder="请输入您的用户名"
+                     style={{ touchAction: "manipulation" }}
+                 />
             </div>
             
-            <div className="mb-6">
+            <div className="mb-4">
               <label htmlFor="email" className="block text-gray-700 dark:text-gray-300 mb-2 font-medium">邮箱</label>
               <input
                 type="email"
@@ -94,7 +94,7 @@ const RegisterPage = () => {
               />
             </div>
             
-            <div className="mb-6">
+            <div className="mb-4">
               <label htmlFor="phone" className="block text-gray-700 dark:text-gray-300 mb-2 font-medium">电话</label>
               <input
                 type="tel"
@@ -109,7 +109,7 @@ const RegisterPage = () => {
               />
             </div>
             
-            <div className="mb-6">
+            <div className="mb-4">
               <label htmlFor="password" className="block text-gray-700 dark:text-gray-300 mb-2 font-medium">密码</label>
               <input
                 type="password"
@@ -124,7 +124,7 @@ const RegisterPage = () => {
               />
             </div>
             
-            <div className="mb-8">
+            <div className="mb-6">
               <label htmlFor="confirmPassword" className="block text-gray-700 dark:text-gray-300 mb-2 font-medium">确认密码</label>
               <input
                 type="password"
@@ -139,7 +139,7 @@ const RegisterPage = () => {
               />
             </div>
             
-            <div className="mb-8">
+            <div className="mb-6">
               <div className="flex items-start">
                 <input
                   type="checkbox"
@@ -171,7 +171,7 @@ const RegisterPage = () => {
               </button>
           </form>
           
-          <div className="mt-8 text-center">
+          <div className="mt-6 text-center">
             <p className="text-gray-600 dark:text-gray-400">
               已有账号？ <Link to="/login" className="text-purple-600 dark:text-purple-400 font-medium hover:underline">返回登录</Link>
             </p>
@@ -179,7 +179,7 @@ const RegisterPage = () => {
         </div>
       </motion.div>
        </div>
-     </div>
+      </div>
   );
 };
 

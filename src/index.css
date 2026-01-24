@@ -37,6 +37,7 @@
 html {
   background-color: var(--bg-primary);
   color: var(--text-primary);
+  overflow-x: hidden;
 }
 
 body {
@@ -139,7 +140,7 @@ a, button, input, select, textarea, .transition-all {
 }
 
 .card-hover {
-  @apply hover:-translate-y-1 transition-transform duration-300;
+  @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-xl;
 }
 
  /* 统一的章节标题样式 */
@@ -149,11 +150,6 @@ a, button, input, select, textarea, .transition-all {
 
  .section-description {
   @apply text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed;
-}
-
-/* 卡片悬停效果优化 */
-.card-hover {
-  @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-xl;
 }
 
 /* 移动端优化工具类 */
@@ -247,59 +243,24 @@ a, button, input, select, textarea, .transition-all {
     margin-left: auto;
     margin-right: auto;
   }
-}
-
-/* 移动端菜单动画优化 */
-@media (max-width: 768px) {
-  /* 减少动画复杂度以提高移动设备性能 */
-  .motion-safe\:animate-simplify {
-    transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+  
+  /* 适配刘海屏和底部安全区域 */
+  .safe-top {
+    padding-top: env(safe-area-inset-top, 0px);
   }
   
-  /* 优化导航栏在移动设备上的表现 */
-  .nav-mobile {
-    backdrop-filter: blur(8px);
-    background-color: rgba(15, 23, 42, 0.95);
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
   }
   
-  /* 确保轮播图在移动设备上有合适的高度 */
-  .hero-slider {
-    height: 400px !important;
-  }
-  
-  /* 调整底部链接的布局 */
-  .footer-links {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  /* 调整表单元素在移动设备上的样式 */
-  .form-input-mobile {
-    font-size: 16px; /* 防止iOS缩放 */
-    padding: 12px 16px;
-    border-radius: 8px;
-  }
-  
-  /* 优化卡片在移动设备上的边距 */
-  .card-mobile {
-    margin-bottom: 1.5rem;
-  }
-  
-  /* 增强移动端文本可读性 */
-  .text-mobile-readable {
-    font-size: 16px;
-    letter-spacing: 0.02em;
-    line-height: 1.6;
-  }
-  
-  /* 优化移动端触摸区域 */
-  .mobile-touch-target {
-    min-width: 44px;
-    min-height: 44px;
+  /* 菜单优化 */
+  .mobile-menu {
+    padding: 1rem;
+    overflow-y: auto;
+    max-height: calc(100vh - 80px);
   }
 }
 
-/* 布局优化工具类 */
 .flex-center {
   @apply flex items-center justify-center;
 }
@@ -319,21 +280,17 @@ a, button, input, select, textarea, .transition-all {
 
 /* 组件间距标准化 */
 .component-spacing {
-  @apply mb-24;
-}
-
-.card-gap {
-  @apply gap-6 md:gap-8;
+  @apply mb-24 mt-24;
 }
 
 /* 响应式网格布局优化 */
 .grid-responsive {
-  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12;
 }
 
 /* 内容区域最大宽度限制 */
 .content-wrapper {
-  @apply max-w-7xl mx-auto px-4;
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
 }
 
 /* 阴影效果分级 */

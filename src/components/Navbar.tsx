@@ -137,11 +137,12 @@ const Navbar = () => {
     const menuAnimationConfig = isMobile ? mobileAnimationConfig : desktopAnimationConfig;
 
     return (
-        <header
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-gray-900/95 backdrop-blur-md shadow-md border-b border-gray-800 py-2" : "bg-transparent/70 backdrop-blur-sm py-4"} nav-mobile`}
-            style={{
-                willChange: "background-color, box-shadow"
-            }}>
+      <header
+             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-gray-900/95 backdrop-blur-md shadow-md border-b border-gray-800 py-2" : "bg-transparent/70 backdrop-blur-sm py-4"} nav-mobile safe-top`}
+             style={{
+                 willChange: "background-color, box-shadow",
+                 touchAction: "manipulation"
+             }}>
             <div className="container mx-auto px-4">
                 <div className="flex items-center justify-between">
                     <div className="flex items-center">
@@ -150,13 +151,11 @@ const Navbar = () => {
                             alt="可信达 Cred"
                             className="h-8 mr-3" />
                     </div>
-                    {}
                     <nav className="hidden md:flex items-center space-x-8">
                         {navItems.map(item => <NavLink key={item.href} item={item} />)}
                     </nav>
-                    {}
-                    <button
-                        className="md:hidden p-4 text-gray-300 hover:bg-gray-800 rounded-full transition-colors touch-target"
+                     <button
+                        className="md:hidden p-4 text-gray-300 hover:bg-gray-800 rounded-full transition-colors touch-target mobile-touch-target"
                         onClick={toggleMenu}
                         aria-label={isMenuOpen ? "关闭菜单" : "打开菜单"}
                         aria-expanded={isMenuOpen}
@@ -168,7 +167,6 @@ const Navbar = () => {
                         <i className={`fas ${isMenuOpen ? "fa-times" : "fa-bars"} text-xl`}></i>
                     </button>
                 </div>
-                {}
                 <motion.div
                     initial={false}
                     animate={{
@@ -177,7 +175,7 @@ const Navbar = () => {
                     }}
                     className="md:hidden overflow-hidden"
                     transition={menuAnimationConfig}>
-                    <div className="space-y-3 py-4 border-t border-gray-800">
+                    <div className="space-y-3 py-4 border-t border-gray-800 mobile-menu">
                         {navItems.map(item => <MobileNavItem key={item.href} item={item} />)}
                     </div>
                 </motion.div>

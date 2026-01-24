@@ -11,7 +11,7 @@ const MacauAdvantagesPage = () => {
             <main className="pt-24 pb-16">
                 {}
                 <motion.section
-                    className="container mx-auto px-4 mb-16"
+                     className="container mx-auto px-6 md:px-8 mb-16"
                     initial={{
                         opacity: 0,
                         y: 20

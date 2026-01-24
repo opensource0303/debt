@@ -30,7 +30,6 @@ const Advantages = () => {
 
     return (
         <section id="advantages" className="py-24 relative">
-            {}
             <div className="absolute inset-0 overflow-hidden">
                 <motion.div
                     className="absolute right-0 top-1/2 w-96 h-96 bg-blue-600/20 rounded-full filter blur-3xl transform -translate-y-1/2"
@@ -62,10 +61,9 @@ const Advantages = () => {
                         duration: 0.8
                     }}>
                     <h2 className="section-title">产品优势</h2>
-                    <p className="section-description">"可信达"平台通过创新技术和商业模式，为解决三角债问题提供了全面、高效、安全的解决方案。
-                                  </p>
+                    <p className="section-description">"可信达"平台通过创新技术和商业模式，为解决三角债问题提供了全面、高效、安全的解决方案。</p>
                 </motion.div>
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {advantages.map((advantage, index) => <motion.div
                         key={index}
                         className="flex items-start p-6 bg-gray-900/70 backdrop-blur-md rounded-2xl border border-gray-700 hover:shadow-xl hover:border-blue-500/30 transition-all duration-300"
@@ -91,12 +89,11 @@ const Advantages = () => {
                             <i className={`fas ${advantage.icon}`}></i>
                         </div>
                         <div>
-                            <h3 className="text-xl font-bold text-white mb-3">{advantage.title}</h3>
+                            <h3 className="text-xl font-bold text-white mb-4">{advantage.title}</h3>
                             <p className="text-gray-300 leading-relaxed">{advantage.description}</p>
                         </div>
                     </motion.div>)}
                 </div>
-                <></>
             </div>
         </section>
     );

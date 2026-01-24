@@ -6,7 +6,6 @@ import Footer from '@/components/Footer';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
 import Advantages from '@/components/Advantages';
-import Contact from '@/components/Contact';
 
 export default function Home() {
   // 检测是否为移动设备
@@ -37,16 +36,15 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen text-white tech-gradient-bg smooth-scroll">
+     <div className="min-h-screen text-white tech-gradient-bg smooth-scroll">
       <div className="bg-overlay min-h-screen">
         <Navbar />
-         <main className="pb-12">
-          <Hero />
-          <About />
-          <Advantages className="mb-20" />
-          <Contact className="mb-20" />
-        </main>
-        <Footer />
+         <main className="pb-16 overflow-x-hidden">
+           <Hero />
+           <About className="mt-24" />
+           <Advantages className="mt-24" />
+         </main>
+         <Footer />
       </div>
     </div>
   );

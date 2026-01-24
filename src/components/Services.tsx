@@ -63,42 +63,42 @@ const Services = () => {
           </p>
         </motion.div>
         
-        <div className="grid md:grid-cols-2 gap-8">
-          {services.map((service, index) => (
-            <motion.div
-              key={index}
-              className="flex flex-col bg-gray-900/70 backdrop-blur-md rounded-2xl border border-gray-700 overflow-hidden group hover:shadow-xl hover:border-blue-500/30 transition-all duration-300"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              whileHover={{ y: -8 }}
-            >
-              <div className="w-full p-6 flex items-start space-x-5">
-                <motion.div 
-                  className={`w-14 h-14 rounded-full ${service.color} flex items-center justify-center text-white`}
-                  whileHover={{ rotate: 5, scale: 1.05 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <i className={`fas ${service.icon} text-2xl`}></i>
-                </motion.div>
-                <div>
-                  <h3 className="text-xl font-bold text-white mb-3">{service.title}</h3>
-                  <p className="text-gray-300">{service.description}</p>
-                </div>
-              </div>
-              <div className="px-6 pb-6 mt-auto">
-                <motion.div 
-                  className="h-0.5 w-12 bg-gray-700 group-hover:bg-blue-500 transition-colors duration-300"
-                  initial={{ width: 0 }}
-                  whileInView={{ width: 48 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.8, delay: index * 0.1 + 0.3 }}
-                ></motion.div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+         <div className="grid md:grid-cols-2 gap-8 md:gap-12">
+           {services.map((service, index) => (
+             <motion.div
+               key={index}
+               className="flex flex-col bg-gray-900/70 backdrop-blur-md rounded-2xl border border-gray-700 overflow-hidden group hover:shadow-xl hover:border-blue-500/30 transition-all duration-300"
+               initial={{ opacity: 0, y: 30 }}
+               whileInView={{ opacity: 1, y: 0 }}
+               viewport={{ once: true }}
+               transition={{ duration: 0.6, delay: index * 0.1 }}
+               whileHover={{ y: -8 }}
+             >
+               <div className="w-full p-8 flex items-start space-x-6">
+                 <motion.div 
+                   className={`w-16 h-16 rounded-full ${service.color} flex items-center justify-center text-white`}
+                   whileHover={{ rotate: 5, scale: 1.05 }}
+                   transition={{ duration: 0.3 }}
+                 >
+                   <i className={`fas ${service.icon} text-2xl`}></i>
+                 </motion.div>
+                 <div>
+                   <h3 className="text-xl font-bold text-white mb-4">{service.title}</h3>
+                   <p className="text-gray-300 leading-relaxed">{service.description}</p>
+                 </div>
+               </div>
+               <div className="px-8 pb-8 mt-auto">
+                 <motion.div 
+                   className="h-0.5 w-12 bg-gray-700 group-hover:bg-blue-500 transition-colors duration-300"
+                   initial={{ width: 0 }}
+                   whileInView={{ width: 48 }}
+                   viewport={{ once: true }}
+                   transition={{ duration: 0.8, delay: index * 0.1 + 0.3 }}
+                 ></motion.div>
+               </div>
+             </motion.div>
+           ))}
+         </div>
 
         <motion.div 
           className="mt-20 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-3xl p-10 text-center text-white"

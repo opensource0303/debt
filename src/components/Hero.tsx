@@ -59,14 +59,14 @@ const Hero = () => {
     id: 2,
     title: "Cred可信达",
     subtitle: "为国分忧、为企排雷",
-    description: "化债发债，资产盘活",
+    description: "化债发债、资产盘活",
     image: "https://lf-code-agent.coze.cn/obj/x-ai-cn/346738007298/attachment/轮播1_20260123002832.png",
     ctaText: "探索产品服务"
   }, {
     id: 3,
     title: "Cred可信达",
     subtitle: "科技赋能、AAA信用",
-    description: "连接资产，连接信任",
+    description: "连接资产、连接信任",
     image: "https://lf-code-agent.coze.cn/obj/x-ai-cn/346738007298/attachment/轮播2_20260123002838.png",
     ctaText: "了解产品优势"
   }], []);
@@ -164,7 +164,7 @@ const Hero = () => {
 
     return (
         <section
-            className="pt-24 pb-24 overflow-hidden relative min-h-[60vh] flex items-center">
+            className="pt-24 pb-16 md:pb-24 overflow-hidden relative min-h-[60vh] flex items-center">
             {/* 背景装饰元素 - 只在非移动设备上显示 */}
             {!isMobile && (
                 <div className="absolute inset-0 overflow-hidden">
@@ -242,7 +242,7 @@ const Hero = () => {
                                         }} />
                                     <div className="absolute inset-0 bg-black/30 z-10"></div>
                                 </div>
-                                <div className="relative z-20 w-full md:w-1/2 text-center md:text-left">
+                            <div className="relative z-20 w-full md:w-1/2 text-center">
                                     <motion.div
                                         initial={{
                                             y: 30,
@@ -291,26 +291,16 @@ const Hero = () => {
                     </div>
                     
                     {/* 导航按钮 */}
-                    <button
-                        className={`absolute left-3 top-1/2 transform -translate-y-1/2 z-30 w-12 h-12 bg-black/50 backdrop-blur-md hover:bg-black/70 rounded-full flex items-center justify-center text-white transition-all shadow-lg touch-target`}
+                     <button
+                        className={`absolute left-3 top-1/2 transform -translate-y-1/2 z-30 w-12 h-12 bg-black/50 backdrop-blur-md hover:bg-black/70 rounded-full flex items-center justify-center text-white transition-all shadow-lg touch-target mobile-touch-target`}
                         onClick={prevSlide}
-                        aria-label="Previous slide"
-                        style={{
-                            minWidth: "48px",
-                            minHeight: "48px",
-                            touchAction: "manipulation"
-                        }}>
+                        aria-label="Previous slide">
                         <i className="fas fa-chevron-left text-xl"></i>
                     </button>
                     <button
-                        className={`absolute right-3 top-1/2 transform -translate-y-1/2 z-30 w-12 h-12 bg-black/50 backdrop-blur-md hover:bg-black/70 rounded-full flex items-center justify-center text-white transition-all shadow-lg touch-target`}
+                        className={`absolute right-3 top-1/2 transform -translate-y-1/2 z-30 w-12 h-12 bg-black/50 backdrop-blur-md hover:bg-black/70 rounded-full flex items-center justify-center text-white transition-all shadow-lg touch-target mobile-touch-target`}
                         onClick={nextSlide}
-                        aria-label="Next slide"
-                        style={{
-                            minWidth: "48px",
-                            minHeight: "48px",
-                            touchAction: "manipulation"
-                        }}>
+                        aria-label="Next slide">
                         <i className="fas fa-chevron-right text-xl"></i>
                     </button>
                 </div>

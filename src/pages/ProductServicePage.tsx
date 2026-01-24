@@ -61,7 +61,7 @@ const ProductServicePage = () => {
                 <main className="pt-24 pb-16">
                     {}
                     <motion.section
-                        className="container mx-auto px-4 mb-16"
+                        className="container mx-auto px-6 md:px-8 mb-16"
                         initial={{
                             opacity: 0,
                             y: 20
@@ -73,12 +73,13 @@ const ProductServicePage = () => {
                         transition={{
                             duration: 0.8
                         }}>
-                        <h1 className="text-4xl md:text-5xl font-bold mb-4 text-center">产品服务</h1>
-                        <p className="text-xl text-gray-300 max-w-3xl mx-auto text-center">我们提供全方位的金融解决方案，帮助企业有效解决债务问题，优化资产结构，提升融资能力
-                                        </p>
+                        <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center">产品服务</h1>
+                        <p
+                            className="text-xl text-gray-300 max-w-3xl mx-auto text-center leading-relaxed">我们提供全方位的金融解决方案，帮助企业有效解决债务问题，优化资产结构，提升融资能力
+                                                     </p>
                     </motion.section>
                     {}
-                    <section className="py-16 bg-gray-900/70 relative">
+                    <section className="py-16 bg-gray-900/70 relative mb-20">
                         <div className="absolute inset-0 overflow-hidden">
                             <motion.div
                                 className="absolute right-0 bottom-0 w-96 h-96 bg-blue-600/10 rounded-full filter blur-3xl"
@@ -92,8 +93,8 @@ const ProductServicePage = () => {
                                     repeatType: "reverse"
                                 }}></motion.div>
                         </div>
-                        <div className="container mx-auto px-4 relative z-10">
-                            <div className="grid md:grid-cols-2 gap-12">
+                        <div className="container mx-auto px-6 md:px-8 relative z-10">
+                            <div className="grid md:grid-cols-2 gap-8">
                                 {services.map((service, index) => <motion.div
                                     key={index}
                                     className="bg-gray-800/90 backdrop-blur-md rounded-2xl shadow-lg overflow-hidden border border-gray-700"
@@ -113,7 +114,8 @@ const ProductServicePage = () => {
                                         delay: index * 0.1
                                     }}
                                     whileHover={{
-                                        y: -5
+                                        y: -5,
+                                        boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1)"
                                     }}>
                                     <div className={`bg-gradient-to-r ${service.color} p-1`}>
                                         <div className="bg-gray-900 p-8">
@@ -140,7 +142,7 @@ const ProductServicePage = () => {
                         </div>
                     </section>
                     {}
-                    <section className="py-16 bg-gray-900/70 relative">
+                    <section className="py-16 bg-gray-900/70 relative mb-20">
                         <div className="absolute inset-0 overflow-hidden">
                             <motion.div
                                 className="absolute -left-32 top-20 w-96 h-96 bg-purple-600/10 rounded-full filter blur-3xl"
@@ -154,7 +156,7 @@ const ProductServicePage = () => {
                                     repeatType: "reverse"
                                 }}></motion.div>
                         </div>
-                        <div className="container mx-auto px-4 relative z-10">
+                        <div className="container mx-auto px-6 md:px-8 relative z-10">
                             <motion.div
                                 className="text-center mb-16"
                                 initial={{
@@ -171,9 +173,9 @@ const ProductServicePage = () => {
                                 transition={{
                                     duration: 0.6
                                 }}>
-                                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">服务优势</h2>
+                                <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">服务优势</h2>
                                 <p className="text-xl text-gray-300 max-w-3xl mx-auto">我们的产品服务融合了国际先进经验与本地市场特性，为客户创造独特价值
-                                                    </p>
+                                                                    </p>
                             </motion.div>
                             <div className="grid md:grid-cols-3 gap-8">
                                 <motion.div
@@ -191,13 +193,13 @@ const ProductServicePage = () => {
                                     transition={{
                                         duration: 0.5
                                     }}
-                                    className="bg-gray-800/90 backdrop-blur-md p-8 rounded-2xl border border-gray-700">
+                                    className="bg-gray-800/90 backdrop-blur-md p-8 rounded-2xl border border-gray-700 hover:shadow-xl transition-shadow duration-300">
                                     <div className="text-blue-400 text-3xl mb-6">
                                         <i className="fas fa-shield-alt"></i>
                                     </div>
                                     <h3 className="text-xl font-bold mb-4">安全可信</h3>
-                                    <p className="text-gray-300">采用区块链、零知识证明等前沿技术，确保交易安全和数据隐私，为客户提供值得信赖的服务环境。
-                                                          </p>
+                                    <p className="text-gray-300 leading-relaxed">采用区块链、零知识证明等前沿技术，确保交易安全和数据隐私，为客户提供值得信赖的服务环境。
+                                                                            </p>
                                 </motion.div>
                                 <motion.div
                                     initial={{
@@ -215,13 +217,13 @@ const ProductServicePage = () => {
                                         duration: 0.5,
                                         delay: 0.1
                                     }}
-                                    className="bg-gray-800/90 backdrop-blur-md p-8 rounded-2xl border border-gray-700">
+                                    className="bg-gray-800/90 backdrop-blur-md p-8 rounded-2xl border border-gray-700 hover:shadow-xl transition-shadow duration-300">
                                     <div className="text-green-400 text-3xl mb-6">
                                         <i className="fas fa-bolt"></i>
                                     </div>
                                     <h3 className="text-xl font-bold mb-4">高效便捷</h3>
-                                    <p className="text-gray-300">提供一站式解决方案，简化复杂流程，显著提高债务解决和资产盘活的效率，降低客户操作成本。
-                                                          </p>
+                                    <p className="text-gray-300 leading-relaxed">提供一站式解决方案，简化复杂流程，显著提高债务解决和资产盘活的效率，降低客户操作成本。
+                                                                            </p>
                                 </motion.div>
                                 <motion.div
                                     initial={{
@@ -239,19 +241,36 @@ const ProductServicePage = () => {
                                         duration: 0.5,
                                         delay: 0.2
                                     }}
-                                    className="bg-gray-800/90 backdrop-blur-md p-8 rounded-2xl border border-gray-700">
+                                    className="bg-gray-800/90 backdrop-blur-md p-8 rounded-2xl border border-gray-700 hover:shadow-xl transition-shadow duration-300">
                                     <div className="text-purple-400 text-3xl mb-6">
                                         <i className="fas fa-globe"></i>
                                     </div>
                                     <h3 className="text-xl font-bold mb-4">国际视野</h3>
-                                    <p className="text-gray-300">结合澳门国际金融中心优势，链接全球资源，为客户提供国际化的融资渠道和资产配置机会。
-                                                          </p>
+                                    <p className="text-gray-300 leading-relaxed">结合澳门国际金融中心优势，链接全球资源，为客户提供国际化的融资渠道和资产配置机会。
+                                                                            </p>
                                 </motion.div>
                             </div>
                         </div>
                     </section>
                     {}
-                    <></>
+                    <motion.section
+                        className="py-16 text-center relative mb-16"
+                        initial={{
+                            opacity: 0
+                        }}
+                        whileInView={{
+                            opacity: 1
+                        }}
+                        viewport={{
+                            once: true
+                        }}
+                        transition={{
+                            duration: 0.8
+                        }}>
+                        <div className="container mx-auto px-6 md:px-8">
+                            <></>
+                        </div>
+                    </motion.section>
                 </main>
                 <Footer />
             </div>

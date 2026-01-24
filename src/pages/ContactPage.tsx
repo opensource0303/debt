@@ -176,8 +176,9 @@ const ContactPage = () => {
                        value={formData.name}
                        onChange={handleChange}
                        required
-                       className="w-full px-4 py-3 rounded-lg border border-gray-700 bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors mobile-optimized"
-                       placeholder="请输入您的姓名" />
+                        className="w-full px-4 py-3 rounded-lg border border-gray-700 bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors mobile-optimized form-input-mobile"
+                        placeholder="请输入您的姓名" 
+                        style={{ touchAction: "manipulation" }} />
                                     </div>
                                     <div className="mb-6">
                                         <label

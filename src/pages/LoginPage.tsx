@@ -38,9 +38,9 @@ const LoginPage = () => {
   return (
       <div className="min-h-screen tech-gradient-bg flex items-center justify-center py-12 px-4">
        <div className="bg-overlay min-h-screen absolute inset-0 opacity-70"></div>
-      <div className="relative z-10">
+      <div className="relative z-10 w-full max-w-md px-4 safe-top safe-bottom">
       <motion.div 
-        className="w-full max-w-md bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden"
+        className="w-full bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -50,7 +50,7 @@ const LoginPage = () => {
           <p className="text-blue-100 text-center mt-2">欢迎回到澳门债权交易中心</p>
         </div>
         
-        <div className="p-8">
+        <div className="p-6 md:p-8">
           <form onSubmit={handleSubmit}>
             <div className="mb-6">
               <label htmlFor="username" className="block text-gray-700 dark:text-gray-300 mb-2 font-medium">用户名</label>
@@ -61,22 +61,22 @@ const LoginPage = () => {
                  value={formData.username}
                  onChange={handleChange}
                  required
-          className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors mobile-optimized form-input-mobile"
-          placeholder="请输入您的用户名"
-          style={{ touchAction: "manipulation" }}
-               />
+            className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors mobile-optimized form-input-mobile"
+            placeholder="请输入您的用户名"
+            style={{ touchAction: "manipulation" }}
+                 />
             </div>
             
             <div className="mb-6">
               <label htmlFor="password" className="block text-gray-700 dark:text-gray-300 mb-2 font-medium">密码</label>
-              <input
+                    <input
                 type="password"
                 id="password"
                 name="password"
                 value={formData.password}
                 onChange={handleChange}
                 required
-          className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors form-input-mobile"
+          className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors mobile-optimized form-input-mobile"
           placeholder="请输入您的密码"
           style={{ touchAction: "manipulation" }}
               />
@@ -112,13 +112,13 @@ const LoginPage = () => {
               </button>
           </form>
           
-          <div className="mt-8 text-center">
+          <div className="mt-6 text-center">
             <p className="text-gray-600 dark:text-gray-400">
               还没有账号？ <Link to="/register" className="text-blue-600 dark:text-blue-400 font-medium hover:underline">立即注册</Link>
             </p>
           </div>
           
-          <div className="mt-10">
+          <div className="mt-8">
             <div className="relative flex items-center justify-center">
               <div className="absolute inset-0 flex items-center">
                 <div className="w-full border-t border-gray-200 dark:border-gray-700"></div>
@@ -128,7 +128,7 @@ const LoginPage = () => {
               </div>
             </div>
             
-            <div className="mt-6 grid grid-cols-3 gap-4">
+            <div className="mt-4 grid grid-cols-3 gap-4">
               <button className="inline-flex justify-center items-center py-2 border border-gray-300 dark:border-gray-700 rounded-lg shadow-sm bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 mobile-touch-target">
                 <i className="fab fa-weixin text-green-500 text-xl"></i>
               </button>
@@ -143,7 +143,7 @@ const LoginPage = () => {
         </div>
       </motion.div>
        </div>
-     </div>
+      </div>
   );
 };
 
