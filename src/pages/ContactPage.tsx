@@ -94,17 +94,17 @@ const ContactPage = () => {
                                         </div>
                                         <div>
                                             <h4 className="text-lg font-semibold mb-1">办公地址</h4>
-                                            <p className="text-gray-200">珠海市横琴华发商都</p>
-                                        </div>
+                                             <p className="text-gray-200">美国纽约长岛Old Westbury<br />澳门马六甲街国际中心11栋</p>
+                                         </div>
                                     </div>
                                     <div className="flex items-start space-x-4">
                                         <div className="text-blue-400 text-2xl mt-1 bg-blue-900/30 w-12 h-12 rounded-full flex items-center justify-center">
                                             <i className="fas fa-phone-alt"></i>
                                         </div>
                                         <div>
-                                            <h4 className="text-lg font-semibold mb-1">联系电话</h4>
-                                            <p className="text-gray-300">+853-2888-8888</p>
-                                        </div>
+                                             <h4 className="text-lg font-semibold mb-1">联系电话</h4>
+                                             <p className="text-gray-300">+853 68258799</p>
+                                         </div>
                                     </div>
                                     <div className="flex items-start space-x-4">
                                         <div className="text-blue-400 text-2xl mt-1 bg-blue-900/30 w-12 h-12 rounded-full flex items-center justify-center">
@@ -139,8 +139,8 @@ const ContactPage = () => {
                                 <div className="mt-12">
                                     <h4 className="text-lg font-semibold mb-4">紧急联系</h4>
                                     <div className="bg-red-900/20 p-4 rounded-lg border border-red-800/50">
-                                        <p className="text-gray-300 flex items-center">
-                                            <i className="fas fa-exclamation-circle text-red-400 mr-2"></i>对于平台紧急问题，请拨打 +853-2888-8888 或发送邮件至 bruce@cred.top
+                                         <p className="text-gray-300 flex items-center">
+                                            <i className="fas fa-exclamation-circle text-red-400 mr-2"></i>对于平台紧急问题，请拨打 +853 68258799 或发送邮件至 bruce@cred.top
                                                                                                              </p>
                                     </div>
                                 </div>

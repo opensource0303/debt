@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const ProductServicePage = () => {
+  const ProductServicePage = () => {
     const services = [{
         title: "智能化债",
         description: "电子确权+智能轧差，把乱账变清账，化解三角债、多角债。",
@@ -52,6 +52,30 @@ const ProductServicePage = () => {
             "实施专业的资产接管和重组管理",
             "提供定期的资产执行和处置报告，确保投资透明度"
         ]
+    }, {
+        title: "数字资产RWA业务",
+        description: "将现实资产（债权、票据、租金等）进行合规确权与结构化，代币化发行并提供二级交易、托管清算、信息披露与收益分配，让资产更透明、更可流转、更易融资。",
+        icon: "fa-coins",
+        color: "from-cyan-600 to-blue-600",
+
+        details: [
+            "资产尽调确权，合规结构化",
+            "代币化发行，白名单合格投资者",
+            "二级交易撮合，流动性管理",
+            "托管清算披露，收益按期分配"
+        ]
+    }, {
+        title: "资产合规与安全托管",
+        description: "为数字资产与RWA提供机构级合规托管方案，覆盖KYC/AML、资产隔离、冷热钱包与MPC多签、权限审计、出入金风控与灾备，确保资产安全可控、可追溯。",
+        icon: "fa-shield-alt",
+        color: "from-emerald-600 to-green-600",
+
+        details: [
+            "客户资产隔离，账实清晰",
+            "MPC/多签托管，权限分离",
+            "提现白名单，反欺诈风控",
+            "全链路审计，灾备与应急"
+        ]
     }];
 
     return (
@@ -92,12 +116,12 @@ const ProductServicePage = () => {
                                     repeat: Infinity,
                                     repeatType: "reverse"
                                 }}></motion.div>
-                        </div>
+                         </div>
                         <div className="container mx-auto px-6 md:px-8 relative z-10">
-                            <div className="grid md:grid-cols-2 gap-8">
-                                {services.map((service, index) => <motion.div
+                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 h-full">
+                                 {services.map((service, index) => <motion.div
                                     key={index}
-                                    className="bg-gray-800/90 backdrop-blur-md rounded-2xl shadow-lg overflow-hidden border border-gray-700"
+                                    className="bg-gray-800/90 backdrop-blur-md rounded-2xl shadow-lg overflow-hidden border border-gray-700 flex flex-col"
                                     initial={{
                                         opacity: 0,
                                         y: 20
@@ -117,8 +141,8 @@ const ProductServicePage = () => {
                                         y: -5,
                                         boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1)"
                                     }}>
-                                    <div className={`bg-gradient-to-r ${service.color} p-1`}>
-                                        <div className="bg-gray-900 p-8">
+                                    <div className={`bg-gradient-to-r ${service.color} p-1 flex-grow`}>
+                                        <div className="bg-gray-900 p-8 h-full flex flex-col">
                                             <div className="flex items-center mb-6">
                                                 <div
                                                     className={`w-14 h-14 rounded-full bg-gradient-to-r ${service.color} flex items-center justify-center text-white text-2xl mr-4`}>
@@ -129,7 +153,7 @@ const ProductServicePage = () => {
                                             <p className="text-gray-300 mb-6 text-lg leading-relaxed">
                                                 {service.description}
                                             </p>
-                                            <div className="space-y-4">
+                                            <div className="space-y-4 flex-grow">
                                                 {service.details.map((detail, idx) => <div key={idx} className="flex items-start">
                                                     <i className="fas fa-check-circle text-green-400 mr-3 mt-1"></i>
                                                     <span className="text-gray-300">{detail}</span>

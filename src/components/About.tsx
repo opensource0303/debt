@@ -54,7 +54,7 @@ const About = () => {
                         style={{
                             fontSize: "48px"
                         }}>公司介绍</h2>
-                    <p className="section-description leading-relaxed">Cred可信达，信任驱动，智能引领。致力于解决中国企业与政府的债务问题，激活资产潜力，连接全球资金，推动经济高效、可持续发展。凭借AAA级信用保障，我们打造一个安全、智能、可靠的国际化资产交易与管理平台。</p>
+                        <p className="section-description leading-relaxed">Cred交易所，信任驱动，智能引领。致力于解决中国企业与政府的债务问题，激活资产潜力，连接全球资金，推动经济高效、可持续发展。凭借AAA级信用保障，我们打造一个安全、智能、可靠的国际化资产交易与管理平台。</p>
                 </motion.div>
             </div>
         </section>

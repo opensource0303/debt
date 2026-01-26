@@ -58,9 +58,9 @@ const Services = () => {
           transition={{ duration: 0.8 }}
         >
           <h2 className="section-title">核心业务</h2>
-          <p className="section-description">
-            Cred可信达，信任驱动，智能引领。致力于解决中国企业与政府的债务问题，激活资产潜力，连接全球资金，推动经济高效、可持续发展。
-          </p>
+                       <p className="section-description">
+  Cred交易所，信任驱动，智能引领。致力于解决中国企业与政府的债务问题，激活资产潜力，连接全球资金，推动经济高效、可持续发展。
+</p>
         </motion.div>
         
          <div className="grid md:grid-cols-2 gap-8 md:gap-12">

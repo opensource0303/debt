@@ -6,7 +6,7 @@ import ContactPage from '@/pages/ContactPage';
 import SolutionPage from '@/pages/SolutionPage';
 import ProductServicePage from '@/pages/ProductServicePage';
 
-// 优化滚动到顶部功能
+// 优化滚动到顶部功能 - 增强移动端体验
 const ScrollToTop = () => {
   const location = useLocation();
   
@@ -14,11 +14,13 @@ const ScrollToTop = () => {
   useLayoutEffect(() => {
     // 移动设备上使用直接滚动以提高性能
     if (window.innerWidth < 768) {
+      // 为移动设备优化滚动性能
       window.scrollTo({
         top: 0,
         behavior: 'instant' // 直接滚动，不使用平滑效果
       });
     } else {
+      // 桌面设备使用平滑滚动
       window.scrollTo({
         top: 0,
         behavior: 'smooth'

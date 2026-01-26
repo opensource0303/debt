@@ -61,7 +61,7 @@ const Advantages = () => {
                         duration: 0.8
                     }}>
                     <h2 className="section-title">产品优势</h2>
-                    <p className="section-description">"可信达"平台通过创新技术和商业模式，为解决三角债问题提供了全面、高效、安全的解决方案。</p>
+                     <p className="section-description">"Cred交易所"平台通过创新技术和商业模式，为解决三角债问题提供了全面、高效、安全的解决方案。</p>
                 </motion.div>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {advantages.map((advantage, index) => <motion.div

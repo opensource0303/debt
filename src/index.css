@@ -9,8 +9,7 @@
   font-weight: 400;
 
   font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;-webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   
   /* 强制使用深色主题 */
@@ -38,6 +37,8 @@ html {
   background-color: var(--bg-primary);
   color: var(--text-primary);
   overflow-x: hidden;
+  /* 优化滚动性能 */
+  -webkit-overflow-scrolling: touch;
 }
 
 body {
@@ -47,6 +48,8 @@ body {
   overflow-x: hidden; /* 防止水平滚动条 */
   touch-action: manipulation; /* 防止双击缩放 */
   -webkit-tap-highlight-color: transparent; /* 移除iOS点击高亮 */
+  /* 提高移动端触摸事件响应速度 */
+  touch-action-delay: none;
 }
 
 /* 全局滚动条样式 */
@@ -164,6 +167,12 @@ a, button, input, select, textarea, .transition-all {
   touch-action: manipulation; /* 防止双击缩放 */
 }
 
+/* 移动端触摸目标专用类 */
+.mobile-touch-target {
+  @apply min-w-[48px] min-h-[48px] px-4 py-2;
+  touch-action: manipulation; /* 防止双击缩放 */
+}
+
 /* 移动端字体大小响应式调整 */
 .text-responsive {
   font-size: clamp(1rem, 4vw, 1.25rem);
@@ -258,6 +267,20 @@ a, button, input, select, textarea, .transition-all {
     padding: 1rem;
     overflow-y: auto;
     max-height: calc(100vh - 80px);
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* 移动端导航栏优化 */
+  .nav-mobile {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+  
+  /* 表单输入框移动端优化 */
+  .form-input-mobile {
+    font-size: 16px; /* 防止iOS缩放 */
+    min-height: 48px;
+    padding: 0.75rem;
   }
 }
 

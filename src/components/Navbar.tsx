@@ -124,6 +124,7 @@ const Navbar = () => {
         {item.name}
     </Link>);
 
+    // 移动端优化的动画配置，更快更流畅
     const mobileAnimationConfig = {
         duration: 0.2,
         ease: "linear"
@@ -137,24 +138,27 @@ const Navbar = () => {
     const menuAnimationConfig = isMobile ? mobileAnimationConfig : desktopAnimationConfig;
 
     return (
-      <header
-             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-gray-900/95 backdrop-blur-md shadow-md border-b border-gray-800 py-2" : "bg-transparent/70 backdrop-blur-sm py-4"} nav-mobile safe-top`}
-             style={{
-                 willChange: "background-color, box-shadow",
-                 touchAction: "manipulation"
-             }}>
+        <header
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-gray-900/95 backdrop-blur-md shadow-md border-b border-gray-800 py-2" : "bg-transparent/70 backdrop-blur-sm py-4"} nav-mobile safe-top`}
+            style={{
+                willChange: "background-color, box-shadow",
+                touchAction: "manipulation" // 优化触摸行为
+            }}>
             <div className="container mx-auto px-4">
                 <div className="flex items-center justify-between">
                     <div className="flex items-center">
-                        <img
-                            src="https://s.coze.cn/t/HSJJvJGwKs4/"
-                            alt="可信达 Cred"
-                            className="h-8 mr-3" />
+                        <Link to="/" className="block">
+                            <img
+                                src="https://s.coze.cn/t/4LXXurmMGlE/"
+                                alt="Cred交易所"
+                                className="h-8 mr-3" />
+                        </Link>
                     </div>
                     <nav className="hidden md:flex items-center space-x-8">
                         {navItems.map(item => <NavLink key={item.href} item={item} />)}
                     </nav>
-                     <button
+                    {/* 优化移动端菜单按钮，增加触摸目标大小 */}
+                    <button
                         className="md:hidden p-4 text-gray-300 hover:bg-gray-800 rounded-full transition-colors touch-target mobile-touch-target"
                         onClick={toggleMenu}
                         aria-label={isMenuOpen ? "关闭菜单" : "打开菜单"}
@@ -162,7 +166,7 @@ const Navbar = () => {
                         style={{
                             minWidth: "48px",
                             minHeight: "48px",
-                            touchAction: "manipulation"
+                            touchAction: "manipulation" // 防止双击缩放
                         }}>
                         <i className={`fas ${isMenuOpen ? "fa-times" : "fa-bars"} text-xl`}></i>
                     </button>

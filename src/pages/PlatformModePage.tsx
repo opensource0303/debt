@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const PlatformModePage = () => {
-    const advantages = [{
+const advantages = [{
         title: "系统化化债能力",
         subtitle: "将“乱账”变“清账”",
         description: "以电子确权与智能轧差为基础，从根本上化解结构性债务风险，服务经济长期稳定运行。",
@@ -39,7 +39,7 @@ const PlatformModePage = () => {
             <div className="bg-overlay min-h-screen">
                 <Navbar />
                 <main className="pt-16 pb-16">
-                    {/* 页面标题部分 */}
+                    {}
                     <motion.section
                         className="container mx-auto px-6 md:px-8 mb-12 mt-8"
                         initial={{
@@ -54,12 +54,11 @@ const PlatformModePage = () => {
                             duration: 0.8
                         }}>
                         <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center">特色优势</h1>
-                        <p className="text-xl text-gray-300 max-w-3xl mx-auto text-center leading-relaxed">
-                          Cred可信达凭借四大核心能力，为解决债务问题提供全方位解决方案
-                        </p>
+                         <p
+  className="text-xl text-gray-300 max-w-3xl mx-auto text-center leading-relaxed">Cred交易所凭借四大核心能力，为解决债务问题提供全方位解决方案
+                                                    </p>
                     </motion.section>
-                    
-                    {/* 核心优势板块 */}
+                    {}
                     <section className="py-16 relative mb-20">
                         <div className="absolute inset-0 overflow-hidden">
                             <motion.div
@@ -73,12 +72,12 @@ const PlatformModePage = () => {
                                     repeat: Infinity,
                                     repeatType: "reverse"
                                 }}></motion.div>
-                        </div>
-                        <div className="container mx-auto px-6 md:px-8 relative z-10">
-                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                         </div>
+                        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                                 {advantages.map((advantage, index) => <motion.div
                                     key={index}
-                                    className="bg-gray-800/90 backdrop-blur-md rounded-2xl shadow-xl overflow-hidden border border-gray-700"
+                                     className="bg-gray-800/90 backdrop-blur-md rounded-2xl shadow-xl overflow-hidden border border-gray-700 flex flex-col"
                                     initial={{
                                         opacity: 0,
                                         y: 30
@@ -99,22 +98,21 @@ const PlatformModePage = () => {
                                         boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1)"
                                     }}>
                                     <div className={`h-2 bg-gradient-to-r ${advantage.color}`}></div>
-                                    <div className="p-8">
-                                        <div className="flex items-center mb-6">
+                                     <div className="p-6 sm:p-8 flex flex-col h-full">
+                                        <div className="flex items-center mb-5">
                                             <div
-                                                className={`w-14 h-14 rounded-full bg-gradient-to-r ${advantage.color} flex items-center justify-center text-white text-2xl mr-4`}>
+                                                className={`w-14 h-14 rounded-full bg-gradient-to-r ${advantage.color} flex items-center justify-center text-white text-2xl mr-4 shrink-0`}>
                                                 <i className={`fas ${advantage.icon}`}></i>
                                             </div>
                                             <div>
-                                                <h3 className="text-2xl font-bold">{advantage.title}</h3>
-                                                <p className="text-blue-300 text-lg">{advantage.subtitle}</p>
+                                                <h3 className="text-xl sm:text-2xl font-bold">{advantage.title}</h3>
+                                                <p className="text-blue-300 text-base sm:text-lg">{advantage.subtitle}</p>
                                             </div>
                                         </div>
-                                        <p className="text-gray-300 text-lg leading-relaxed mb-6">
-                                            {advantage.description}
-                                        </p>
+                                        <p className="text-gray-300 text-base sm:text-lg leading-relaxed mb-6 flex-grow">
+                                            {advantage.description}</p>
                                         <motion.div
-                                            className={`h-1 w-20 bg-gradient-to-r ${advantage.color} rounded-full`}
+                                            className={`h-1 w-20 bg-gradient-to-r ${advantage.color} rounded-full mt-auto`}
                                             initial={{
                                                 width: 0
                                             }}
@@ -133,8 +131,7 @@ const PlatformModePage = () => {
                             </div>
                         </div>
                     </section>
-                    
-                    {/* 技术与创新板块 */}
+                    {}
                     <section className="py-16 bg-gray-900/70 relative mb-20">
                         <div className="absolute inset-0 overflow-hidden">
                             <motion.div
@@ -167,11 +164,11 @@ const PlatformModePage = () => {
                                     duration: 0.6
                                 }}>
                                 <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">技术与创新</h2>
-                                <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                                  我们融合先进技术与创新模式，打造高效、安全、可靠的资产交易与管理平台
-                                </p>
+                                <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">我们融合先进技术与创新模式，打造高效、安全、可靠的资产交易与管理平台
+                                                                    </p>
                             </motion.div>
-                            <div className="grid md:grid-cols-3 gap-8">
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                                {}
                                 <motion.div
                                     initial={{
                                         opacity: 0,
@@ -187,15 +184,20 @@ const PlatformModePage = () => {
                                     transition={{
                                         duration: 0.5
                                     }}
-                                    className="bg-gray-800/90 backdrop-blur-md p-8 rounded-2xl border border-gray-700 hover:shadow-xl transition-shadow duration-300">
-                                    <div className="text-blue-400 text-3xl mb-6">
+                                    className="bg-gray-800/90 backdrop-blur-md p-8 rounded-2xl border border-gray-700 hover:border-blue-500/50 hover:shadow-xl transition-all duration-300 group"
+                                    whileHover={{
+                                        y: -5
+                                    }}>
+                                    <div
+                                        className="text-blue-400 text-3xl mb-6 group-hover:scale-110 transition-transform duration-300">
                                         <i className="fas fa-shield-alt"></i>
                                     </div>
-                                    <h3 className="text-xl font-bold mb-4">隐私计算技术</h3>
-                                    <p className="text-gray-300 leading-relaxed">
-                                      采用零知识证明和多方安全计算技术，在严格保护参与方商业秘密与隐私信息的前提下，精准挖掘债务闭环。
-                                    </p>
+                                    <h3
+                                        className="text-xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-indigo-400 text-transparent bg-clip-text">隐私计算技术</h3>
+                                    <p className="text-gray-300 leading-relaxed">采用零知识证明和多方安全计算技术，在严格保护参与方商业秘密与隐私信息的前提下，精准挖掘债务闭环。
+                                                                            </p>
                                 </motion.div>
+                                {}
                                 <motion.div
                                     initial={{
                                         opacity: 0,
@@ -212,15 +214,20 @@ const PlatformModePage = () => {
                                         duration: 0.5,
                                         delay: 0.1
                                     }}
-                                    className="bg-gray-800/90 backdrop-blur-md p-8 rounded-2xl border border-gray-700 hover:shadow-xl transition-shadow duration-300">
-                                    <div className="text-green-400 text-3xl mb-6">
+                                    className="bg-gray-800/90 backdrop-blur-md p-8 rounded-2xl border border-gray-700 hover:border-green-500/50 hover:shadow-xl transition-all duration-300 group"
+                                    whileHover={{
+                                        y: -5
+                                    }}>
+                                    <div
+                                        className="text-green-400 text-3xl mb-6 group-hover:scale-110 transition-transform duration-300">
                                         <i className="fas fa-link"></i>
                                     </div>
-                                    <h3 className="text-xl font-bold mb-4">权威区块链存证</h3>
-                                    <p className="text-gray-300 leading-relaxed">
-                                      区块链存证和电子签章技术确保债务清偿全流程具备法律效力，为后续司法衔接提供标准化证据。
-                                    </p>
+                                    <h3
+                                        className="text-xl font-bold mb-4 bg-gradient-to-r from-green-400 to-teal-400 text-transparent bg-clip-text">权威区块链存证</h3>
+                                    <p className="text-gray-300 leading-relaxed">区块链存证和电子签章技术确保债务清偿全流程具备法律效力，为后续司法衔接提供标准化证据。
+                                                                            </p>
                                 </motion.div>
+                                {}
                                 <motion.div
                                     initial={{
                                         opacity: 0,
@@ -237,20 +244,29 @@ const PlatformModePage = () => {
                                         duration: 0.5,
                                         delay: 0.2
                                     }}
-                                    className="bg-gray-800/90 backdrop-blur-md p-8 rounded-2xl border border-gray-700 hover:shadow-xl transition-shadow duration-300">
-                                    <div className="text-purple-400 text-3xl mb-6">
+                                    className="bg-gray-800/90 backdrop-blur-md p-8 rounded-2xl border border-gray-700 hover:border-purple-500/50 hover:shadow-xl transition-all duration-300 group"
+                                    whileHover={{
+                                        y: -5
+                                    }}>
+                                    <div
+                                        className="text-purple-400 text-3xl mb-6 group-hover:scale-110 transition-transform duration-300">
                                         <i className="fas fa-brain"></i>
                                     </div>
-                                    <h3 className="text-xl font-bold mb-4">AI与大数据分析</h3>
-                                    <p className="text-gray-300 leading-relaxed">
-                                      运用人工智能和大数据技术，构建智能风控模型，提升风险管理能力和决策效率，实现资产精准定价。
-                                    </p>
+                                    <h3
+                                        className="text-xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-pink-400 text-transparent bg-clip-text">AI与大数据分析</h3>
+                                    <p className="text-gray-300 leading-relaxed">运用人工智能和大数据技术，构建智能风控模型，提升风险管理能力和决策效率，实现资产精准定价。
+                                                                            </p>
                                 </motion.div>
+                                {}
+                                <></>
+                                {}
+                                <></>
+                                {}
+                                <></>
                             </div>
                         </div>
                     </section>
-                    
-                    {/* 结语板块 */}
+                    {}
                     <motion.section
                         className="py-20 text-center relative mb-16"
                         initial={{
@@ -267,23 +283,22 @@ const PlatformModePage = () => {
                         }}>
                         <div className="container mx-auto px-6 md:px-8">
                             <div className="max-w-3xl mx-auto">
-                                <motion.h2
-                                    className="text-3xl md:text-4xl font-bold text-white mb-6"
-                                    initial={{
-                                        y: 20
-                                    }}
-                                    whileInView={{
-                                        y: 0
-                                    }}
-                                    viewport={{
-                                        once: true
-                                    }}
-                                    transition={{
-                                        duration: 0.6,
-                                        delay: 0.2
-                                    }}>
-                                    Cred可信达，连接资产，连接信任
-                                </motion.h2>
+                                 <motion.h2
+  className="text-3xl md:text-4xl font-bold text-white mb-6"
+  initial={{
+      y: 20
+  }}
+  whileInView={{
+      y: 0
+  }}
+  viewport={{
+      once: true
+  }}
+  transition={{
+      duration: 0.6,
+      delay: 0.2
+  }}>Cred交易所，连接资产，连接信任
+                                                                    </motion.h2>
                                 <motion.p
                                     className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
                                     initial={{
@@ -298,9 +313,8 @@ const PlatformModePage = () => {
                                     transition={{
                                         duration: 0.6,
                                         delay: 0.4
-                                    }}>
-                                    我们致力于通过创新技术和专业服务，构建安全、智能、可靠的国际化资产交易与管理平台
-                                </motion.p>
+                                    }}>我们致力于通过创新技术和专业服务，构建安全、智能、可靠的国际化资产交易与管理平台
+                                                                    </motion.p>
                             </div>
                         </div>
                     </motion.section>
